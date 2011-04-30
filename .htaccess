@@ -1,0 +1,8 @@
+DirectoryIndex index.php
+
+Redirect /stats http://stats.tuxfamily.org/libreprojects.net [NC,L]
+Redirect /plan http://jancborchardt.titanpad.com/libreprojects [NC,L]
+Redirect /code https://gitorious.org/libreprojects/website/trees/master [NC,L]
+
+# April 1
+#Redirect /index.html /alternatives/index.html [NC,L]
