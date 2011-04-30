@@ -18,7 +18,7 @@ INSERT INTO "categories" VALUES('development',13);
 INSERT INTO "categories" VALUES('science',14);
 INSERT INTO "categories" VALUES('organization',15);
 CREATE TABLE projects (id TEXT PRIMARY_KEY, category TEXT, name TEXT, description TEXT, address TEXT);
-INSERT INTO "projects" VALUES('diaspora','social','Diaspora','social network','http://joindiaspora.com/');
+INSERT INTO "projects" VALUES('diaspora','social','Diaspora','social network','http://diasp.org/');
 INSERT INTO "projects" VALUES('identica','social','Identi.ca','microblog','http://identi.ca/');
 INSERT INTO "projects" VALUES('jappix','social','Jappix','chat','http://jappix.com/');
 INSERT INTO "projects" VALUES('freelishus','social','Freelish.us','bookmarks','http://freelish.us/');
