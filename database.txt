@@ -114,8 +114,6 @@ INSERT INTO "projects" VALUES('nounproject','graphics','Noun Project','symbols',
 INSERT INTO "projects" VALUES('tango','graphics','Tango','icons','http://commons.wikimedia.org/wiki/GNOME_Desktop_icons#Actions');
 INSERT INTO "projects" VALUES('openfontlibrary','graphics','Open Font Library','typefaces','http://openfontlibrary.org/');
 INSERT INTO "projects" VALUES('leagueofmovabletype','graphics','League of Movable Type','typefaces','http://theleagueofmoveabletype.com/');
-INSERT INTO "projects" VALUES('fontsquirrel','graphics','Font Squirrel','typefaces','http://fontsquirrel.com/');
-INSERT INTO "projects" VALUES('kernest','graphics','Kernest','web fonts','http://kernest.com/');
 INSERT INTO "projects" VALUES('wordpress','publishing','WordPress','blog','http://wordpress.com/');
 INSERT INTO "projects" VALUES('drupal','publishing','Drupal','website','http://drupalgardens.com/');
 INSERT INTO "projects" VALUES('impresspages','publishing','ImpressPages','website','http://impresspages.org/');
