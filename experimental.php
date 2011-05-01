@@ -10,6 +10,41 @@
 <h2><a title="what&apos;s this about?" href="#information">?</a></h2>
 <div><a href="http://2011.donation.tuxfamily.org/"><strong>Like this?</strong><img src="tuxfamily-donation.png" /><br /><span>Please donate to TuxFamily,<br />our awesome web host! :)</span></a></div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript"></script>
+<script type='text/javascript'> 
+  //<![CDATA[
+    $(document).ready(function(){
+      var runSearch = function() {
+        var value = $('#search input').val();
+    
+        if(!value.length)
+          $('#search-results').html('');
+        else {
+          $.post('/search',
+                {'query': value},
+                function(data) {
+                  $('#search-results').html(data);
+                });
+          _trackEvent('search', 'run', 'value');
+        }
+      };
+    
+      $('#search input.searchfield').keyup(function(event) {
+        runSearch();
+      });
+      $('#search input.searchfield').change(function(event) {
+        runSearch();
+      });
+      $('#search').submit(function(event) {
+        runSearch();
+        event.preventDefault();
+      });
+    });
+  //]]>
+</script>
+<form action='/' id='search'><input class='searchfield' name='query' placeholder='Search Libre Projects' result='5' type='search'></form> 
+<div id='search-results'><p class='no-results'></p></div>
+
 <?php // get favorite projects from parameters like /?top=diaspora,identica,jappix,reddit,newsblur
 if(isset($_GET['top'])): ?>
 <h2 id="top"><a href="#top">&#x2605;</a></h2>
