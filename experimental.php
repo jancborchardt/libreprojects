@@ -15,7 +15,7 @@ if(isset($_GET['top'])): ?>
 <h2 id="top"><a href="#top">top</a></h2>
 <ul>
 <?php
-$top = explode(',', $_GET['top']);
+$excludeprojects = $top = explode(',', $_GET['top']);
 while($topproject = array_shift($top)) {
 	try { $topprojectentry = $db->prepare('SELECT * FROM projects WHERE id="'.$topproject.'";'); $topprojectentry->execute(); } catch (Exception $e) { die ($e); }
 	$project = $topprojectentry->fetchObject() ?>
@@ -29,7 +29,7 @@ try { $categories = $db->prepare('SELECT * FROM categories ORDER BY position ASC
 while($category = $categories->fetchObject()): ?>
 <h2 id="<?php echo $category->id ?>"><a href="#<?php echo $category->id ?>"><?php echo $category->id ?></a></h2>
 <ul>
-<?php try { $projects = $db->prepare('SELECT * FROM projects WHERE category="'.$category->id.'";'); $projects->execute(); } catch (Exception $e) { die($e); }
+<?php try { $projects = $db->prepare('SELECT * FROM projects WHERE category="'.$category->id.'" AND NOT IN '.$excludeprojects.';'); $projects->execute(); } catch (Exception $e) { die($e); }
 while($project = $projects->fetchObject()): ?>
 	<li><a href="<?php echo $project->address ?>"><img src="logos/<?php echo $project->id ?>.png" /><span><strong><?php echo $project->name ?></strong> <?php echo $project->description ?></span></a></li>
 <?php endwhile; ?>
