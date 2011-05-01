@@ -8,7 +8,9 @@
 <?php try { $count = $db->prepare('SELECT COUNT(*) AS projectcount FROM projects;'); $count->execute(); } catch (Exception $e) { die($e); } ?>
 <p><?php echo $count->fetchObject()->projectcount ?> free web services & alternatives</p>
 <h2><a title="what&apos;s this about?" href="#information">?</a></h2>
-<div><a href="http://2011.donation.tuxfamily.org/"><strong>Like this?</strong><img src="tuxfamily-donation.png" /><br /><span>Please donate to TuxFamily,<br />our awesome web host! :)</span></a></div>
+<?php try { $advert = $db->prepare('SELECT * FROM adverts ORDER BY RANDOM() LIMIT 1;'); $advert->execute(); } catch (Exception $e) { die($e); }
+$ad = $advert->fetchObject(); ?>
+<div><a href="<?php echo $ad->address ?>"><strong><?php echo $ad->caption ?></strong><img src="adverts/<?php echo $ad->id ?>" /><br /><span><?php echo $ad->description ?></span></a></div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript"></script>
 <script type='text/javascript'> 

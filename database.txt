@@ -1,6 +1,14 @@
 BEGIN TRANSACTION;
+DROP TABLE adverts;
 DROP TABLE categories;
 DROP TABLE projects;
+CREATE TABLE adverts (id TEXT PRIMARY_KEY, caption TEXT, description TEXT, address TEXT);
+INSERT INTO "adverts" VALUES('tuxfamily.png','Like this?','Please donate to TuxFamily,<br />our awesome web host! :)','http://2011.donation.tuxfamily.org/');
+INSERT INTO "adverts" VALUES('hypnotoad.gif','LIKE THIS!?','DONATE TO<br />OUR WEB HOST','http://2011.donation.tuxfamily.org/');
+INSERT INTO "adverts" VALUES('owncloud.png','Dropbox?','ownCloud is a free<br />alternative in development!','http://owncloud.org/');
+INSERT INTO "adverts" VALUES('riseup.png','Free email?','Support riseup.net, the<br />free email collective.','https://help.riseup.net/donate');
+INSERT INTO "adverts" VALUES('fdroid.png','Android?','F-Droid is a<br />free software market','http://f-droid.org/repository/');
+INSERT INTO "adverts" VALUES('openhatch.png','Developer?','Look for opportunities<br />at OpenHatch','http://openhatch.org/');
 CREATE TABLE categories (id TEXT PRIMARY_KEY, position INTEGER);
 INSERT INTO "categories" VALUES('social',1);
 INSERT INTO "categories" VALUES('tools',2);
