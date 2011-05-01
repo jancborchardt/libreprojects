@@ -28,7 +28,7 @@ INSERT INTO "projects" VALUES('onlinegroups','social','OnlineGroups','mailing li
 INSERT INTO "projects" VALUES('freenode','social','freenode','IRC','http://webchat.freenode.net/');
 INSERT INTO "projects" VALUES('seeks','tools','Seeks','search engine','http://seeks.fr/');
 INSERT INTO "projects" VALUES('yacy','tools','YaCy','search engine','http://www.yacyweb.de/peer.htm');
-INSERT INTO "projects" VALUES('etherpad','tools','EtherPad','text editor','http://titanpad.com/');
+INSERT INTO "projects" VALUES('etherpad','tools','Titanpad','text editor','http://titanpad.com/');
 INSERT INTO "projects" VALUES('funambol','tools','Funambol','calendar','http://my.funambol.com/');
 INSERT INTO "projects" VALUES('grical','tools','GriCal','open calendar','http://grical.org/');
 INSERT INTO "projects" VALUES('wingman','tools','Wingman','to-do list','http://wingman.heroku.com/');
@@ -103,7 +103,7 @@ INSERT INTO "projects" VALUES('vodo','video','Vodo','platform','http://vodo.net/
 INSERT INTO "projects" VALUES('filmaster','video','Filmaster','community','http://filmaster.com/');
 INSERT INTO "projects" VALUES('communityvideo','video','Community Video','database','http://archive.org/details/opensource_movies');
 INSERT INTO "projects" VALUES('universalsubtitles','video','Universal','subtitles','http://universalsubtitles.org/');
-INSERT INTO "projects" VALUES('svg-edit','graphics','SVG-edit','graphic editor','http://svg-edit.googlecode.com/svn/trunk/editor/svg-editor.html');
+INSERT INTO "projects" VALUES('svgedit','graphics','SVG-edit','graphic editor','http://svg-edit.googlecode.com/svn/trunk/editor/svg-editor.html');
 INSERT INTO "projects" VALUES('pixastic','graphics','Pixastic','photo editor','http://editor.pixastic.com/');
 INSERT INTO "projects" VALUES('harmony','graphics','Harmony','drawing tool','http://mrdoob.com/projects/harmony/');
 INSERT INTO "projects" VALUES('openclipartlibrary','graphics','Open Clip Art','artwork','http://openclipart.org/');

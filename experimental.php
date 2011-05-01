@@ -10,26 +10,28 @@
 <h2><a title="what&apos;s this about?" href="#information">?</a></h2>
 <div><a href="http://2011.donation.tuxfamily.org/"><strong>Like this?</strong><img src="tuxfamily-donation.png" /><br /><span>Please donate to TuxFamily,<br />our awesome web host! :)</span></a></div>
 
-<?php // get favorite projects from web address like /?top=diaspora,identica,jappix,reddit,newsblur
+<?php // get favorite projects from parameters like /?top=diaspora,identica,jappix,reddit,newsblur
 if(isset($_GET['top'])): ?>
-<h2 id="top"><a href="#top">top</a></h2>
+<h2 id="top"><a href="#top">&#x2605;</a></h2>
 <ul>
 <?php
-$excludeprojects = $top = explode(',', $_GET['top']);
+$top = explode(',', $_GET['top']);
 while($topproject = array_shift($top)) {
 	try { $topprojectentry = $db->prepare('SELECT * FROM projects WHERE id="'.$topproject.'";'); $topprojectentry->execute(); } catch (Exception $e) { die ($e); }
-	$project = $topprojectentry->fetchObject() ?>
+	$project = $topprojectentry->fetchObject();
+	$excludeprojects .= "'".$topproject."',"; ?>
 	<li><a href="<?php echo $project->address ?>"><img src="logos/<?php echo $project->id ?>.png" /><span><strong><?php echo $project->name ?></strong> <?php echo $project->description ?></span></a></li>
 <?php } ?>
 </ul>
-<?php endif; ?>
+<?php $excludeprojects = substr($excludeprojects, 0 , strlen($excludeprojects)-1);
+endif; ?>
 
 <?php // get other categories
 try { $categories = $db->prepare('SELECT * FROM categories ORDER BY position ASC;'); $categories->execute(); } catch (Exception $e) { die($e); }
 while($category = $categories->fetchObject()): ?>
 <h2 id="<?php echo $category->id ?>"><a href="#<?php echo $category->id ?>"><?php echo $category->id ?></a></h2>
 <ul>
-<?php try { $projects = $db->prepare('SELECT * FROM projects WHERE category="'.$category->id.'" AND NOT IN '.$excludeprojects.';'); $projects->execute(); } catch (Exception $e) { die($e); }
+<?php try { $projects = $db->prepare('SELECT * FROM projects WHERE category="'.$category->id.'" AND id NOT IN ('.$excludeprojects.');'); $projects->execute(); } catch (Exception $e) { die($e); }
 while($project = $projects->fetchObject()): ?>
 	<li><a href="<?php echo $project->address ?>"><img src="logos/<?php echo $project->id ?>.png" /><span><strong><?php echo $project->name ?></strong> <?php echo $project->description ?></span></a></li>
 <?php endwhile; ?>

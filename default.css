@@ -23,7 +23,7 @@ p+h2 { margin:-1em 0 0 9.5em; z-index:100; }
 p+h2 a { padding:1em; }
 
 div { position:absolute; margin:-3.7em 0 0 35em; }
-div a { padding:2em; }
+div a { padding-left:2em; }
 div a span, div a img { visibility:hidden; font-size:.8em; }
 div a:hover img, div a:focus img { visibility:visible; display:inline; position:absolute; margin-top:-1.5em; }
 div a:hover span, div a:focus span { visibility:visible; display:block; margin-left:2.5em; }
@@ -34,6 +34,8 @@ p+h2+div+h2+ul { margin-top:2em; }
 h2 { font-size:3em; margin:.8em 0 0 -2em; display:block; position:absolute; z-index:-100; text-transform:capitalize; }
 h2 a { color:#222; text-shadow:#444 0 1px 0; }
 h2 a:hover, h2 a:focus { color:#111; text-shadow:#444 0 1px 0; outline:0; }
+h2#top+ul { margin-bottom:1.5em; }
+h2#top+ul+h2 {margin-top:1.3em; }
 
 h2+ul li { line-height:6em; }
 h2+ul li a { padding:35px 20px; white-space:nowrap; }
