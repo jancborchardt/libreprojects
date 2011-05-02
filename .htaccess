@@ -1,5 +1,7 @@
 Options +FollowSymlinks
 RewriteEngine on
+RewriteRule ^top/([^/]+) /?top=$1 [NC]
+RewriteRule ^top /?top=seeks,dictcc,diaspora,identica,etherpad,reddit,newsblur,openstreetmap [NC]
 
 DirectoryIndex index.php
 
@@ -8,17 +10,16 @@ Redirect /plan http://jancborchardt.titanpad.com/libreprojects [NC,L]
 Redirect /code https://gitorious.org/libreprojects/website/trees/master [NC,L]
 
 # favorite services
-Redirect /top http://libreprojects.net/?top=riseup,diaspora,identica,jappix,reddit,newsblur,seeks,dictcc,etherpad,funambol,grical,wordpress,openstreetmap,wikipedia,librefm,bewelcome,launchpad,gitorious,tuxfamily,lichess,wpilot,achtungdiekurve  [NC,L]
-Redirect /jan http://libreprojects.net/?top=seeks,dictcc,diaspora,identica,reddit,jappix,newsblur,openstreetmap [NC,L]
-Redirect /alaric http://libreprojects.net/?top=diaspora,reddit,seeks,wikipedia,projectgutenberg,jamendo,freemusicarchive [NC,L]
-Redirect /anne http://libreprojects.net/?top=diaspora,seeks,dictcc,wikinews,openstreetmap,wikipedia,jamendo [NC,L]
-Redirect /arthur http://libreprojects.net/?top=diaspora,identica,jappix,seeks,etherpad,grical,newsblur [NC,L]
-Redirect /benny http://libreprojects.net/?top=diaspora,reddit,etherpad,seeks,wikipedia,lichess,jamendo [NC,L]
-Redirect /dominik http://libreprojects.net/?top=diaspora,seeks,grical,dictcc,newsblur,wikipedia,openstreetmap [NC,L]
-Redirect /hannes http://libreprojects.net/?top=diaspora,jappix,reddit,seeks,wikipedia,newsblur,achtungdiekurve [NC,L]
-Redirect /insa http://libreprojects.net/?top=diaspora,reddit,seeks,wikipedia,lichess,jamendo,freemusicarchive [NC,L]
-Redirect /martin http://libreprojects.net/?top=diaspora,jappix,seeks,wikipedia,wikitravel,openstreetmap,bewelcome [NC,L]
-Redirect /parker http://libreprojects.net/?top=diaspora,identica,reddit,seeks,wikipedia,dictcc,jamendo [NC,L]
+Redirect /jan http://libreprojects.net/top/riseup,diaspora,identica,jappix,reddit,newsblur,seeks,dictcc,etherpad,funambol,grical,wordpress,openstreetmap,wikipedia,librefm,bewelcome,launchpad,gitorious,tuxfamily,lichess,wpilot,achtungdiekurve  [NC,L]
+Redirect /alaric http://libreprojects.net/top/diaspora,reddit,seeks,wikipedia,projectgutenberg,jamendo,freemusicarchive [NC,L]
+Redirect /anne http://libreprojects.net/top/diaspora,seeks,dictcc,wikinews,openstreetmap,wikipedia,jamendo [NC,L]
+Redirect /arthur http://libreprojects.net/top/diaspora,identica,jappix,seeks,etherpad,grical,newsblur [NC,L]
+Redirect /benny http://libreprojects.net/top/diaspora,reddit,etherpad,seeks,wikipedia,lichess,jamendo [NC,L]
+Redirect /dominik http://libreprojects.net/top/diaspora,seeks,grical,dictcc,newsblur,wikipedia,openstreetmap [NC,L]
+Redirect /hannes http://libreprojects.net/top/diaspora,jappix,reddit,seeks,wikipedia,newsblur,achtungdiekurve [NC,L]
+Redirect /insa http://libreprojects.net/top/diaspora,reddit,seeks,wikipedia,lichess,jamendo,freemusicarchive [NC,L]
+Redirect /martin http://libreprojects.net/top/diaspora,jappix,seeks,wikipedia,wikitravel,openstreetmap,bewelcome [NC,L]
+Redirect /parker http://libreprojects.net/top/diaspora,identica,reddit,seeks,wikipedia,dictcc,jamendo [NC,L]
 
 # redirect anything else to main page
 #RewriteRule ^(.)$ http://libreprojects.net/ [NC,L]
