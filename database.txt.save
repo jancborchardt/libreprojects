@@ -55,9 +55,8 @@ INSERT INTO "projects" VALUES('newsblur','news','NewsBlur','feed reader','http:/
 INSERT INTO "projects" VALUES('openstreetmap','travel','OpenStreetMap','world map','http://openstreetmap.org/');
 INSERT INTO "projects" VALUES('openrouteservice','travel','OpenRouteService','directions','http://openrouteservice.org/');
 INSERT INTO "projects" VALUES('webglearth','travel','WebGL Earth','globus','http://webglearth.com/');
+INSERT INTO "projects" VALUES('bewelcome','travel','BeWelcome','hospitality network','http://bewelcome.org/');
 INSERT INTO "projects" VALUES('wikitravel','travel','Wikitravel','guide','http://wikitravel.org/');
-INSERT INTO "projects" VALUES('bewelcome','travel','BeWelcome','hospitality','http://bewelcome.org/');
-INSERT INTO "projects" VALUES('hitchwiki','travel','Hitchwiki','hitchhiking','http://hitchwiki.org/');
 INSERT INTO "projects" VALUES('neweuropetours','travel','Sandeman&apos;s','city tours','http://neweuropetours.eu/');
 INSERT INTO "projects" VALUES('useit','travel','Use-It','city guides','http://use-it.info/');
 
@@ -72,7 +71,6 @@ INSERT INTO "projects" VALUES('yirtok','games','Yirtok','shoot &apos;em up','htt
 INSERT INTO "projects" VALUES('elementdots','games','Element Dots','falling sand','http://pok5.de/elementdots/');
 INSERT INTO "projects" VALUES('missilefleet','games','Missile Fleet','tactics','http://glimr.rubyforge.org/cake/missile_fleet.html');
 INSERT INTO "projects" VALUES('puzzlecollection','games','Puzzles','collection','http://paddavis.com/jspuzzles/');
-INSERT INTO "projects" VALUES('rotogame','games','Roto Game','puzzle','http://rotogame.appspot.com/');
 INSERT INTO "projects" VALUES('atomix','games','Atomix','puzzle','http://ledger.sdf.org/atomix/');
 INSERT INTO "projects" VALUES('vectomatic','games','Vectomatic','for children','http://www.vectomatic.org/gwt/lib-gwt-svg-edu/lib-gwt-svg-edu.html');
 INSERT INTO "projects" VALUES('marblerun','games','Marble Run','puzzle','http://marblerun.at/');
@@ -117,7 +115,6 @@ INSERT INTO "projects" VALUES('freemusicarchive','audio','Free Music','archive',
 INSERT INTO "projects" VALUES('librefm','audio','Libre.fm','radio','http://libre.fm/');
 INSERT INTO "projects" VALUES('musopen','audio','Musopen','public domain','http://musopen.com/');
 INSERT INTO "projects" VALUES('communityaudio','audio','Community Audio','database','http://archive.org/details/opensource_audio');
-INSERT INTO "projects" VALUES('netlabels','audio','Netlabels','collection','http://archive.org/details/netlabels');
 INSERT INTO "projects" VALUES('freesound','audio','Freesound','sounds','http://freesound.org/');
 INSERT INTO "projects" VALUES('ccmixter','audio','ccMixter','samples','http://ccmixter.org/');
 INSERT INTO "projects" VALUES('cashmusic','audio','CASH Music','tools','http://cashmusic.org/');

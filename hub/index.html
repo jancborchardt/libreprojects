@@ -1,0 +1,63 @@
+<!DOCTYPE html><html><head><meta http-equiv="content-type" content="text/html;charset=utf-8" /> 
+<title>Libre Hub</title>
+<link rel="shortcut icon" href="/favicon.png" /><link rel="apple-touch-icon-precomposed" href="/favicon-touch.png" />
+<script>
+// iFrame buster buster from http://coderrr.wordpress.com/2009/02/13/preventing-frame-busting-and-click-jacking-ui-redressing/
+var prevent_bust = 0;
+window.onbeforeunload = function() { prevent_bust++; }
+setInterval(function() {
+	if(prevent_bust > 0) {
+		prevent_bust -= 2;
+		window.top.location = 'http://libreprojects.net/204';
+	}
+}, 1)
+
+// customize user agent to force sites’ mobile layout, does not work yet
+navigator.__defineGetter__('userAgent', function(){ return 'Mozilla/5.0 (iPhone; U; CPU iPhone OS 4_0 like Mac OS X; en-us) AppleWebKit/532.9 (KHTML, like Gecko) Version/4.0.5 Mobile/8A293 Safari/6531.22.7'; });
+
+// a reload button for each iFrame
+function reload(frameid) { document.getElementById(frameid).src = document.getElementById(frameid).src; }
+</script>
+<style>
+* { margin:0; padding:0; border:0; }
+body { background-color:#333; height:1600px; }
+iframe { margin:1em; display:inline; border-radius:1em; -moz-border-radius:1em; -webkit-border-radius:1em; }
+.full { width:97%; }
+.half { width:47% }
+.thirds { width:64% }
+.third { width:30.5% }
+.quarters { width:75%; }
+.quarter { width:22%; }
+.small { height:300px; }
+.medium { height:450px; }
+.big { height:640px; }
+.small+.small+.big { position:relative; margin-top:-340px; }
+
+a { color:#ccc; text-decoration:none; }
+a:hover, a:focus { color:#fff; text-shadow:#000 0 0 1em; outline:0; }
+a:active { color:#ddd; }
+a.reload { position:relative; margin-left:-2em; padding:.5em; color:#222; text-shadow:#444 0 1px 0; }
+a.reload:hover, a.reload:focus { color:#999; text-shadow:0; }
+</style>
+</head><body>
+<!--<iframe class="thirds small" src="https://mail.riseup.net/"></iframe>
+<iframe class="thirds small" src="http://my.funambol.com/c/portal/layout#calendar"></iframe>
+<iframe class="third big" src="https://jancborchardt.titanpad.com/jancborchardt"></iframe>-->
+
+<iframe id="mail" class="thirds small" src="https://mail.riseup.net/"></iframe><a class="reload" href="javascript:reload('mail');">&#x21bb;</a>
+<!-- Identi.ca sometimes busts the frame. Ze framebusterbuster, it does nothing! -->
+<iframe id="identica" class="third small" src="http://identi.ca/jancborchardt/all/"></iframe><a class="reload" href="javascript:reload('identica');">&#x21bb;</a>
+
+<iframe id="pad-jcb" class="third medium" src="https://jancborchardt.titanpad.com/jancborchardt"></iframe><a class="reload" href="javascript:reload('pad-jcb');">&#x21bb;</a>
+<iframe id="pad-thesis" class="third medium" src="https://jancborchardt.titanpad.com/thesis"></iframe><a class="reload" href="javascript:reload('pad-thesis');">&#x21bb;</a>
+<iframe id="pad-lp" class="third medium" src="https://jancborchardt.titanpad.com/libreprojects"></iframe><a class="reload" href="javascript:reload('pad-lp');">&#x21bb;</a>
+
+<iframe id="newsblur" class="thirds small" src="http://newsblur.com/"></iframe><a class="reload" href="javascript:reload('newsblur');">&#x21bb;</a>
+<iframe id="reddit" class="third small" src="http://www.reddit.com/.compact"></iframe><a class="reload" href="javascript:reload('reddit');">&#x21bb;</a>
+
+<iframe id="diaspora" class="thirds small" src="https://joindiaspora.com/aspects"></iframe><a class="reload" href="javascript:reload('diaspora');">&#x21bb;</a>
+
+<!-- Jappix focuses and shifts the complete page on new messages, extremely annoying
+<iframe id="jappix" class="third small" src="https://www.jappix.com/?m=mobile"></iframe><a class="reload" href="javascript:reload('jappix');">&#x21bb;</a>-->
+
+</body></html> 

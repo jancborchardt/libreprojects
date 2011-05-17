@@ -1,9 +1,9 @@
 Options +FollowSymlinks
 RewriteEngine on
 RewriteRule ^top/([^/]+) /?top=$1 [NC]
-RewriteRule ^top /?top=seeks,dictcc,diaspora,identica,etherpad,reddit,newsblur,openstreetmap [NC]
+RewriteRule ^top /?top=seeks,diaspora,identica,etherpad,reddit,newsblur,openstreetmap [NC]
 
-DirectoryIndex index.php
+DirectoryIndex index.php index.html
 
 Redirect /stats http://stats.tuxfamily.org/libreprojects.net [NC,L]
 Redirect /plan http://jancborchardt.titanpad.com/libreprojects [NC,L]
@@ -20,6 +20,9 @@ Redirect /hannes http://libreprojects.net/top/diaspora,jappix,reddit,seeks,wikip
 Redirect /insa http://libreprojects.net/top/diaspora,reddit,seeks,wikipedia,lichess,jamendo,freemusicarchive [NC,L]
 Redirect /martin http://libreprojects.net/top/diaspora,jappix,seeks,wikipedia,wikitravel,openstreetmap,bewelcome [NC,L]
 Redirect /parker http://libreprojects.net/top/diaspora,identica,reddit,seeks,wikipedia,dictcc,jamendo [NC,L]
+
+# return 204 for iFrame buster buster
+RedirectMatch 204 204(.*)$
 
 # redirect anything else to main page
 #RewriteRule ^(.)$ http://libreprojects.net/ [NC,L]
