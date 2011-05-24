@@ -6,7 +6,7 @@ if (isSet($_GET["locale"])) {
 
 } elseIf (isSet($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
 	require_once('accept-to-gettext.inc');
-	$langs=array('de_DE', 'en_US', 'it_IT');
+	$langs=array('de_DE', 'en_US', 'fr_FR', 'it_IT');
 	$locale=al2gt($langs, 'text/html');
 
 } else { $locale="en_US"; }
