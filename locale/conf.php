@@ -11,7 +11,7 @@ if (isSet($_GET["locale"])) {
 
 } else { $locale="en_US"; }
 
-setlocale('LC_ALL', $locale);
+setlocale(LC_ALL, $locale);
 bindtextdomain("messages", "./locale");
 textdomain("messages");
 ?>
