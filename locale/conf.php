@@ -1,13 +1,17 @@
 <?php
-$locale = "en_US";
-if(isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
-	$locale = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 5);
-	$locale = preg_replace("/(..)-(..)/e", "'\\1_'.strtoupper('\\2')", $locale);
-}
-if(isset($_GET["locale"])) $locale = $_GET["locale"];
+if (eregi(basename(__FILE__),$_SERVER['REQUEST_URI'])) {die('This file cannot be accessed directly.');}
 
-putenv("LC_ALL=$locale");
-setlocale(LC_ALL, $locale);
+if (isSet($_GET["locale"])) {
+	$locale = substr($_GET["locale"], 0, 5);
+
+} elseIf (isSet($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
+	require_once('accept-to-gettext.inc');
+	$langs=array('de_DE', 'en_US', 'it_IT');
+	$locale=al2gt($langs, 'text/html');
+
+} else { $locale="en_US"; }
+
+setlocale('LC_ALL', $locale);
 bindtextdomain("messages", "./locale");
 textdomain("messages");
 ?>
