@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libreprojects\n"
 "POT-Creation-Date: 2011-05-21\n"
-"PO-Revision-Date: 2011-05-21 10:14+0100\n"
+"PO-Revision-Date: 2011-05-28 07:38+0100\n"
 "Last-Translator: Flavio Pastore <ironbishop>\n"
 "Language-Team: Italian <tp@lists.linux.it>\n"
 "MIME-Version: 1.0\n"
@@ -24,7 +24,7 @@ msgstr "servizi web liberi e alternativi"
 
 #
 msgid "what&apos;s this about?"
-msgstr "cos&apos;è tutto questo?"
+msgstr "cos&apos;&egrave; questo sito?"
 
 #
 msgid "Search Libre Projects"

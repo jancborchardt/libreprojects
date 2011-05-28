@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Libreprojects\n"
 "POT-Creation-Date: 2011-05-21\n"
-"PO-Revision-Date: 2011-05-24 20:30+0100\n"
+"PO-Revision-Date: 2011-05-28 07:39+0100\n"
 "Last-Translator: Flavio Pastore <ironbishop>\n"
 "Language-Team: French\n"
 "MIME-Version: 1.0\n"
@@ -36,7 +36,7 @@ msgstr "Information"
 
 #
 msgid "Web services listed here have free usage &amp; sharing as a main goal &ndash; using <a href='http://gnu.org/licenses/'><abbr title='General Public License'>the GNU GPL</abbr></a>, <a title='preferably Share-Alike' href='http://creativecommons.org/'>a Creative Commons license</a> or similar terms. There will be no advertising for corporations that offer libre features as a niche service. On the other hand, platforms that mainly distribute free content and don&apos;t require user accounts do not have to be free themselves."
-msgstr "Le services web que vous trouvez dans cette page ont comme objectif principal la libert&eacute; d'usage et la collaboration - ils utilisent la license <a href='http://gnu.org/licenses/'><abbr title='General Public License'>the GNU GPL</abbr></a>, <a title='preferably Share-Alike' href='http://creativecommons.org/'>a Creative Commons license</a> ou des licenses semblables. Les entreprises qui offrent des functions libres comme des services suppl&eacute;mentaires ne seront pas inclus. Encore, les plates-formes ne seront pas consid&eacute;r&eacute;es comme  libres seulement parce qu&apos;elles offrent des services gratuits ou ne demandent pas une inscription."
+msgstr "Le services web que vous trouvez dans cette page ont comme objectif principal la libert&eacute; d&apos;usage et la collaboration - ils utilisent la license <a href='http://gnu.org/licenses/'><abbr title='General Public License'>the GNU GPL</abbr></a>, <a title='preferably Share-Alike' href='http://creativecommons.org/'>a Creative Commons license</a> ou des licenses semblables. Les entreprises qui offrent des functions libres comme des services suppl&eacute;mentaires ne seront pas inclus. Encore, les plates-formes ne seront pas consid&eacute;r&eacute;es comme  libres seulement parce qu&apos;elles offrent des services gratuits ou ne demandent pas une inscription."
 
 #
 msgid "In the end, hosted web services are all about mutual trust. Users trust that their data is secure and the service will stay available in the future. Developers trust that the service will not be abused."
