@@ -1,2 +1,18 @@
 temp/
 test-index.php
+
+# temporary files
+.*.sw[po]
+*.bak
+*.BAK
+*~
+*.orig
+*.class
+.cvsignore
+Thumbs.db
+.DS_Store
+*.py[co]
+_darcs/*
+CVS/*
+.svn/*
+RCS/*
