@@ -8,6 +8,7 @@ DirectoryIndex index.php index.html
 Redirect /stats http://stats.tuxfamily.org/libreprojects.net [NC,L]
 Redirect /plan http://jancborchardt.titanpad.com/libreprojects [NC,L]
 Redirect /code https://gitorious.org/libreprojects/website/trees/master [NC,L]
+Redirect /owncloud http://mars.iuk.hdm-stuttgart.de/~jb089/owncloud/ [NC,L]
 
 # favorite services
 Redirect /jan http://libreprojects.net/top/riseup,diaspora,identica,jappix,reddit,newsblur,seeks,dictcc,etherpad,funambol,grical,wordpress,openstreetmap,wikipedia,librefm,bewelcome,launchpad,gitorious,tuxfamily,lichess,wpilot,achtungdiekurve  [NC,L]
@@ -20,9 +21,6 @@ Redirect /hannes http://libreprojects.net/top/diaspora,jappix,reddit,seeks,wikip
 Redirect /insa http://libreprojects.net/top/diaspora,reddit,seeks,wikipedia,lichess,jamendo,freemusicarchive [NC,L]
 Redirect /martin http://libreprojects.net/top/diaspora,jappix,seeks,wikipedia,wikitravel,openstreetmap,bewelcome [NC,L]
 Redirect /parker http://libreprojects.net/top/diaspora,identica,reddit,seeks,wikipedia,dictcc,jamendo [NC,L]
-
-# return 204 for iFrame buster buster
-RedirectMatch 204 204(.*)$
 
 # redirect anything else to main page
 #RewriteRule ^(.)$ http://libreprojects.net/ [NC,L]
