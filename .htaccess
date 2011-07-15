@@ -9,7 +9,6 @@ DirectoryIndex index.php index.html
 Redirect /stats http://stats.tuxfamily.org/libreprojects.net
 Redirect /plan http://jancborchardt.titanpad.com/libreprojects
 Redirect /code https://gitorious.org/libreprojects/libreprojects/trees/master
-Redirect /owncloud http://mars.iuk.hdm-stuttgart.de/~jb089/owncloud/
 
 # favorite services
 Redirect /jan http://libreprojects.net/top/riseup,diaspora,identica,jappix,reddit,newsblur,seeks,dictcc,etherpad,funambol,grical,wordpress,openstreetmap,wikipedia,librefm,bewelcome,launchpad,gitorious,tuxfamily,lichess,wpilot,achtungdiekurve
