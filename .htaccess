@@ -7,7 +7,7 @@ DirectoryIndex index.php index.html
 
 # redirects to other functions
 Redirect /stats http://stats.tuxfamily.org/libreprojects.net
-Redirect /plan http://jancborchardt.titanpad.com/libreprojects
+Redirect /plan http://gitorious.org/libreprojects/pages/Home
 Redirect /code https://gitorious.org/libreprojects/libreprojects/trees/master
 
 # favorite services
