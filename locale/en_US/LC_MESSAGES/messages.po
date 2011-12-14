@@ -61,3 +61,63 @@ msgstr ""
 msgid "Check out similar projects such as <a title='a plug computer running your piece of the internet' href='http://wiki.debian.org/FreedomBox'>FreedomBox</a>, <a title='a website is only source code' href='http://unhosted.org/'>Unhosted</a>, <a title='alternative Android market for free software' href='http://f-droid.org/repository/'>FDroid</a> and <a title='community tools for free and open source software' href='http://openhatch.org/'>OpenHatch</a>."
 msgstr ""
 
+#
+msgid "social"
+msgstr ""
+
+#
+msgid "tools"
+msgstr ""
+
+#
+msgid "news"
+msgstr ""
+
+#
+msgid "travel"
+msgstr ""
+
+#
+msgid "games"
+msgstr ""
+
+#
+msgid "multiplayer"
+msgstr ""
+
+#
+msgid "knowledge"
+msgstr ""
+
+#
+msgid "text"
+msgstr ""
+
+#
+msgid "audio"
+msgstr ""
+
+#
+msgid "video"
+msgstr ""
+
+#
+msgid "graphics"
+msgstr ""
+
+#
+msgid "publishing"
+msgstr ""
+
+#
+msgid "development"
+msgstr ""
+
+#
+msgid "science"
+msgstr ""
+
+#
+msgid "organization"
+msgstr ""
+
