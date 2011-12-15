@@ -9,6 +9,7 @@
 <?php try { $count = $db->prepare('SELECT COUNT(*) AS projectcount FROM projects;'); $count->execute(); } catch (Exception $e) { die($e); } ?>
 <p><?=$count->fetchObject()->projectcount ?> <?=_("free web services & alternatives")?></p>
 <h2><a title='<?=_("what&apos;s this about?")?>' href="/#information">?</a></h2>
+<ul id="locale"><?php foreach ($langs as $lang) : ?><li><a <?= $locale == $lang ? 'class="selected" ' : '' ?>href="?locale=<?=$lang?>"><img src="/locale/<?=$lang?>/flag.png"></a></li><?php endforeach; ?></ul>
 
 <?php // get favorite projects from parameters like /top/diaspora,identica,jappix,reddit,newsblur
 if(isset($_GET['top'])): ?>
@@ -31,7 +32,7 @@ try { $categories = $db->prepare('SELECT * FROM categories ORDER BY position ASC
 while($category = $categories->fetchObject()): ?>
 <h2 id="<?=$category->id ?>"><a href="/#<?=$category->id ?>"><?=_($category->id)?></a></h2>
 <ul>
-<?php try { $projects = $db->prepare('SELECT * FROM projects WHERE category="'.$category->id.'" AND id NOT IN ('.$excludeprojects.');'); $projects->execute(); } catch (Exception $e) { die($e); }
+<?php try { $projects = $db->prepare('SELECT * FROM projects WHERE category="'.$category->id.'" ' . (isset($excludeprojects) ? 'AND id NOT IN ('.$excludeprojects.')' : '') . ';'); $projects->execute(); } catch (Exception $e) { die($e); }
 while($project = $projects->fetchObject()): ?>
 	<li><a href="<?=$project->address ?>"><img src="/logos/<?=$project->id ?>.png" /><span><strong><?=$project->name ?></strong> <?=$project->description ?></span></a></li>
 <?php endwhile; ?>
