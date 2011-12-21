@@ -55,7 +55,7 @@ lp = $.extend(lp, {
 		$('.translatable').each(function(idxe, element) {
 			var $element = $(element);
 			var translation = '';
-			console.log($element.data('translatable'));
+
 			if (typeof lp.dictionaries[locale][$element.data('translatable')] == 'string') {
 				translation = lp.dictionaries[locale][$element.data('translatable')];
 			} else {
@@ -68,7 +68,7 @@ lp = $.extend(lp, {
 	initTranslation: function() {
 		$('.translatable').each(function(idxe, element) {
 			var $element = $(element);
-			$element.data('translatable', $element.html());
+			$element.data('translatable', $element.html().replace(/"/g, '\''));
 		} );
 	}
 } );
