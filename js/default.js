@@ -36,7 +36,7 @@ lp = $.extend(lp, {
 	},
 
 	getDictionary: function(locale) {
-		$.getJSON('/js/locales/' + locale + '.json', function(dictionary) {
+		$.getJSON('js/locales/' + locale + '.json', function(dictionary) {
 			lp.dictionaries[locale] = dictionary;
 			lp.translateTo(locale);
 		} );
@@ -115,7 +115,7 @@ $(document).ready(function() {
 	var $locale = $('#locale');
 	$.each(lp.locales, function(lidx, locale) {
 		var $li = $('<li />');
-		var $a = $('<a href="#" id="lang-' + locale.id + '" onclick="javascript:lp.setLocale(\'' + locale.id + '\');return false;" />').html('<img src="/images/countries/' + locale.id + '" alt="' + locale.name + ' flag" />').appendTo($li);
+		var $a = $('<a href="#" id="lang-' + locale.id + '" onclick="javascript:lp.setLocale(\'' + locale.id + '\');return false;" />').html('<img src="images/countries/' + locale.id + '.png" alt="' + locale.name + ' flag" />').appendTo($li);
 		$li.appendTo($locale);
 	} );
 
