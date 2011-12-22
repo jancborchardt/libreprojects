@@ -98,7 +98,7 @@ lp = $.extend(lp, {
 			$('#categories ul').each(function() {
 				var $category = $(this);
 				if ($category.find('li').filter(function() {
-					return $(this).css('display') == 'inline';
+					return $(this).css('display') == 'block';
 				}).length) {
 					$category.show().prev().show();
 				} else {
