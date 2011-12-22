@@ -132,7 +132,7 @@ $(document).ready(function() {
 		var $ul = $('<ul />').appendTo($categories);
 		$.each(lp.projects, function(pidx, project) {
 			if (category.id == project.category) {
-				$('<li />').html('<a href="' + project.address + '"><img src="logos/' + project.id + '.png" /><span><strong>' + project.name + '</strong>' + project.description + '</span></a></li>').
+				$('<li />').html('<a href="' + project.address + '"><img src="logos/' + project.id + '.png" alt="" /><span><strong>' + project.name + '</strong>' + project.description + '</span></a></li>').
 					    appendTo($ul);
 			}
 		} );
