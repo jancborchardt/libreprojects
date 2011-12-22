@@ -24,7 +24,7 @@ ul li { display:inline; }
 
 #search { z-index:200; position:absolute; top:2.3em; right:5em; padding:1em; background:none; border:none; }
 #search label { position:absolute; top:1.1em; left:1em; font-size:2em; }
-#searching { background:none; border:none; color:#fff; font-size:2em; padding:.3em .5em; width:7em; }
+#searching { background:none; border:none; color:#fff; font-size:2em; padding:.3em .5em; width:7em; outline:0; }
 
 /* main heading */
 h1 { font-size:3.8em; display:block; white-space:nowrap; }
