@@ -18,9 +18,9 @@ ul { list-style:none; margin:0; padding:0; max-width:100%; height:6em; }
 ul li { display:inline; }
 
 /* locale styling */
-ul#locale { position:absolute; top:-25px; right:20px; }
-ul#locale li a { padding:6px; margin:0 2px; }
-ul#locale li a:hover, ul#locale li a:focus, div#search:hover { border-radius:6px !important; -moz-border-radius:6px !important; -webkit-border-radius:6px !important; }
+#locale { position:absolute; top:0; right:0; }
+#locale li a { padding:.5em; margin:0; }
+#locale li a:hover, #locale li a:focus { -webkit-border-radius:1em; -moz-border-radius:1em; border-radius:1em; }
 
 #search { z-index:200; position:absolute; top:2.3em; right:5em; padding:1em; background:none; border:none; }
 #search label { position:absolute; top:1.1em; left:1em; font-size:2em; }
