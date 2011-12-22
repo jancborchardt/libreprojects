@@ -22,8 +22,8 @@ ul li { display:inline; }
 #locale li a { padding:.5em; margin:0; }
 #locale li a:hover, #locale li a:focus { border-radius:.5em; }
 
-#search { z-index:200; position:absolute; top:2.3em; right:5em; padding:1em; background:none; border:none; }
-#search label { position:absolute; top:1.1em; left:1em; font-size:2em; }
+#search { z-index:200; position:absolute; top:3em; right:3em; background:none; border:none; }
+#search label { position:absolute; top:.6em; left:.5em; font-size:2em; }
 #searching { background:none; border:none; color:#fff; font-size:2em; padding:.3em .5em; width:7em; outline:0; }
 
 /* main heading */
