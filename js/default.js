@@ -26,7 +26,7 @@ lp = $.extend(lp, {
 			lp.locale = locale;
 
 			$.each(lp.locales, function(lidx, availableLocale) {
-				if (!locale.indexOf(availableLocale.id) || !locale.indexOf(availableLocale.name)) {
+				if (locale.indexOf(availableLocale.id) != -1 || !locale.indexOf(availableLocale.name != -1)) {
 					$('#locale a').removeClass('selected');
 					$('#lang-' + availableLocale.id).addClass('selected');
 					lp.translateTo(availableLocale.id);
@@ -70,6 +70,42 @@ lp = $.extend(lp, {
 			var $element = $(element);
 			$element.data('translatable', $element.html().replace(/"/g, '\''));
 		} );
+	},
+
+	search: function() {
+		var $search = $(this);
+
+		// Only do the following after 250ms if keyup is not being used again
+		$search.doTimeout('lp.search', 250, function() {
+			// CSS fanciness
+			if (value = $search.val().toLowerCase()) {
+				$search.parents('#search').addClass('searching');
+			} else {
+				$search.parents('#search').removeClass('searching');
+			}
+
+			// Hide or show projects depending if they match or not
+			$('#categories ul li span').each(function(idx, project) {
+				var $project = $(project);
+				if (value && $project.text().toLowerCase().indexOf(value) == -1) {
+					$project.parents('li').hide();
+				} else {
+					$project.parents('li').show();
+				}
+			} );
+
+			// Hide or show categories depending if all their projects are hidden or not
+			$('#categories ul').each(function() {
+				var $category = $(this);
+				if ($category.find('li').filter(function() {
+					return $(this).css('display') == 'inline';
+				}).length) {
+					$category.show().prev().show();
+				} else {
+					$category.hide().prev().hide();
+				}
+			} );
+		} );
 	}
 } );
 
@@ -104,4 +140,6 @@ $(document).ready(function() {
 
 	lp.initTranslation();
 	lp.setLocale();
+
+	$('#searching').keyup(lp.search).keyup();
 } );
