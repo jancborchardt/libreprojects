@@ -141,5 +141,7 @@ $(document).ready(function() {
 	lp.initTranslation();
 	lp.setLocale();
 
+	// Search
+	$("label").inFieldLabels();
 	$('#searching').keyup(lp.search).keyup();
 } );
