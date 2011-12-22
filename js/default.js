@@ -75,8 +75,8 @@ lp = $.extend(lp, {
 	search: function() {
 		var $search = $(this);
 
-		// Only do the following after 250ms if keyup is not being used again
-		$search.doTimeout('lp.search', 250, function() {
+		// Only do the following after 100ms if keyup is not being used again
+		$search.doTimeout('lp.search', 100, function() {
 			// CSS fanciness
 			if (value = $search.val().toLowerCase()) {
 				$search.parents('#search').addClass('searching');
