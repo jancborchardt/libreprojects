@@ -45,9 +45,11 @@ h2#top+ul { margin-bottom:1.5em; }
 
 h2+ul li { line-height:6em; }
 h2+ul li a { padding:35px 20px; white-space:nowrap; }
-h2+ul li a .star { margin:8px 0 0 0;padding:0;z-index:200; line-height:1em; }
-h2+ul li a .star:after { content:'\2606\a0'; }
-h2+ul li a .star:hover:after { color: #D9C540; content:'\2605\a0'; }
+h2+ul li a .star { margin:8px 0 0 0; padding:0; z-index:200; line-height:1em; }
+h2+ul li a .star-off:after { content:'\2606\a0'; }
+h2+ul li a .star-off:hover:after { color: #D9C540; content:'\2605\a0'; }
+h2+ul li a .star-on:after { color: #D9C540; content:'\2605\a0'; }
+h2+ul li a .star-on:hover:after { content:'\2606\a0'; color:#ccc; }
 
 h2#favorites, h2#favorites+ul {display:none;}
 
