@@ -77,12 +77,7 @@ lp = $.extend(lp, {
 
 		// Only do the following after 100ms if keyup is not being used again
 		$search.doTimeout('lp.search', 100, function() {
-			// CSS fanciness
-			if (value = $search.val().toLowerCase()) {
-				$search.parents('#search').addClass('searching');
-			} else {
-				$search.parents('#search').removeClass('searching');
-			}
+			var value = $search.val().toLowerCase()
 
 			// Hide or show projects depending if they match or not
 			$('#categories ul li span').each(function(idx, project) {
@@ -97,9 +92,7 @@ lp = $.extend(lp, {
 			// Hide or show categories depending if all their projects are hidden or not
 			$('#categories ul').each(function() {
 				var $category = $(this);
-				if ($category.find('li').filter(function() {
-					return $(this).css('display') == 'block';
-				}).length) {
+				if ($category.find('li:visible').length) {
 					$category.show().prev().show();
 				} else {
 					$category.hide().prev().hide();
