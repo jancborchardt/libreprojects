@@ -45,6 +45,10 @@ h2#top+ul { margin-bottom:1.5em; }
 
 h2+ul li { line-height:6em; }
 h2+ul li a { padding:35px 20px; white-space:nowrap; }
+h2+ul li a .star { margin:8px 0 0 0;padding:0;z-index:200; line-height:1em; }
+h2+ul li a .star:after { content:'\2606\a0'; }
+h2+ul li a .star:hover:after { color: #D9C540; content:'\2605\a0'; }
+
 /* icon hover */
 h2+ul li a:hover, h2+ul li a:focus, #locale a:hover, #locale a.selected, #searching { background:rgba(30, 30, 30, 0.7);  border-radius:.5em; box-shadow:#444 0 1px 0; }
 h2+ul li a:active { background-color:#111; }
