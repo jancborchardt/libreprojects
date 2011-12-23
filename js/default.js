@@ -118,15 +118,16 @@ $(document).ready(function() {
 	// Create categories and adding projects
 	var $categories = $('#categories')
 	$.each(lp.categories, function(cidx, category) {
-		var $h2 = $('<h2 id="' + category.id + '" />').
-				      html('<a href="#' + category.id + '" class="translatable">' + category.id + '</a>').
-				      appendTo($categories);
+		var $h2 = $('<h2 id="' + category.id + '" />')
+			          .html('<a href="#' + category.id + '" class="translatable">' + category.id + '</a>')
+				  .appendTo($categories);
 
 		var $ul = $('<ul />').appendTo($categories);
 		$.each(lp.projects, function(pidx, project) {
 			if (category.id == project.category) {
-				$('<li />').html('<a href="' + project.address + '"><img src="logos/' + project.id + '.png" alt="" /><span><strong>' + project.name + '</strong>' + project.description + '</span><span class="star"></span></a></li>').
-					    appendTo($ul);
+				$('<li />').html('<a href="' + project.address + '"><img src="logos/' + project.id + '.png" alt="" /><span><strong>' + project.name + '</strong>' + project.description + '</span><span class="star star-off"></span></a></li>')
+					   .data('category', category.id)
+					   .appendTo($ul);
 			}
 		} );
 	} );
@@ -137,4 +138,26 @@ $(document).ready(function() {
 	// Search
 	$("label").inFieldLabels();
 	$('#searching').keyup(lp.search).keyup();
+
+	$('.star').click(function() {
+		var $star = $(this);
+		var $li = $star.parents('li');
+		var $category = $star.parents('ul').prev();
+		if ($category.attr('id') != 'favorites') {
+			// Move the project to favorites
+			$star.removeClass('star-off')
+			     .addClass('star-on');
+			$li.appendTo($('h2#favorites').next());
+			$('h2#favorites').show().next().show();
+		} else {
+			// Move the project back to its category
+			$star.removeClass('star-on')
+			     .addClass('star-off');
+			$li.appendTo($('h2#' + $li.data('category')).next());
+			if ($('h2#favorites').next().find('li:visible').length == 0) {
+				$('h2#favorites').hide().next().hide();
+			}
+		}
+		return false;
+	} );
 } );
