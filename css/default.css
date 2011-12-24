@@ -52,6 +52,8 @@ h2+ul li a .star-on:after { color: #D9C540; content:'\2605\a0'; }
 h2+ul li a .star-on:hover:after { content:'\2606\a0'; color:#ccc; }
 
 h2#favorites, h2#favorites+ul {display:none;}
+h2#favorites {padding-left: 45px;}
+h2#favorites a:hover {color: #D9C540}
 
 /* icon hover */
 h2+ul li a:hover, h2+ul li a:focus, #locale a:hover, #locale a.selected, #searching { background:rgba(30, 30, 30, 0.7);  border-radius:.5em; box-shadow:#444 0 1px 0; }

@@ -3,6 +3,7 @@
  */
 
 lp = $.extend(lp, {
+
 	/**
 	 * Actual user locale
 	 */
@@ -99,6 +100,90 @@ lp = $.extend(lp, {
 				}
 			} );
 		} );
+	},
+
+	moveProjectToFavorites: function($li, $star) {
+		if (!$star) {
+			$star = $li.find('.star')
+		}
+		$star.removeClass('star-off')
+		     .addClass('star-on');
+		if ($li) {
+			$li.appendTo($('h2#favorites').next());
+			$('h2#favorites').show().next().show();
+		}
+	},
+
+	removeProjectFromFavorites: function($li, $star) {
+		if (!$star) {
+			$star = $li.find('.star')
+		}
+		$star.removeClass('star-on')
+		     .addClass('star-off');
+		$li.appendTo($('h2#' + $li.data('category')).next());
+		if ($('h2#favorites').next().find('li:visible').length == 0) {
+			$('h2#favorites').hide().next().hide();
+		}
+	},
+
+	addProjectToState: function(project) {
+		var frags = $.deparam.fragment();
+		if (typeof frags['favs'] == 'undefined') {
+			frags['favs'] = '';
+		}
+		var favs = frags['favs'].split(',');
+		if (typeof favs[project] == 'undefined') {
+			favs.push(project);
+		}
+		favs = favs.filter(function(element){return element.length != ''});
+		frags['favs'] = favs.join(',');
+		$.bbq.pushState(frags);
+	},
+
+	removeProjectFromState: function(project) {
+		var frags = $.deparam.fragment();
+		if (typeof frags['favs'] != 'undefined') {
+			var favs = frags['favs'].split(',');
+			if (typeof favs[project]) {
+				favs = favs.filter(function(element){return element != project});
+			}
+			if (favs.length == 0) {
+				frags['favs'] = '';
+			} else {
+				frags['favs'] = favs.join(',');
+			}
+		}
+		$.bbq.pushState(frags);
+	},
+
+	/**
+	 * When the state change, we have to check if all projects in favorites
+	 * still are there or if they have to be added or sent back to their
+	 * categories.
+	 */
+	onStateChange: function(e) {
+		var frags = $.deparam.fragment();
+		if (typeof frags['favs'] != 'undefined') {
+			var favs = frags['favs'].split(',');
+
+			// Adding to favorites
+			$.each(frags['favs'].split(','), function(idxf, fav) {
+				if (fav) {
+					var $project = $('#favorites').next().find('#' + fav);
+					if ($project.length == 0) {
+						lp.moveProjectToFavorites($('#' + fav));
+					}
+				}
+			} );
+
+			// Removing from favorites
+			$('#favorites').next().find('li').each(function(idxf, fav) {
+				var $fav = $(fav);
+				if (favs.indexOf($fav.attr('id')) == -1 && fav != '') {
+					lp.removeProjectFromFavorites($fav);
+				}
+			} );
+		}
 	}
 } );
 
@@ -125,7 +210,7 @@ $(document).ready(function() {
 		var $ul = $('<ul />').appendTo($categories);
 		$.each(lp.projects, function(pidx, project) {
 			if (category.id == project.category) {
-				$('<li />').html('<a href="' + project.address + '"><img src="logos/' + project.id + '.png" alt="" /><span><strong>' + project.name + '</strong>' + project.description + '</span><span class="star star-off"></span></a></li>')
+				$('<li id="' + project.id + '" />').html('<a href="' + project.address + '"><img src="logos/' + project.id + '.png" alt="" /><span><strong>' + project.name + '</strong>' + project.description + '</span><span class="star star-off"></span></a></li>')
 					   .data('category', category.id)
 					   .appendTo($ul);
 			}
@@ -144,20 +229,14 @@ $(document).ready(function() {
 		var $li = $star.parents('li');
 		var $category = $star.parents('ul').prev();
 		if ($category.attr('id') != 'favorites') {
-			// Move the project to favorites
-			$star.removeClass('star-off')
-			     .addClass('star-on');
-			$li.appendTo($('h2#favorites').next());
-			$('h2#favorites').show().next().show();
+			lp.moveProjectToFavorites($li, $star);
+			lp.addProjectToState($li.attr('id'));
 		} else {
-			// Move the project back to its category
-			$star.removeClass('star-on')
-			     .addClass('star-off');
-			$li.appendTo($('h2#' + $li.data('category')).next());
-			if ($('h2#favorites').next().find('li:visible').length == 0) {
-				$('h2#favorites').hide().next().hide();
-			}
+			lp.removeProjectFromFavorites($li, $star);
+			lp.removeProjectFromState($li.attr('id'));
 		}
 		return false;
 	} );
+
+	$(window).bind('hashchange', lp.onStateChange).trigger('hashchange');
 } );
