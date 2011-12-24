@@ -170,7 +170,7 @@ lp = $.extend(lp, {
 
 	addProjectToUrl: function(project) {
 		var favs = lp.getFavoritesFromUrl();
-		if (typeof favs[project] == 'undefined') {
+		if (favs.indexOf(project) == -1) {
 			favs.push(project);
 		}
 		lp.saveFavoritesToUrl(favs);
@@ -178,10 +178,50 @@ lp = $.extend(lp, {
 
 	removeProjectFromUrl: function(project) {
 		var favs = lp.getFavoritesFromUrl();
-		if (typeof favs[project]) {
+		if (favs.indexOf(project) != -1) {
 			favs = favs.filter(function(element){return element != project});
 		}
 		lp.saveFavoritesToUrl(favs);
+	},
+
+	getFavoritesFromStorage: function() {
+		var favs = $.Storage.get('favorites');
+		if (!favs) {
+			favs = '';
+		}
+		return favs.split(',').filter(function(element){return element.length != ''});
+	},
+
+	saveFavoritesToStorage: function(favs) {
+		if (favs.length == 0) {
+			favs = '';
+		} else {
+			favs = favs.join(',');
+		}
+		$.Storage.set('favorites', favs);
+	},
+
+	setUrlFromStorage: function() {
+		var favs = lp.getFavoritesFromStorage();
+		if (favs.length > 0) {
+			$.each(favs, function(idxf, fav) {
+				lp.addProjectToUrl(fav);
+			} );
+		}
+	},
+
+	addFavoriteToStorage: function(fav) {
+		var favs = lp.getFavoritesFromStorage();
+		if (favs.indexOf(fav) == -1) {
+			favs.push(fav);
+			lp.saveFavoritesToStorage(favs);
+		}
+	},
+
+	removeFavoriteFromStorage: function(fav) {
+		var favs = lp.getFavoritesFromStorage();
+		favs = favs.filter(function(element){return element != fav});
+		lp.saveFavoritesToStorage(favs);
 	},
 
 	/**
@@ -199,6 +239,7 @@ lp = $.extend(lp, {
 				var $project = $('#favorites').next().find('#' + fav);
 				if ($project.length == 0) {
 					lp.moveProjectToFavorites($('#' + fav));
+					lp.addFavoriteToStorage(fav);
 				}
 			}
 		} );
@@ -208,6 +249,7 @@ lp = $.extend(lp, {
 			var $fav = $(fav);
 			if (favs.indexOf($fav.attr('id')) == -1 && fav != '') {
 				lp.removeProjectFromFavorites($fav);
+				lp.removeFavoriteFromStorage($fav.attr('id'));
 			}
 		} );
 	}
@@ -262,5 +304,6 @@ $(document).ready(function() {
 		return false;
 	} );
 
+	lp.setUrlFromStorage();
 	$(window).bind('hashchange', lp.onStateChange).trigger('hashchange');
 } );
