@@ -81,7 +81,7 @@ lp = $.extend(lp, {
 			var value = $search.val().toLowerCase()
 
 			// Hide or show projects depending if they match or not
-			$('#categories ul li span').each(function(idx, project) {
+			$('#categories ul li span.description').each(function(idx, project) {
 				var $project = $(project);
 				if (value && $project.text().toLowerCase().indexOf(value) == -1) {
 					$project.parents('li').hide();
@@ -144,7 +144,7 @@ lp = $.extend(lp, {
 		$.bbq.pushState(frags);
 	},
 
-	addProjectToState: function(project) {
+	addProjectToUrl: function(project) {
 		var favs = lp.getFavoritesFromUrl();
 		if (typeof favs[project] == 'undefined') {
 			favs.push(project);
@@ -152,7 +152,7 @@ lp = $.extend(lp, {
 		lp.saveFavoritesToUrl(favs);
 	},
 
-	removeProjectFromState: function(project) {
+	removeProjectFromUrl: function(project) {
 		var favs = lp.getFavoritesFromUrl();
 		if (typeof favs[project]) {
 			favs = favs.filter(function(element){return element != project});
@@ -214,7 +214,7 @@ $(document).ready(function() {
 		var $ul = $('<ul />').appendTo($categories);
 		$.each(lp.projects, function(pidx, project) {
 			if (category.id == project.category) {
-				$('<li id="' + project.id + '" />').html('<a href="' + project.address + '"><img src="logos/' + project.id + '.png" alt="" /><span><strong>' + project.name + '</strong>' + project.description + '</span><span class="star star-off"></span></a></li>')
+				$('<li id="' + project.id + '" />').html('<a href="' + project.address + '"><img src="logos/' + project.id + '.png" alt="" /><span class="description"><strong>' + project.name + '</strong>' + project.description + '</span><span class="star star-off"></span></a></li>')
 					   .data('category', category.id)
 					   .appendTo($ul);
 			}
@@ -234,10 +234,10 @@ $(document).ready(function() {
 		var $category = $star.parents('ul').prev();
 		if ($category.attr('id') != 'favorites') {
 			lp.moveProjectToFavorites($li, $star);
-			lp.addProjectToState($li.attr('id'));
+			lp.addProjectToUrl($li.attr('id'));
 		} else {
 			lp.removeProjectFromFavorites($li, $star);
-			lp.removeProjectFromState($li.attr('id'));
+			lp.removeProjectFromUrl($li.attr('id'));
 		}
 		return false;
 	} );
