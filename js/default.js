@@ -141,43 +141,47 @@ lp = $.extend(lp, {
 	},
 
 	getFromUrl: function(fragment) {
-		if (!fragment) {
-			fragment = 'favs';
-		}
 		var frags = $.deparam.fragment();
 		if (typeof frags[fragment] == 'undefined') {
 			frags[fragment] = '';
 		}
-		return frags[fragment].split(',').filter(function(element){return element.length != ''});
+		return frags[fragment];
 	},
 
-	saveToUrl: function(favs, fragment) {
-		if (!fragment) {
-			fragment = 'favs';
-		}
+	saveToUrl: function(fragment, value) {
 		var frags = $.deparam.fragment();
-		if (favs.length == 0) {
-			frags[fragment] = '';
-		} else {
-			frags[fragment] = favs.join(',');
-		}
+		frags[fragment] = value;
 		$.bbq.pushState(frags);
 	},
 
+	getFavoritesFromUrl: function() {
+		var favs = lp.getFromUrl('favs');
+		return favs.split(',').filter(function(element){return element.length != ''});
+	},
+
+	saveFavoritesToUrl: function(favs) {
+		if (favs.length == 0) {
+			favs = '';
+		} else {
+			favs = favs.join(',');
+		}
+		lp.saveToUrl('favs', favs);
+	},
+
 	addProjectToUrl: function(project) {
-		var favs = lp.getFromUrl();
+		var favs = lp.getFavoritesFromUrl();
 		if (typeof favs[project] == 'undefined') {
 			favs.push(project);
 		}
-		lp.saveToUrl(favs);
+		lp.saveFavoritesToUrl(favs);
 	},
 
 	removeProjectFromUrl: function(project) {
-		var favs = lp.getFromUrl();
+		var favs = lp.getFavoritesFromUrl();
 		if (typeof favs[project]) {
 			favs = favs.filter(function(element){return element != project});
 		}
-		lp.saveToUrl(favs);
+		lp.saveFavoritesToUrl(favs);
 	},
 
 	/**
@@ -187,27 +191,25 @@ lp = $.extend(lp, {
 	 */
 	onStateChange: function(e) {
 		var frags = $.deparam.fragment();
-		if (typeof frags['favs'] != 'undefined') {
-			var favs = frags['favs'].split(',');
+		var favs = lp.getFavoritesFromUrl();
 
-			// Adding to favorites
-			$.each(favs, function(idxf, fav) {
-				if (fav) {
-					var $project = $('#favorites').next().find('#' + fav);
-					if ($project.length == 0) {
-						lp.moveProjectToFavorites($('#' + fav));
-					}
+		// Adding to favorites
+		$.each(favs, function(idxf, fav) {
+			if (fav) {
+				var $project = $('#favorites').next().find('#' + fav);
+				if ($project.length == 0) {
+					lp.moveProjectToFavorites($('#' + fav));
 				}
-			} );
+			}
+		} );
 
-			// Removing from favorites
-			$('#favorites').next().find('li').each(function(idxf, fav) {
-				var $fav = $(fav);
-				if (favs.indexOf($fav.attr('id')) == -1 && fav != '') {
-					lp.removeProjectFromFavorites($fav);
-				}
-			} );
-		}
+		// Removing from favorites
+		$('#favorites').next().find('li').each(function(idxf, fav) {
+			var $fav = $(fav);
+			if (favs.indexOf($fav.attr('id')) == -1 && fav != '') {
+				lp.removeProjectFromFavorites($fav);
+			}
+		} );
 	}
 } );
 
