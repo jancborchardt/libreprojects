@@ -255,10 +255,8 @@ $(document).ready(function() {
 		var $li = $star.parents('li');
 		var $category = $star.parents('ul').prev();
 		if ($category.attr('id') != 'favorites') {
-			lp.moveProjectToFavorites($li, $star);
 			lp.addProjectToUrl($li.attr('id'));
 		} else {
-			lp.removeProjectFromFavorites($li, $star);
 			lp.removeProjectFromUrl($li.attr('id'));
 		}
 		return false;
