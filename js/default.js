@@ -78,7 +78,7 @@ lp = $.extend(lp, {
 
 		// Only do the following after 100ms if keyup is not being used again
 		$search.doTimeout('lp.search', 100, function() {
-			var value = $search.val().toLowerCase()
+			var value = $search.val().toLowerCase();
 
 			// Hide or show projects depending if they match or not
 			$('#categories ul li span.description').each(function(idx, project) {
@@ -90,15 +90,30 @@ lp = $.extend(lp, {
 				}
 			} );
 
-			// Hide or show categories depending if all their projects are hidden or not
-			$('#categories ul').each(function() {
-				var $category = $(this);
-				if ($category.find('li:visible').length) {
-					$category.show().prev().show();
-				} else {
-					$category.hide().prev().hide();
-				}
-			} );
+			lp.categoriesDisplay();
+		} );
+	},
+
+	/**
+	 * Hide or show categories depending if all their projects are hidden or
+	 * not.
+	 */
+	categoriesDisplay: function(category) {
+		var $categories = null;
+		if (! category) {
+			$categories = $('#categories ul');
+		} else {
+			$categories = $('#categories h2#' + category).next();
+		}
+		$categories.each(function() {
+			var $category = $(this);
+			if ($category.find('li').filter(function() {
+				return $(this).css('display') != 'none';
+			} ).length) {
+				$category.show().prev().show();
+			} else {
+				$category.hide().prev().hide();
+			}
 		} );
 	},
 
@@ -108,10 +123,10 @@ lp = $.extend(lp, {
 		}
 		$star.removeClass('star-off')
 		     .addClass('star-on');
-		if ($li) {
-			$li.appendTo($('h2#favorites').next());
-			$('h2#favorites').show().next().show();
-		}
+		$li.appendTo($('h2#favorites').next());
+		$('h2#favorites').show().next().show();
+		lp.categoriesDisplay($li.data('category'));
+		lp.categoriesDisplay('favorites');
 	},
 
 	removeProjectFromFavorites: function($li, $star) {
@@ -121,43 +136,48 @@ lp = $.extend(lp, {
 		$star.removeClass('star-on')
 		     .addClass('star-off');
 		$li.appendTo($('h2#' + $li.data('category')).next());
-		if ($('h2#favorites').next().find('li:visible').length == 0) {
-			$('h2#favorites').hide().next().hide();
-		}
+		lp.categoriesDisplay($li.data('category'));
+		lp.categoriesDisplay('favorites');
 	},
 
-	getFavoritesFromUrl: function() {
+	getFromUrl: function(fragment) {
+		if (!fragment) {
+			fragment = 'favs';
+		}
 		var frags = $.deparam.fragment();
-		if (typeof frags['favs'] == 'undefined') {
-			frags['favs'] = '';
+		if (typeof frags[fragment] == 'undefined') {
+			frags[fragment] = '';
 		}
-		return frags['favs'].split(',').filter(function(element){return element.length != ''});
+		return frags[fragment].split(',').filter(function(element){return element.length != ''});
 	},
 
-	saveFavoritesToUrl: function(favs) {
+	saveToUrl: function(favs, fragment) {
+		if (!fragment) {
+			fragment = 'favs';
+		}
 		var frags = $.deparam.fragment();
 		if (favs.length == 0) {
-			frags['favs'] = '';
+			frags[fragment] = '';
 		} else {
-			frags['favs'] = favs.join(',');
+			frags[fragment] = favs.join(',');
 		}
 		$.bbq.pushState(frags);
 	},
 
 	addProjectToUrl: function(project) {
-		var favs = lp.getFavoritesFromUrl();
+		var favs = lp.getFromUrl();
 		if (typeof favs[project] == 'undefined') {
 			favs.push(project);
 		}
-		lp.saveFavoritesToUrl(favs);
+		lp.saveToUrl(favs);
 	},
 
 	removeProjectFromUrl: function(project) {
-		var favs = lp.getFavoritesFromUrl();
+		var favs = lp.getFromUrl();
 		if (typeof favs[project]) {
 			favs = favs.filter(function(element){return element != project});
 		}
-		lp.saveFavoritesToUrl(favs);
+		lp.saveToUrl(favs);
 	},
 
 	/**
