@@ -126,34 +126,38 @@ lp = $.extend(lp, {
 		}
 	},
 
-	addProjectToState: function(project) {
+	getFavoritesFromUrl: function() {
 		var frags = $.deparam.fragment();
 		if (typeof frags['favs'] == 'undefined') {
 			frags['favs'] = '';
 		}
-		var favs = frags['favs'].split(',');
-		if (typeof favs[project] == 'undefined') {
-			favs.push(project);
+		return frags['favs'].split(',').filter(function(element){return element.length != ''});
+	},
+
+	saveFavoritesToUrl: function(favs) {
+		var frags = $.deparam.fragment();
+		if (favs.length == 0) {
+			frags['favs'] = '';
+		} else {
+			frags['favs'] = favs.join(',');
 		}
-		favs = favs.filter(function(element){return element.length != ''});
-		frags['favs'] = favs.join(',');
 		$.bbq.pushState(frags);
 	},
 
-	removeProjectFromState: function(project) {
-		var frags = $.deparam.fragment();
-		if (typeof frags['favs'] != 'undefined') {
-			var favs = frags['favs'].split(',');
-			if (typeof favs[project]) {
-				favs = favs.filter(function(element){return element != project});
-			}
-			if (favs.length == 0) {
-				frags['favs'] = '';
-			} else {
-				frags['favs'] = favs.join(',');
-			}
+	addProjectToState: function(project) {
+		var favs = lp.getFavoritesFromUrl();
+		if (typeof favs[project] == 'undefined') {
+			favs.push(project);
 		}
-		$.bbq.pushState(frags);
+		lp.saveFavoritesToUrl(favs);
+	},
+
+	removeProjectFromState: function(project) {
+		var favs = lp.getFavoritesFromUrl();
+		if (typeof favs[project]) {
+			favs = favs.filter(function(element){return element != project});
+		}
+		lp.saveFavoritesToUrl(favs);
 	},
 
 	/**
@@ -167,7 +171,7 @@ lp = $.extend(lp, {
 			var favs = frags['favs'].split(',');
 
 			// Adding to favorites
-			$.each(frags['favs'].split(','), function(idxf, fav) {
+			$.each(favs, function(idxf, fav) {
 				if (fav) {
 					var $project = $('#favorites').next().find('#' + fav);
 					if ($project.length == 0) {
