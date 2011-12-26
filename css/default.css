@@ -50,8 +50,9 @@ h2+ul li a:hover, h2+ul li a:focus, #locale a:hover, #locale a.selected, #search
 h2+ul li a:active { background-color:#111; }
 /* text appearance */
 li a span { display:none; }
-li a:hover span, li a:focus span { position:absolute; display:inline; margin:30px 0 0 -82px; }
-li a:hover span strong, li a:focus span strong { position:absolute; display:inline; margin-top:-1em; }
+li a:hover span { display:inline; }
+li a:hover .project, li a:focus .project { position:absolute; margin:30px 0 0 -82px; }
+li a:hover .project strong, li a:focus .project strong { position:absolute; margin-top:-1em; }
 
 /* footer */
 footer { float:left; margin-bottom:3em; }
