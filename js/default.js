@@ -14,6 +14,22 @@ lp = $.extend(lp, {
 	 */
 	dictionaries: {},
 
+	/**
+	 * The project we're viewing the details of in the lightbox
+	 */
+	actualProject: null,
+
+	getProject: function(id) {
+		var found = null;
+		$.each(lp.projects, function(idxp, project) {
+			if (project.id == id) {
+				found = project;
+				return false;
+			}
+		} );
+		return found;
+	},
+
 	setLocale: function(locale) {
 		if (!locale) {
 			locale = $.cookie('locale');
@@ -228,9 +244,10 @@ lp = $.extend(lp, {
 	 * When the state change, we have to check if all projects in favorites
 	 * still are there or if they have to be added or sent back to their
 	 * categories.
+	 *
+	 * We also have to check if the event is for showing a project details.
 	 */
 	onStateChange: function(e) {
-		var frags = $.deparam.fragment();
 		var favs = lp.getFavoritesFromUrl();
 
 		// Adding to favorites
@@ -252,6 +269,40 @@ lp = $.extend(lp, {
 				lp.removeFavoriteFromStorage($fav.attr('id'));
 			}
 		} );
+
+		// Showing project details lightbox
+		if (project = lp.getFromUrl('project')) {
+			var $details = $('#project-details');
+			// In case we just arrive on the website with #project in the URL
+			if (!lp.actualProject) {
+				lp.actualProject = lp.getProject(project);
+			}
+			$details.modal( {
+				onOpen: function(dialog) {
+					// Filling up details
+					$details.find('.url').attr('href', lp.actualProject.address)
+					$details.find('.name').html(lp.actualProject.name);
+					$details.find('.description').html(lp.actualProject.description);
+					$details.find('.logo').attr('src', 'logos/' + lp.actualProject.id + '.png');
+
+					dialog.overlay.fadeIn('fast', function() {
+						dialog.data.show();
+						dialog.container.fadeIn('fast');
+					} );
+				},
+				onClose: function(dialog) {
+					lp.saveToUrl('project', '');
+				},
+				minWidth: 400,
+				minHeight: 300,
+				closeHTML: 'X',
+				overlayClose: true
+			} );
+		} else if (lp.actualProject) {
+			// Hiding project details lightbox
+			$.modal.close();
+			lp.actualProject = null;
+		}
 	}
 } );
 
@@ -301,6 +352,15 @@ $(document).ready(function() {
 		} else {
 			lp.removeProjectFromUrl($li.attr('id'));
 		}
+		return false;
+	} );
+
+	$('#categories ul li a').click(function() {
+		var $a = $(this);
+
+		lp.actualProject = lp.getProject($a.parent().attr('id'));
+		lp.saveToUrl('project', lp.actualProject.id);
+
 		return false;
 	} );
 
