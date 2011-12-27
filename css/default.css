@@ -29,7 +29,7 @@ li { float:left; }
 /* main heading */
 h1 { font-size:3.8em; display:block; white-space:nowrap; }
 h1 img { width:.85em; height:.85em; margin:-.15em .3em 0 -1.3em; }
-h1 a { color:#fff; text-decoration:none; padding:.5em; }
+h1 a { color:#fff; text-decoration:none; padding: 0 .5em; }
 h1 a:hover, h1 a:focus { color:#fff; text-shadow:#000 0 0 1em; outline:0; }
 h1+p { color:#fff; margin:-2.7em 0 0 1.5em; z-index:-100; }
 p+h2 { margin:-1em 0 0 9.5em; z-index:100; }
