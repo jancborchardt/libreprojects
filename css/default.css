@@ -61,7 +61,7 @@ h2#favorites a:hover {color: #D9C540}
 /* icon hover */
 h2+ul li a:hover, h2+ul li a:focus, #locale a:hover, #locale a.selected,
 #project-details .alternative-to a:hover, #project-details .alternative-to a:focus,
-#project-details .similar-to a:hover, #project-details .similar-to a:focus { background:rgba(30, 30, 30, 0.7);  border-radius:.5em; box-shadow:#444 0 1px 0; }
+#project-details .similar-to a:hover, #project-details .similar-to a:focus, #searching { background:rgba(30, 30, 30, 0.7);  border-radius:.5em; box-shadow:#444 0 1px 0; }
 h2+ul li a:active, #project-details .alternative-to a:active, #project-details .similar-to a:active { background-color:#111; }
 /* text appearance */
 li a span { display:none; }
