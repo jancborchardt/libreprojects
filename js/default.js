@@ -240,6 +240,54 @@ lp = $.extend(lp, {
 		lp.saveFavoritesToStorage(favs);
 	},
 
+	getLightboxOptions: function() {
+		var $details = $('#project-details');
+		return {
+			onOpen: function(dialog) {
+				dialog.overlay.fadeIn('fast', function() {
+					// Filling up details
+					$details.find('.url').attr('href', lp.actualProject.url).data('text', 'Check it out !');
+					$details.find('.name').html(lp.actualProject.name);
+					$details.find('.description').html(lp.actualProject.description);
+					$details.find('.category').attr('href', '#' + lp.actualProject.category).html(lp.actualProject.category).data('text', 'Check the ' + lp.actualProject.category + ' category');
+					$details.find('.logo').attr('src', 'logos/' + lp.actualProject.id + '.png');
+					var $tags = $details.find('.tags').html('');
+					if (lp.actualProject.tags && lp.actualProject.tags.length) {
+						$.each(lp.actualProject.tags, function(idxt, tag) {
+							$('<li />').html('#' + tag)
+								   .appendTo($tags);
+						} );
+					}
+					var $alternative = $details.find('.alternative-to ul').html('');
+					if (lp.actualProject.alternative && lp.actualProject.alternative.length) {
+						$.each(lp.actualProject.alternative, function(idxa, alternative) {
+							var $li = $('<li />').html('<a href="#"><img src="logos/alternatives/' + alternative + '.png" alt="' + alternative + ' logo"/></a>')
+									     .appendTo($alternative);
+							$li.find('a').data('text', alternative);
+						} );
+					}
+					$details.find('a').hover(function() {
+						var $a = $(this);
+						if ($a.data('text')) {
+							$details.find('.text').html($a.data('text')).show();
+						}
+					}, function() {
+						$details.find('.text').html('').hide();
+					} );
+					dialog.data.show();
+					dialog.container.fadeIn('fast');
+				} );
+			},
+			onClose: function(dialog) {
+				lp.saveToUrl('project', '');
+			},
+			minWidth: 400,
+			minHeight: 300,
+			closeHTML: 'X',
+			overlayClose: true
+		};
+	},
+
 	/**
 	 * When the state change, we have to check if all projects in favorites
 	 * still are there or if they have to be added or sent back to their
@@ -272,33 +320,12 @@ lp = $.extend(lp, {
 
 		// Showing project details lightbox
 		if (project = lp.getFromUrl('project')) {
-			var $details = $('#project-details');
 			// In case we just arrive on the website with #project in the URL
 			if (!lp.actualProject) {
 				lp.actualProject = lp.getProject(project);
 			}
-			$details.modal( {
-				onOpen: function(dialog) {
-					// Filling up details
-					$details.find('.url').attr('href', lp.actualProject.address)
-					$details.find('.name').html(lp.actualProject.name);
-					$details.find('.description').html(lp.actualProject.description);
-					$details.find('.logo').attr('src', 'logos/' + lp.actualProject.id + '.png');
-
-					dialog.overlay.fadeIn('fast', function() {
-						dialog.data.show();
-						dialog.container.fadeIn('fast');
-					} );
-				},
-				onClose: function(dialog) {
-					lp.saveToUrl('project', '');
-				},
-				minWidth: 400,
-				minHeight: 300,
-				closeHTML: 'X',
-				overlayClose: true
-			} );
-		} else if (lp.actualProject) {
+			$('#project-details').modal( lp.getLightboxOptions() );
+		} else {
 			// Hiding project details lightbox
 			$.modal.close();
 			lp.actualProject = null;
@@ -312,7 +339,13 @@ $(document).ready(function() {
 	var $locale = $('#locale');
 	$.each(lp.locales, function(lidx, locale) {
 		var $li = $('<li />');
-		var $a = $('<a href="#" id="lang-' + locale.id + '" onclick="javascript:lp.setLocale(\'' + locale.id + '\');return false;" />').html('<img src="images/countries/' + locale.id + '.png" alt="' + locale.name + ' flag" />').appendTo($li);
+		var $a = $('<a href="#" id="lang-' + locale.id + '" />')
+			 .html('<img src="images/countries/' + locale.id + '.png" alt="' + locale.name + ' flag" />')
+			 .click(function() {
+				 lp.setLocale(locale.id);
+				 return false;
+			 } )
+			 .appendTo($li);
 		$li.appendTo($locale);
 	} );
 
@@ -329,7 +362,7 @@ $(document).ready(function() {
 		var $ul = $('<ul />').appendTo($categories);
 		$.each(lp.projects, function(pidx, project) {
 			if (category.id == project.category) {
-				$('<li id="' + project.id + '" />').html('<a href="' + project.address + '"><img src="logos/' + project.id + '.png" alt="" /><span class="description"><strong>' + project.name + '</strong>' + project.description + '</span><span class="star star-off"></span></a></li>')
+				$('<li id="' + project.id + '" />').html('<a href="' + project.url + '"><img src="logos/' + project.id + '.png" alt="' + project.id + ' logo" /><span class="description"><strong>' + project.name + '</strong>' + project.description + '</span><span class="star star-off"></span></a></li>')
 					   .data('category', category.id)
 					   .appendTo($ul);
 			}
