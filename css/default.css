@@ -22,6 +22,7 @@ li { float:left; }
 #locale li a { padding:.5em; margin:0; }
 #locale li a:hover, #locale li a:focus { border-radius:.5em; }
 
+/* search styling */
 #search { z-index:200; position:absolute; margin:0; top:4em; right:3em; background:none; border:none; }
 #search label { position:absolute; top:.6em; left:.5em; font-size:2em; }
 #searching { background:none; border:none; color:#fff; font-size:2em; padding:.3em .5em; width:7em; outline:0; }
@@ -45,6 +46,8 @@ h2#top+ul { margin-bottom:1.5em; }
 
 h2+ul li { line-height:6em; }
 h2+ul li a { padding:35px 20px; white-space:nowrap; }
+
+/* favs */
 h2+ul li a .star { margin:8px 0 0 0; padding:0; z-index:200; line-height:1em; }
 h2+ul li a .star-off:after { content:'\2606\a0'; }
 h2+ul li a .star-off:hover:after { color: #D9C540; content:'\2605\a0'; }
@@ -56,8 +59,10 @@ h2#favorites {padding-left: 45px;}
 h2#favorites a:hover {color: #D9C540}
 
 /* icon hover */
-h2+ul li a:hover, h2+ul li a:focus, #locale a:hover, #locale a.selected, #searching { background:rgba(30, 30, 30, 0.7);  border-radius:.5em; box-shadow:#444 0 1px 0; }
-h2+ul li a:active { background-color:#111; }
+h2+ul li a:hover, h2+ul li a:focus, #locale a:hover, #locale a.selected,
+#project-details .alternative-to a:hover, #project-details .alternative-to a:focus,
+#project-details .similar-to a:hover, #project-details .similar-to a:focus { background:rgba(30, 30, 30, 0.7);  border-radius:.5em; box-shadow:#444 0 1px 0; }
+h2+ul li a:active, #project-details .alternative-to a:active, #project-details .similar-to a:active { background-color:#111; }
 /* text appearance */
 li a span { display:none; }
 li a:hover span, li a:focus span { position:absolute; display:inline; margin:30px 0 0 -82px; }
@@ -69,6 +74,34 @@ h3 { margin-top:4em; color:#777; }
 h3+p, h3+p+p, h3+p+p+p { color:#777; }
 
 /* project details lightbox */
-#project-details { display:none; }
+#project-details { display:none; font-size: .9em;}
+#project-details .introduction a span { border: none; font-size: 1.1em; padding-left: 10px; }
+#project-details .introduction a img { height: 70px; width: 70px; }
+#project-details .introduction p { float:left; margin-top: 0; }
+#project-details .introduction p.cat-desc { margin-top: 23px; }
+#project-details .introduction p.cat-desc span { padding-left: 10px; margin-left: 10px; border-left: 1px dotted #FFF;  }
+#project-details .introduction .tags { position:absolute; left: 95px; top: 60px;; font-size: 0.8em; }
+#project-details .introduction .tags li { padding-right: 5px; }
+
+#project-details .label { clear: both; float: left; width: 100px; }
+#project-details .alternative-to a,
+#project-details .similar-to a { padding: 12px 7px 15px 7px; }
+#project-details .alternative-to img,
+#project-details .similar-to img { width: 35px; height: 35px; }
+
+#project-details .text {
+	display: none;
+	font-size: 1.1em;
+	font-weight: bold;
+	position: absolute;
+	border-top: 8px solid #444;
+	background-color: #222;
+	width: 405px;
+	margin: 0 15px 0 0;
+	bottom: 0;
+	left: 0;
+	padding: 10px 10px;
+}
+
 #simplemodal-overlay { background-color:#000; }
 #simplemodal-container { background-color:#333; border:8px solid #444; padding:12px; border-radius:.5em; }
