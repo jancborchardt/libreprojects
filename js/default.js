@@ -281,7 +281,7 @@ lp = $.extend(lp, {
 			onClose: function(dialog) {
 				lp.saveToUrl('project', '');
 			},
-			minWidth: 400,
+			minWidth: 450,
 			minHeight: 300,
 			closeHTML: 'X',
 			overlayClose: true
