@@ -1,19 +1,28 @@
 var lp = {
 	"locales":[{"id":"de","name":"german"},{"id":"en","name":"english"},{"id":"fr","name":"french"},{"id":"id","name":"indonesian"},{"id":"it","name":"italian"}],
 	"categories":[{"id":"social","position":"1"},{"id":"tools","position":"2"},{"id":"news","position":"3"},{"id":"travel","position":"4"},{"id":"games","position":"5"},{"id":"multiplayer","position":"6"},{"id":"knowledge","position":"7"},{"id":"text","position":"8"},{"id":"audio","position":"9"},{"id":"video","position":"10"},{"id":"graphics","position":"11"},{"id":"publishing","position":"12"},{"id":"development","position":"13"},{"id":"science","position":"14"},{"id":"organization","position":"15"}],
+	"alternatives":[
+		{"id":"gmail","name":"Gmail","url":"https:\/\/mail.google.com\/"},
+		{"id":"facebook","name":"Facebook","url":"https:\/\/www.facebook.com\/"},
+		{"id":"google plus","name":"Google +","url":"https:\/\/plus.google.com\/"},
+		{"id":"google calendar","name":"Google Calendar","url":"https:\/\/calendar.google.com\/"},
+		{"id":"twitter","name":"Twitter","url":"https:\/\/www.twitter.com\/"},
+		{"id":"yahoo groups","name":"Yahoo! Groups","url":"https:\/\/groups.yahoo.com\/"},
+		{"id":"hotmail","name":"Hotmail","url":"https:\/\/www.hotmail.com\/"}
+	],
 	"projects":[
 		{"id":"diaspora","category":"social","name":"Diaspora","description":"social network","url":"http:\/\/diasp.eu\/","tags":["social","network","decentralized"],"alternative":["facebook","google plus"]},
 		{"id":"identica","category":"social","name":"Identi.ca","description":"microblog","url":"http:\/\/identi.ca\/","tags":["social","network","decentralized", "microblogging"],"alternative":["twitter"]},
 		{"id":"jappix","category":"social","name":"Jappix","description":"chat","url":"http:\/\/jappix.com\/"},
 		{"id":"freelishus","category":"social","name":"Freelish.us","description":"bookmarks","url":"http:\/\/freelish.us\/"},
-		{"id":"reddit","category":"social","name":"reddit","description":"discussion","url":"http:\/\/reddit.com\/"},
-		{"id":"riseup","category":"social","name":"riseup","description":"email","url":"http:\/\/riseup.net\/","tags":["email","mailinglist","provider"],"alternative":["gmail","hotmail"]},
-		{"id":"onlinegroups","category":"social","name":"OnlineGroups","description":"mailing lists","url":"http:\/\/onlinegroups.net\/"},
-		{"id":"freenode","category":"social","name":"freenode","description":"IRC","url":"http:\/\/webchat.freenode.net\/"},
+		{"id":"reddit","category":"social","name":"Reddit","description":"discussion","url":"http:\/\/reddit.com\/"},
+		{"id":"riseup","category":"social","name":"Riseup","description":"email","url":"http:\/\/riseup.net\/","tags":["email","mailinglist","provider"],"alternative":["gmail","hotmail","yahoo groups"]},
+		{"id":"onlinegroups","category":"social","name":"OnlineGroups","description":"mailing lists","url":"http:\/\/onlinegroups.net\/","tags":["mailinglist","provider"],"alternative":["yahoo groups"]},
+		{"id":"freenode","category":"social","name":"Freenode","description":"IRC","url":"http:\/\/webchat.freenode.net\/"},
 		{"id":"seeks","category":"tools","name":"Seeks","description":"search engine","url":"http:\/\/seeks.fr\/"},
 		{"id":"yacy","category":"tools","name":"YaCy","description":"search engine","url":"http:\/\/www.yacyweb.de\/peer.htm"},
 		{"id":"etherpad","category":"tools","name":"Titanpad","description":"text editor","url":"http:\/\/titanpad.com\/"},
-		{"id":"funambol","category":"tools","name":"Funambol","description":"calendar","url":"http:\/\/my.funambol.com\/"},
+		{"id":"funambol","category":"tools","name":"Funambol","description":"calendar","url":"http:\/\/my.funambol.com\/","tags":["calendar","mobile"],"alternative":["google calendar"]},
 		{"id":"grical","category":"tools","name":"GriCal","description":"open calendar","url":"http:\/\/grical.org\/"},
 		{"id":"wingman","category":"tools","name":"Wingman","description":"to-do list","url":"http:\/\/wingman.heroku.com\/"},
 		{"id":"wiktionary","category":"tools","name":"Wiktionary","description":"dictionary","url":"http:\/\/wiktionary.org\/"},
@@ -144,7 +153,8 @@ var lp = {
 		{"id":"spacegame","category":"games","name":"Space Game","description":"crowdsourcing","url":"http:\/\/thespacegame.org\/"},
 		{"id":"scalablevg","category":"graphics","name":"scalable.vg","description":"hosting","url":"http:\/\/scalable.vg\/"},
 		{"id":"mirocommunity","category":"video","name":"Miro Community","description":"platform","url":"http:\/\/mirocommunity.org\/"},
-		{"id":"openhatch","category":"organization","name":"OpenHatch","description":"help platform","url":"http:\/\/openhatch.org\/"}
+		{"id":"openhatch","category":"organization","name":"OpenHatch","description":"help platform","url":"http:\/\/openhatch.org\/"},
+		{"id":"friendica","category":"social","name":"Friendica","description":"multi social network","url":"http:\/\/friendica.com\/","tags":["social","network","decentralized","microblogging"],"alternative":["facebook","google plus","twitter"]}
 	]
 };
 
