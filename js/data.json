@@ -12,7 +12,7 @@ var lp = {
 	],
 	"projects":[
 		{"id":"diaspora","category":"social","name":"Diaspora","description":"social network","url":"http:\/\/diasp.eu\/","tags":["social","network","decentralized"],"alternative":["facebook","google plus"]},
-		{"id":"identica","category":"social","name":"Identi.ca","description":"microblog","url":"http:\/\/identi.ca\/","tags":["social","network","decentralized", "microblogging"],"alternative":["twitter"]},
+		{"id":"identica","category":"social","name":"Identi.ca","description":"microblog","url":"http:\/\/identi.ca\/","tags":["social","network","decentralized", "microblog"],"alternative":["twitter"]},
 		{"id":"jappix","category":"social","name":"Jappix","description":"chat","url":"http:\/\/jappix.com\/"},
 		{"id":"freelishus","category":"social","name":"Freelish.us","description":"bookmarks","url":"http:\/\/freelish.us\/"},
 		{"id":"reddit","category":"social","name":"Reddit","description":"discussion","url":"http:\/\/reddit.com\/"},
@@ -154,7 +154,7 @@ var lp = {
 		{"id":"scalablevg","category":"graphics","name":"scalable.vg","description":"hosting","url":"http:\/\/scalable.vg\/"},
 		{"id":"mirocommunity","category":"video","name":"Miro Community","description":"platform","url":"http:\/\/mirocommunity.org\/"},
 		{"id":"openhatch","category":"organization","name":"OpenHatch","description":"help platform","url":"http:\/\/openhatch.org\/"},
-		{"id":"friendica","category":"social","name":"Friendica","description":"social multi network","url":"http:\/\/friendica.com\/","tags":["social","network","decentralized","microblogging"],"alternative":["facebook","google plus","twitter"]}
+		{"id":"friendica","category":"social","name":"Friendica","description":"social multi network","url":"http:\/\/friendica.com\/","tags":["social","network","decentralized","microblog"],"alternative":["facebook","google plus","twitter"]}
 	]
 };
 
