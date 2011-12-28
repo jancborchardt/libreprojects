@@ -219,6 +219,10 @@ lp = $.extend(lp, {
 	saveToUrl: function(fragment, value) {
 		var frags = $.deparam.fragment();
 		frags[fragment] = value;
+		// To prevent scrolling on every actions, we remove it if not adding it right now
+		if (fragment != 'scroll') {
+			frags['scroll'] = '';
+		}
 		$.bbq.pushState(frags);
 	},
 
@@ -344,6 +348,14 @@ lp = $.extend(lp, {
 					}, function() {
 						$details.find('.text').html('').hide();
 					} );
+
+					$details.find('a[href*=#]').click(function() {
+						$.modal.close();
+						lp.saveToUrl('scroll', $(this).attr('href').substr(1));
+
+						return false;
+					} );
+
 					dialog.data.show();
 					dialog.container.fadeIn('fast');
 				} );
@@ -400,6 +412,11 @@ lp = $.extend(lp, {
 			// Hiding project details lightbox
 			$.modal.close();
 			lp.actualProject = null;
+		}
+
+		if (scroll = lp.getFromUrl('scroll')) {
+			$.smoothScroll({scrollTarget: $('#' + scroll)});
+//			lp.saveToUrl('scroll', '');
 		}
 	}
 } );
@@ -460,10 +477,14 @@ $(document).ready(function() {
 	} );
 
 	$('#categories ul li a').click(function() {
-		var $a = $(this);
-
-		lp.actualProject = lp.getProject($a.parent().attr('id'));
+		lp.actualProject = lp.getProject($(this).parent().attr('id'));
 		lp.saveToUrl('project', lp.actualProject.id);
+
+		return false;
+	} );
+
+	$('a[href*=#]').click(function() {
+		lp.saveToUrl('scroll', $(this).parent().attr('id'));
 
 		return false;
 	} );
