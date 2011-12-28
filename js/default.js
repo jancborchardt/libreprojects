@@ -30,6 +30,58 @@ lp = $.extend(lp, {
 		return found;
 	},
 
+	getAlternative: function(id) {
+		var found = null;
+		$.each(lp.alternatives, function(idxp, alternative) {
+			if (alternative.id == id) {
+				found = alternative;
+				return false;
+			}
+		} );
+		return found;
+	},
+
+	findSimilarProjectsTo: function(project, max) {
+		var similar = [];
+		var found = [];
+		project = project || lp.actualProject;
+		max = max || 6;
+
+		if (! project.tags || project.tags.length == 0) {
+			return similar;
+		}
+
+		$.each(lp.projects, function(idxp, pj) {
+			if (pj.tags && pj.tags.length > 0 && pj.id != project.id) {
+				var score = 0;
+				$.each(project.tags, function(idxt, tag) {
+					if (pj.tags.indexOf(tag) != -1) {
+						score++;
+					}
+				} );
+				if (score) {
+					// Check if we don't already have max project that have >= score
+					var nbBetterFound = 0;
+					$.each(found, function(idxf, f) {
+						if (f.score >= score) {
+							nbBetterFound++;
+						}
+					} );
+					if (nbBetterFound < max) {
+						found.push({score:score,project:pj});
+					}
+				}
+			}
+		} );
+
+		// Build similar
+		$.each(found.sort(function(a, b){return b.score - a.score}), function(idxf, f) {
+			similar.push(f.project);
+		} );
+
+		return similar;
+	},
+
 	setLocale: function(locale) {
 		if (!locale) {
 			locale = $.cookie('locale');
@@ -261,12 +313,30 @@ lp = $.extend(lp, {
 					var $alternative = $details.find('.alternative-to ul').html('');
 					if (lp.actualProject.alternative && lp.actualProject.alternative.length) {
 						$.each(lp.actualProject.alternative, function(idxa, alternative) {
-							var $li = $('<li />').html('<a href="#"><img src="logos/alternatives/' + alternative + '.png" alt="' + alternative + ' logo"/></a>')
-									     .appendTo($alternative);
-							$li.find('a').data('text', alternative);
+							alternative = lp.getAlternative(alternative);
+							if (alternative) {
+								var $li = $('<li />').html('<a href="' + alternative.url + '"><img src="logos/alternatives/' + alternative.id + '.png" alt="' + alternative.name + ' logo"/></a>')
+										     .appendTo($alternative);
+								$li.find('a').data('text', alternative.name);
+							}
 						} );
 					}
-					$details.find('a').hover(function() {
+					var $similar = $details.find('.similar-to ul').html('');
+					$.each(lp.findSimilarProjectsTo(), function(idxs, similar) {
+						if (similar) {
+							var $li = $('<li />').html('<a href="#"><img src="logos/' + similar.id + '.png" alt="' + similar.name + ' logo"/></a>')
+									     .appendTo($similar);
+							$li.find('a').data('text', similar.name)
+								     .click(function() {
+										$.modal.close();
+										lp.actualProject = similar;
+										lp.saveToUrl('project', lp.actualProject.id);
+										return false;
+								     } );
+						}
+					} );
+
+					$details.find('a').unbind('hover').hover(function() {
 						var $a = $(this);
 						if ($a.data('text')) {
 							$details.find('.text').html($a.data('text')).show();
@@ -280,6 +350,7 @@ lp = $.extend(lp, {
 			},
 			onClose: function(dialog) {
 				lp.saveToUrl('project', '');
+				$.modal.close();
 			},
 			minWidth: 450,
 			minHeight: 300,
@@ -362,7 +433,7 @@ $(document).ready(function() {
 		var $ul = $('<ul />').appendTo($categories);
 		$.each(lp.projects, function(pidx, project) {
 			if (category.id == project.category) {
-				$('<li id="' + project.id + '" />').html('<a href="' + project.url + '"><img src="logos/' + project.id + '.png" alt="' + project.id + ' logo" /><span class="description"><strong>' + project.name + '</strong>' + project.description + '</span><span class="star star-off"></span></a></li>')
+				$('<li id="' + project.id + '" />').html('<a href="' + project.url + '"><img src="logos/' + project.id + '.png" alt="' + project.name + ' logo" /><span class="description"><strong>' + project.name + '</strong>' + project.description + '</span><span class="star star-off"></span></a></li>')
 					   .data('category', category.id)
 					   .appendTo($ul);
 			}
