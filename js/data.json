@@ -7,7 +7,7 @@ var lp = {
 		{"id":"jappix","category":"social","name":"Jappix","description":"chat","url":"http:\/\/jappix.com\/"},
 		{"id":"freelishus","category":"social","name":"Freelish.us","description":"bookmarks","url":"http:\/\/freelish.us\/"},
 		{"id":"reddit","category":"social","name":"reddit","description":"discussion","url":"http:\/\/reddit.com\/"},
-		{"id":"riseup","category":"social","name":"riseup","description":"email","url":"http:\/\/riseup.net\/"},
+		{"id":"riseup","category":"social","name":"riseup","description":"email","url":"http:\/\/riseup.net\/","tags":["email","mailinglist","provider"],"alternative":["gmail","hotmail"]},
 		{"id":"onlinegroups","category":"social","name":"OnlineGroups","description":"mailing lists","url":"http:\/\/onlinegroups.net\/"},
 		{"id":"freenode","category":"social","name":"freenode","description":"IRC","url":"http:\/\/webchat.freenode.net\/"},
 		{"id":"seeks","category":"tools","name":"Seeks","description":"search engine","url":"http:\/\/seeks.fr\/"},
