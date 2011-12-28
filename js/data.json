@@ -154,7 +154,7 @@ var lp = {
 		{"id":"scalablevg","category":"graphics","name":"scalable.vg","description":"hosting","url":"http:\/\/scalable.vg\/"},
 		{"id":"mirocommunity","category":"video","name":"Miro Community","description":"platform","url":"http:\/\/mirocommunity.org\/"},
 		{"id":"openhatch","category":"organization","name":"OpenHatch","description":"help platform","url":"http:\/\/openhatch.org\/"},
-		{"id":"friendica","category":"social","name":"Friendica","description":"multi social network","url":"http:\/\/friendica.com\/","tags":["social","network","decentralized","microblogging"],"alternative":["facebook","google plus","twitter"]}
+		{"id":"friendica","category":"social","name":"Friendica","description":"social multi network","url":"http:\/\/friendica.com\/","tags":["social","network","decentralized","microblogging"],"alternative":["facebook","google plus","twitter"]}
 	]
 };
 
