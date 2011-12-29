@@ -111,7 +111,7 @@ lp = $.extend(lp, {
 		} );
 	},
 
-	translateTo: function(locale) {
+	translateTo: function(locale, $from) {
 		if (!locale) {
 			return;
 		}
@@ -121,7 +121,8 @@ lp = $.extend(lp, {
 			return;
 		}
 
-		$('.translatable').each(function(idxe, element) {
+		var $toTranslate = $from ? $from.find('.translatable') : $('.translatable');
+		$toTranslate.each(function(idxe, element) {
 			var $element = $(element);
 			var translation = '';
 
@@ -130,12 +131,19 @@ lp = $.extend(lp, {
 			} else {
 				translation = $element.data('translatable');
 			}
-			$element.html(translation);
+			if ($element.html()) {
+				$element.html(translation);
+			}
+			// need i18n
+//			if ($element.data('text')) {
+//				$element.data('text', translation);
+//			}
 		} );
 	},
 
-	initTranslation: function() {
-		$('.translatable').each(function(idxe, element) {
+	initTranslation: function($from) {
+		var $toInit = $from ? $from.find('.translatable') : $('.translatable');
+		$toInit.each(function(idxe, element) {
 			var $element = $(element);
 			$element.data('translatable', $element.html().replace(/"/g, '\''));
 		} );
@@ -325,20 +333,26 @@ lp = $.extend(lp, {
 							}
 						} );
 					}
+
 					var $similar = $details.find('.similar-to ul').html('');
 					$.each(lp.findSimilarProjectsTo(), function(idxs, similar) {
-						if (similar) {
-							var $li = $('<li />').html('<a href="#"><img src="logos/' + similar.id + '.png" alt="' + similar.name + ' logo"/></a>')
-									     .appendTo($similar);
-							$li.find('a').data('text', similar.name)
-								     .click(function() {
-										$.modal.close();
-										lp.actualProject = similar;
-										lp.saveToUrl('project', lp.actualProject.id);
-										return false;
-								     } );
-						}
+						var $li = $('<li />').html('<a href="#"><img src="logos/' + similar.id + '.png" alt="' + similar.name + ' logo"/></a>')
+								     .appendTo($similar);
+						$li.find('a').data('text', similar.name)
+							     .click(function() {
+									$.modal.close();
+									lp.actualProject = similar;
+									lp.saveToUrl('project', lp.actualProject.id);
+									return false;
+							     } );
 					} );
+
+					if ($alternative.find('li').length == 0 ||
+					    $similar.find('li').length == 0) {
+						$details.find('.text').html('This sheet is not complete <a href=\'#participate\'>help us</a> improve it.')
+								      .data('translatable', 'This sheet is not complete <a href=\'#participate\'>help us</a> improve it.')
+								      .show();
+					}
 
 					$details.find('a').unbind('hover').hover(function() {
 						var $a = $(this);
@@ -346,8 +360,17 @@ lp = $.extend(lp, {
 							$details.find('.text').html($a.data('text')).show();
 						}
 					}, function() {
-						$details.find('.text').html('').hide();
+						var $text = $details.find('.text');
+						if ($text.data('translatable')) {
+							$text.html($text.data('translatable'));
+							lp.translateTo(lp.locale, $text.parent());
+						} else {
+							$details.find('.text').html('').hide();
+						}
 					} );
+
+					lp.initTranslation($details);
+					lp.translateTo(lp.locale, $details);
 
 					$details.find('a[href*=#]').click(function() {
 						$.modal.close();
