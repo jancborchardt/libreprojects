@@ -56,7 +56,7 @@ lp = $.extend(lp, {
 				var score = 0;
 				$.each(project.tags, function(idxt, tag) {
 					if (pj.tags.indexOf(tag) != -1) {
-						score++;
+						score = (-1 * (idxt - project.tags.length)); // 1st tag is worth more than 2nd that is worth more than 3rd etc.
 					}
 				} );
 				if (score) {
