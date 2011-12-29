@@ -75,21 +75,23 @@ h3+p, h3+p+p, h3+p+p+p { color:#777; }
 
 /* project details lightbox */
 #project-details { display:none; font-size: .9em; }
-#project-details .introduction a span { border: none; font-size: 1.1em; padding-left: 10px; }
-#project-details .introduction a img { height: 70px; width: 70px; }
-#project-details .introduction p { float:left; margin-top: 0; }
-#project-details .introduction p.cat-desc { margin-top: 23px; }
-#project-details .introduction p.cat-desc span { padding-left: 10px; margin-left: 10px; border-left: 1px dotted #FFF;  }
-#project-details .introduction .tags { position:absolute; left: 95px; top: 60px;; font-size: 0.8em; }
-#project-details .introduction .tags li { padding-right: 5px; }
+#project-details .header a span { border: none; font-size: 1.1em; padding-left: 10px; }
+#project-details .header a img { height: 70px; width: 70px; }
+#project-details .header p { float:left; margin-top: 0; }
+#project-details .header p.cat-desc { margin-top: 23px; }
+#project-details .header p.cat-desc span { padding-left: 10px; margin-left: 10px; border-left: 1px dotted #FFF;  }
+#project-details .header .tags { position:absolute; left: 95px; top: 60px;; font-size: 0.8em; }
+#project-details .header .tags li { padding-right: 5px; }
 
 #project-details .label { clear: both; float: left; width: 100px; }
+#project-details .details { clear: both; }
+#project-details .introduction { font-size: 0.8em; line-height: 1.3em; }
 #project-details .alternative-to a,
 #project-details .similar-to a { padding: 12px 7px 15px 7px; }
 #project-details .alternative-to img,
 #project-details .similar-to img { width: 35px; height: 35px; }
 
-#project-details .text {
+#project-details .tip {
 	display: none;
 	font-size: 1.1em;
 	font-weight: bold;
@@ -102,8 +104,8 @@ h3+p, h3+p+p, h3+p+p+p { color:#777; }
 	left: 0;
 	padding: 10px 10px;
 }
-#project-details .text a { color: #888; }
-#project-details .text a:hover, #project-details .text a:focus { color:#fff; }
+#project-details .tip a { color: #888; }
+#project-details .tip a:hover, #project-details .tip a:focus { color:#fff; }
 
 #simplemodal-overlay { background-color:#000; }
 #simplemodal-container { background-color:#333; border:8px solid #444; padding:12px; border-radius:.5em; }

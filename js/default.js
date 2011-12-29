@@ -347,25 +347,32 @@ lp = $.extend(lp, {
 							     } );
 					} );
 
+					var $introduction = $details.find('.introduction');
+					if (typeof lp.actualProject.introduction == 'string') {
+						$introduction.html(lp.actualProject.introduction)
+							     .data('text', lp.actualProject.introduction);
+					}
+
 					if ($alternative.find('li').length == 0 ||
-					    $similar.find('li').length == 0) {
-						$details.find('.text').html('This sheet is not complete <a href=\'#participate\'>help us</a> improve it.')
-								      .data('translatable', 'This sheet is not complete <a href=\'#participate\'>help us</a> improve it.')
-								      .show();
+					    $similar.find('li').length == 0 ||
+					    $introduction.html().length == 0) {
+						$details.find('.tip').html('This sheet is not complete <a href=\'#participate\'>help us</a> improve it.')
+								     .data('translatable', 'This sheet is not complete <a href=\'#participate\'>help us</a> improve it.')
+								     .show();
 					}
 
 					$details.find('a').unbind('hover').hover(function() {
 						var $a = $(this);
 						if ($a.data('text')) {
-							$details.find('.text').html($a.data('text')).show();
+							$details.find('.tip').html($a.data('text')).show();
 						}
 					}, function() {
-						var $text = $details.find('.text');
-						if ($text.data('translatable')) {
-							$text.html($text.data('translatable'));
-							lp.translateTo(lp.locale, $text.parent());
+						var $tip = $details.find('.tip');
+						if ($tip.data('translatable')) {
+							$tip.html($tip.data('translatable'));
+							lp.translateTo(lp.locale, $tip.parent());
 						} else {
-							$details.find('.text').html('').hide();
+							$details.find('.tip').html('').hide();
 						}
 					} );
 
