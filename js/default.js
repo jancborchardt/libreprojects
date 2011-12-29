@@ -338,7 +338,7 @@ lp = $.extend(lp, {
 					$.each(lp.findSimilarProjectsTo(), function(idxs, similar) {
 						var $li = $('<li />').html('<a href="#"><img src="logos/' + similar.id + '.png" alt="' + similar.name + ' logo"/></a>')
 								     .appendTo($similar);
-						$li.find('a').data('text', similar.name)
+						$li.find('a').data('text', similar.name + ' - ' + similar.description)
 							     .click(function() {
 									$.modal.close();
 									lp.actualProject = similar;
