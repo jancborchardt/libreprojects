@@ -1,6 +1,19 @@
 var lp = {
 	"locales":[{"id":"de","name":"german"},{"id":"en","name":"english"},{"id":"fr","name":"french"},{"id":"id","name":"indonesian"},{"id":"it","name":"italian"}],
 	"categories":[{"id":"social","position":"1"},{"id":"tools","position":"2"},{"id":"news","position":"3"},{"id":"travel","position":"4"},{"id":"games","position":"5"},{"id":"multiplayer","position":"6"},{"id":"knowledge","position":"7"},{"id":"text","position":"8"},{"id":"audio","position":"9"},{"id":"video","position":"10"},{"id":"graphics","position":"11"},{"id":"publishing","position":"12"},{"id":"development","position":"13"},{"id":"science","position":"14"},{"id":"organization","position":"15"}],
+	"licenses":[
+		{"id":"cc-by-v25","name":"Creative Commons Attribution 2.5 Generic","url":"https://creativecommons.org/licenses/by/2.5/"},
+		{"id":"cc-by-nc-v3","name":"Creative Commons Attribution-NonCommercial 3.0 Unported","url":"https://creativecommons.org/licenses/by-nc/3.0/"},
+		{"id":"cc-by-nc-sa-v3","name":"Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported","url":"https://creativecommons.org/licenses/by-nc-sa/3.0/"},
+		{"id":"cc-by-nc-nd-v3","name":"Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported","url":"https://creativecommons.org/licenses/by-nc-nd/3.0/"},
+		{"id":"cc-by-sa-v3","name":"Creative Commons Attribution-ShareAlike 3.0 Unported","url":"https://creativecommons.org/licenses/by-nc/3.0/"},
+		{"id":"cc-by-nd-v3","name":"Creative Commons Attribution-NoDerivs 3.0 Unported","url":"https://creativecommons.org/licenses/by-nd/3.0/"},
+		{"id":"cc-zero-v1","name":"Creative Commons Public Domain Dedication","url":"https://creativecommons.org/publicdomain/zero/1.0/"},
+		{"id":"mit","name":"MIT license","url":"http://www.opensource.org/licenses/MIT"},
+		{"id":"gnu-agpl-v3","name":"GNU Affero General Public License","url":"https://www.gnu.org/licenses/agpl-3.0.html"},
+		{"id":"gnu-gpl-v3","name":"GNU General Public License","url":"https://www.gnu.org/licenses/gpl-3.0.html"},
+		{"id":"gnu-lgpl-v3","name":"GNU Lesser General Public License","url":"https://www.gnu.org/licenses/lgpl-3.0.html"},
+	],
 	"alternatives":[
 		{"id":"gmail","name":"Gmail","url":"https:\/\/mail.google.com\/"},
 		{"id":"facebook","name":"Facebook","url":"https:\/\/www.facebook.com\/"},
@@ -17,8 +30,8 @@ var lp = {
 		{"id":"gtalk","name":"Gtalk","url":"https:\/\/www.google.com\/talk\/"}
 	],
 	"projects":[
-		{"id":"diaspora","category":"social","name":"Diaspora","description":"social network","url":"http:\/\/diasp.eu\/","tags":["social","network","decentralized"],"alternative":["facebook","google plus"],"introduction":"Diaspora is a free personal web server that implements a distributed social networking service. Installations of the software form nodes (termed 'pods') which make up the distributed Diaspora social network."},
-		{"id":"identica","category":"social","name":"Identi.ca","description":"microblog","url":"http:\/\/identi.ca\/","tags":["social","network","decentralized", "microblog"],"alternative":["twitter"]},
+		{"id":"diaspora","category":"social","name":"Diaspora","description":"social network","url":"http:\/\/diasp.eu\/","licenses":["gnu-agpl-v3"],"tags":["social","network","decentralized"],"alternative":["facebook","google plus"],"introduction":"Diaspora is a free personal web server that implements a distributed social networking service. Installations of the software form nodes (termed 'pods') which make up the distributed Diaspora social network."},
+		{"id":"identica","category":"social","name":"Identi.ca","description":"microblog","url":"http:\/\/identi.ca\/","licenses":["gnu-agpl-v3"],"tags":["social","network","decentralized", "microblog"],"alternative":["twitter"]},
 		{"id":"jappix","category":"social","name":"Jappix","description":"chat","url":"http:\/\/jappix.com\/","tags":["chat","jabber"],"alternative":["gtalk"]},
 		{"id":"freelishus","category":"social","name":"Freelish.us","description":"bookmarks","url":"http:\/\/freelish.us\/","tags":["bookmark","social"],"alternative":["delicious","diigo"]},
 		{"id":"reddit","category":"social","name":"Reddit","description":"discussion","url":"http:\/\/reddit.com\/"},
@@ -160,7 +173,7 @@ var lp = {
 		{"id":"scalablevg","category":"graphics","name":"scalable.vg","description":"hosting","url":"http:\/\/scalable.vg\/"},
 		{"id":"mirocommunity","category":"video","name":"Miro Community","description":"platform","url":"http:\/\/mirocommunity.org\/"},
 		{"id":"openhatch","category":"organization","name":"OpenHatch","description":"help platform","url":"http:\/\/openhatch.org\/"},
-		{"id":"friendica","category":"social","name":"Friendica","description":"social multi network","url":"http:\/\/friendica.com\/","tags":["social","network","decentralized","microblog"],"alternative":["facebook","google plus","twitter"]}
+		{"id":"friendica","category":"social","name":"Friendica","description":"social multi network","url":"http:\/\/friendica.com\/","licenses":["mit"],"tags":["social","network","decentralized","microblog"],"alternative":["facebook","google plus","twitter"]}
 	]
 };
 

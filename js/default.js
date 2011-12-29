@@ -19,26 +19,29 @@ lp = $.extend(lp, {
 	 */
 	actualProject: null,
 
-	getProject: function(id) {
+	getData: function(type, id) {
 		var found = null;
-		$.each(lp.projects, function(idxp, project) {
-			if (project.id == id) {
-				found = project;
-				return false;
-			}
-		} );
+		if (typeof lp[type] != 'undefined') {
+			$.each(lp[type], function(idx, value) {
+				if (value.id == id) {
+					found = value;
+					return false;
+				}
+			} );
+		}
 		return found;
 	},
 
+	getProject: function(id) {
+		return lp.getData('projects', id);
+	},
+
 	getAlternative: function(id) {
-		var found = null;
-		$.each(lp.alternatives, function(idxp, alternative) {
-			if (alternative.id == id) {
-				found = alternative;
-				return false;
-			}
-		} );
-		return found;
+		return lp.getData('alternatives', id);
+	},
+
+	getLicense: function(id) {
+		return lp.getData('licenses', id);
 	},
 
 	findSimilarProjectsTo: function(project, max) {
@@ -315,6 +318,7 @@ lp = $.extend(lp, {
 					$details.find('.description').html(lp.actualProject.description);
 					$details.find('.category').attr('href', '#' + lp.actualProject.category).html(lp.actualProject.category).data('text', 'Check the ' + lp.actualProject.category + ' category');
 					$details.find('.logo').attr('src', 'logos/' + lp.actualProject.id + '.png');
+
 					var $tags = $details.find('.tags').html('');
 					if (lp.actualProject.tags && lp.actualProject.tags.length) {
 						$.each(lp.actualProject.tags, function(idxt, tag) {
@@ -322,6 +326,7 @@ lp = $.extend(lp, {
 								   .appendTo($tags);
 						} );
 					}
+
 					var $alternative = $details.find('.alternative-to ul').html('');
 					if (lp.actualProject.alternative && lp.actualProject.alternative.length) {
 						$.each(lp.actualProject.alternative, function(idxa, alternative) {
@@ -330,6 +335,18 @@ lp = $.extend(lp, {
 								var $li = $('<li />').html('<a href="' + alternative.url + '"><img src="logos/alternatives/' + alternative.id + '.png" alt="' + alternative.name + ' logo"/></a>')
 										     .appendTo($alternative);
 								$li.find('a').data('text', alternative.name);
+							}
+						} );
+					}
+
+					var $license = $details.find('.license ul').html('');
+					if (lp.actualProject.licenses && lp.actualProject.licenses.length) {
+						$.each(lp.actualProject.licenses, function(idx, license) {
+							license = lp.getLicense(license);
+							if (license) {
+								var $li = $('<li />').html('<a href="' + license.url + '"><img src="logos/licenses/' + license.id + '.png" alt="' + license.name + ' logo"/></a>')
+										     .appendTo($license);
+								$li.find('a').data('text', license.name);
 							}
 						} );
 					}
@@ -355,7 +372,8 @@ lp = $.extend(lp, {
 
 					if ($alternative.find('li').length == 0 ||
 					    $similar.find('li').length == 0 ||
-					    $introduction.html().length == 0) {
+					    $introduction.html().length == 0 ||
+					    $license.find('li').length == 0) {
 						$details.find('.tip').html('This sheet is not complete <a href=\'#participate\'>help us</a> improve it.')
 								     .data('translatable', 'This sheet is not complete <a href=\'#participate\'>help us</a> improve it.')
 								     .show();
@@ -395,7 +413,7 @@ lp = $.extend(lp, {
 				$.modal.close();
 			},
 			minWidth: 450,
-			minHeight: 300,
+			minHeight: 350,
 			closeHTML: 'X',
 			overlayClose: true
 		};
