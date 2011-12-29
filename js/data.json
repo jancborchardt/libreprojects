@@ -10,9 +10,9 @@ var lp = {
 		{"id":"cc-by-nd-v3","name":"Creative Commons Attribution-NoDerivs 3.0 Unported","url":"https://creativecommons.org/licenses/by-nd/3.0/"},
 		{"id":"cc-zero-v1","name":"Creative Commons Public Domain Dedication","url":"https://creativecommons.org/publicdomain/zero/1.0/"},
 		{"id":"mit","name":"MIT license","url":"http://www.opensource.org/licenses/MIT"},
-		{"id":"gnu-agpl-v3","name":"GNU Affero General Public License","url":"https://www.gnu.org/licenses/agpl-3.0.html"},
-		{"id":"gnu-gpl-v3","name":"GNU General Public License","url":"https://www.gnu.org/licenses/gpl-3.0.html"},
-		{"id":"gnu-lgpl-v3","name":"GNU Lesser General Public License","url":"https://www.gnu.org/licenses/lgpl-3.0.html"},
+		{"id":"gnu-agpl-v3","name":"GNU Affero General Public License v3","url":"https://www.gnu.org/licenses/agpl-3.0.html"},
+		{"id":"gnu-gpl-v3","name":"GNU General Public License v3","url":"https://www.gnu.org/licenses/gpl-3.0.html"},
+		{"id":"gnu-lgpl-v3","name":"GNU Lesser General Public License v3","url":"https://www.gnu.org/licenses/lgpl-3.0.html"},
 	],
 	"alternatives":[
 		{"id":"gmail","name":"Gmail","url":"https:\/\/mail.google.com\/"},
