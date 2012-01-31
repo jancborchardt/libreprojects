@@ -123,6 +123,7 @@ var lp = {
 		{"id":"openrouteservice","category":"travel","name":"OpenRouteService","description":"directions","url":"http:\/\/openrouteservice.org\/"},
 		{"id":"webglearth","category":"travel","name":"WebGL Earth","description":"globus","url":"http:\/\/webglearth.com\/"},
 		{"id":"wikitravel","category":"travel","name":"Wikitravel","description":"guide","url":"http:\/\/wikitravel.org\/"},
+		{"id":"openmarkers","category":"travel","name":"openMarkers","description":"places","url":"http:\/\/openmarkers.com\/"},
 		{"id":"bewelcome","category":"travel","name":"BeWelcome","description":"hospitality","url":"http:\/\/bewelcome.org\/"},
 		{"id":"hitchwiki","category":"travel","name":"Hitchwiki","description":"hitchhiking","url":"http:\/\/hitchwiki.org\/"},
 		{"id":"useit","category":"travel","name":"Use-It","description":"city guides","url":"http:\/\/use-it.info\/"},
