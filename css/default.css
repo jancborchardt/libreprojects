@@ -18,7 +18,7 @@ ul { list-style:none; margin:0; padding:0; }
 li { float:left; }
 
 /* locale styling */
-#locale { position:absolute; top:0; right:0; }
+#locale { position:fixed; top:0; right:0; }
 #locale li a { padding:.5em; margin:0; }
 #locale li a:hover, #locale li a:focus { border-radius:.5em; }
 
@@ -48,7 +48,7 @@ h2+ul li { line-height:6em; }
 h2+ul li a { padding:35px 20px; white-space:nowrap; }
 
 /* favs */
-h2+ul li a .star { margin:8px 0 0 0; padding:0; z-index:200; line-height:1em; }
+h2+ul li a .star { position:absolute; margin:.3em 0 0 0; padding:0; z-index:200; font-size:1.3em; line-height:1em; }
 h2+ul li a .star-off:after { content:'\2606\a0'; }
 h2+ul li a .star-off:hover:after { color: #D9C540; content:'\2605\a0'; }
 h2+ul li a .star-on:after { color: #D9C540; content:'\2605\a0'; }
@@ -66,8 +66,9 @@ h2+ul li a:hover, h2+ul li a:focus, #locale a:hover, #locale a.selected,
 h2+ul li a:active, #project-details .alternative-to a:active, #project-details .similar-to a:active, #project-details .license a:active { background-color:#111; }
 /* text appearance */
 li a span { display:none; }
-li a:hover span, li a:focus span { position:absolute; display:inline; margin:30px 0 0 -82px; }
-li a:hover span strong, li a:focus span strong { position:absolute; display:inline; margin-top:-1em; }
+li a:hover span { display:inline; }
+li a:hover .project, li a:focus .project { position:absolute; margin:30px 0 0 -82px; }
+li a:hover .project strong, li a:focus .project strong { position:absolute; margin-top:-1em; }
 
 /* footer */
 footer { float:left; margin-bottom:3em; }

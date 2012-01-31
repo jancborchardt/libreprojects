@@ -498,7 +498,7 @@ $(document).ready(function() {
 		var $ul = $('<ul />').appendTo($categories);
 		$.each(lp.projects, function(pidx, project) {
 			if (category.id == project.category) {
-				$('<li id="' + project.id + '" />').html('<a href="' + project.url + '"><img src="logos/' + project.id + '.png" alt="' + project.name + ' logo" /><span class="description"><strong>' + project.name + '</strong>' + project.description + '</span><span class="star star-off"></span></a></li>')
+				$('<li id="' + project.id + '" />').html('<a href="' + project.url + '"><img src="logos/' + project.id + '.png" alt="" /><span class="project"><strong>' + project.name + '</strong><span class="translatable">' + project.description + '</span></span><span class="star star-off"></span></a></li>')
 					   .data('category', category.id)
 					   .appendTo($ul);
 			}
