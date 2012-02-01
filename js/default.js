@@ -219,7 +219,7 @@ lp = $.extend(lp, {
 		lp.categoriesDisplay('favorites');
 	},
 
-	getFromUrl: function(fragment) {
+	getFromAddress: function(fragment) {
 		var frags = $.deparam.fragment();
 		if (typeof frags[fragment] == 'undefined') {
 			frags[fragment] = '';
@@ -227,7 +227,7 @@ lp = $.extend(lp, {
 		return frags[fragment];
 	},
 
-	saveToUrl: function(fragment, value) {
+	saveToAddress: function(fragment, value) {
 		var frags = $.deparam.fragment();
 		frags[fragment] = value;
 		// To prevent scrolling on every actions, we remove it if not adding it right now
@@ -237,34 +237,34 @@ lp = $.extend(lp, {
 		$.bbq.pushState(frags);
 	},
 
-	getFavoritesFromUrl: function() {
-		var favs = lp.getFromUrl('favs');
+	getFavoritesFromAddress: function() {
+		var favs = lp.getFromAddress('favs');
 		return favs.split(',').filter(function(element){return element.length != ''});
 	},
 
-	saveFavoritesToUrl: function(favs) {
+	saveFavoritesToAddress: function(favs) {
 		if (favs.length == 0) {
 			favs = '';
 		} else {
 			favs = favs.join(',');
 		}
-		lp.saveToUrl('favs', favs);
+		lp.saveToAddress('favs', favs);
 	},
 
-	addProjectToUrl: function(project) {
-		var favs = lp.getFavoritesFromUrl();
+	addProjectToAddress: function(project) {
+		var favs = lp.getFavoritesFromAddress();
 		if (favs.indexOf(project) == -1) {
 			favs.push(project);
 		}
-		lp.saveFavoritesToUrl(favs);
+		lp.saveFavoritesToAddress(favs);
 	},
 
-	removeProjectFromUrl: function(project) {
-		var favs = lp.getFavoritesFromUrl();
+	removeProjectFromAddress: function(project) {
+		var favs = lp.getFavoritesFromAddress();
 		if (favs.indexOf(project) != -1) {
 			favs = favs.filter(function(element){return element != project});
 		}
-		lp.saveFavoritesToUrl(favs);
+		lp.saveFavoritesToAddress(favs);
 	},
 
 	getFavoritesFromStorage: function() {
@@ -284,11 +284,11 @@ lp = $.extend(lp, {
 		$.Storage.set('favorites', favs);
 	},
 
-	setUrlFromStorage: function() {
+	setAddressFromStorage: function() {
 		var favs = lp.getFavoritesFromStorage();
 		if (favs.length > 0) {
 			$.each(favs, function(idxf, fav) {
-				lp.addProjectToUrl(fav);
+				lp.addProjectToAddress(fav);
 			} );
 		}
 	},
@@ -313,7 +313,7 @@ lp = $.extend(lp, {
 			onOpen: function(dialog) {
 				dialog.overlay.fadeIn('fast', function() {
 					// Filling up details
-					$details.find('.url').attr('href', lp.actualProject.url).data('text', 'Check it out !');
+					$details.find('.address').attr('href', lp.actualProject.address).data('text', 'Check it out !');
 					$details.find('.name').html(lp.actualProject.name);
 					$details.find('.description').html(lp.actualProject.description);
 					$details.find('.category').attr('href', '#' + lp.actualProject.category).html(lp.actualProject.category).data('text', 'Check the ' + lp.actualProject.category + ' category');
@@ -332,7 +332,7 @@ lp = $.extend(lp, {
 						$.each(lp.actualProject.alternative, function(idxa, alternative) {
 							alternative = lp.getAlternative(alternative);
 							if (alternative) {
-								var $li = $('<li />').html('<a href="' + alternative.url + '"><img src="logos/alternatives/' + alternative.id + '.png" alt="' + alternative.name + ' logo"/></a>')
+								var $li = $('<li />').html('<a href="' + alternative.address + '"><img src="logos/alternatives/' + alternative.id + '.png" alt="' + alternative.name + ' logo"/></a>')
 										     .appendTo($alternative);
 								$li.find('a').data('text', alternative.name);
 							}
@@ -344,7 +344,7 @@ lp = $.extend(lp, {
 						$.each(lp.actualProject.licenses, function(idx, license) {
 							license = lp.getLicense(license);
 							if (license) {
-								var $li = $('<li />').html('<a href="' + license.url + '"><img src="logos/licenses/' + license.id + '.png" alt="' + license.name + ' logo"/></a>')
+								var $li = $('<li />').html('<a href="' + license.address + '"><img src="logos/licenses/' + license.id + '.png" alt="' + license.name + ' logo"/></a>')
 										     .appendTo($license);
 								$li.find('a').data('text', license.name);
 							}
@@ -359,7 +359,7 @@ lp = $.extend(lp, {
 							     .click(function() {
 									$.modal.close();
 									lp.actualProject = similar;
-									lp.saveToUrl('project', lp.actualProject.id);
+									lp.saveToAddress('project', lp.actualProject.id);
 									return false;
 							     } );
 					} );
@@ -399,7 +399,7 @@ lp = $.extend(lp, {
 
 					$details.find('a[href*=#]').click(function() {
 						$.modal.close();
-						lp.saveToUrl('scroll', $(this).attr('href').substr(1));
+						lp.saveToAddress('scroll', $(this).attr('href').substr(1));
 
 						return false;
 					} );
@@ -409,7 +409,7 @@ lp = $.extend(lp, {
 				} );
 			},
 			onClose: function(dialog) {
-				lp.saveToUrl('project', '');
+				lp.saveToAddress('project', '');
 				$.modal.close();
 			},
 			minWidth: 450,
@@ -427,7 +427,7 @@ lp = $.extend(lp, {
 	 * We also have to check if the event is for showing a project details.
 	 */
 	onStateChange: function(e) {
-		var favs = lp.getFavoritesFromUrl();
+		var favs = lp.getFavoritesFromAddress();
 
 		// Adding to favorites
 		$.each(favs, function(idxf, fav) {
@@ -450,8 +450,8 @@ lp = $.extend(lp, {
 		} );
 
 		// Showing project details lightbox
-		if (project = lp.getFromUrl('project')) {
-			// In case we just arrive on the website with #project in the URL
+		if (project = lp.getFromAddress('project')) {
+			// In case we just arrive on the website with #project in the address
 			if (!lp.actualProject) {
 				lp.actualProject = lp.getProject(project);
 			}
@@ -462,9 +462,9 @@ lp = $.extend(lp, {
 			lp.actualProject = null;
 		}
 
-		if (scroll = lp.getFromUrl('scroll')) {
+		if (scroll = lp.getFromAddress('scroll')) {
 			$.smoothScroll({scrollTarget: $('#' + scroll)});
-//			lp.saveToUrl('scroll', '');
+//			lp.saveToAddress('scroll', '');
 		}
 	}
 } );
@@ -498,7 +498,7 @@ $(document).ready(function() {
 		var $ul = $('<ul />').appendTo($categories);
 		$.each(lp.projects, function(pidx, project) {
 			if (category.id == project.category) {
-				$('<li id="' + project.id + '" />').html('<a href="' + project.url + '"><img src="logos/' + project.id + '.png" alt="" /><span class="project"><strong>' + project.name + '</strong><span class="translatable">' + project.description + '</span></span><span class="star star-off"></span></a></li>')
+				$('<li id="' + project.id + '" />').html('<a href="' + project.address + '"><img src="logos/' + project.id + '.png" alt="" /><span class="project"><strong>' + project.name + '</strong><span class="translatable">' + project.description + '</span></span><span class="star star-off"></span></a></li>')
 					   .data('category', category.id)
 					   .appendTo($ul);
 			}
@@ -517,26 +517,26 @@ $(document).ready(function() {
 		var $li = $star.parents('li');
 		var $category = $star.parents('ul').prev();
 		if ($category.attr('id') != 'favorites') {
-			lp.addProjectToUrl($li.attr('id'));
+			lp.addProjectToAddress($li.attr('id'));
 		} else {
-			lp.removeProjectFromUrl($li.attr('id'));
+			lp.removeProjectFromAddress($li.attr('id'));
 		}
 		return false;
 	} );
 
 	$('#categories ul li a').click(function() {
 		lp.actualProject = lp.getProject($(this).parent().attr('id'));
-		lp.saveToUrl('project', lp.actualProject.id);
+		lp.saveToAddress('project', lp.actualProject.id);
 
 		return false;
 	} );
 
 	$('a[href*=#]').click(function() {
-		lp.saveToUrl('scroll', $(this).parent().attr('id'));
+		lp.saveToAddress('scroll', $(this).parent().attr('id'));
 
 		return false;
 	} );
 
-	lp.setUrlFromStorage();
+	lp.setAddressFromStorage();
 	$(window).bind('hashchange', lp.onStateChange).trigger('hashchange');
 } );
