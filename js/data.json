@@ -174,7 +174,8 @@ var lp = {
 		{"id":"scalablevg","category":"graphics","name":"scalable.vg","description":"hosting","address":"http:\/\/scalable.vg\/"},
 		{"id":"mirocommunity","category":"video","name":"Miro Community","description":"platform","address":"http:\/\/mirocommunity.org\/"},
 		{"id":"openhatch","category":"organization","name":"OpenHatch","description":"help platform","address":"http:\/\/openhatch.org\/"},
-		{"id":"friendica","category":"social","name":"Friendica","description":"social multi network","address":"http:\/\/friendica.com\/","licenses":["mit"],"tags":["social","network","decentralized","microblog"],"alternative":["facebook","google plus","twitter"]}
+		{"id":"friendica","category":"social","name":"Friendica","description":"social multi network","address":"http:\/\/friendica.com\/","licenses":["mit"],"tags":["social","network","decentralized","microblog"],"alternative":["facebook","google plus","twitter"]},
+		{"id":"noosfero","category":"social","name":"Noosfero","description":"social  network","address":"http:\/\/noosfero.org\/","licenses":["gnu-agpl-v3"],"tags":["social","network","blog","cms", "chat", "solidarityecononomy"],"alternative":["facebook","google plus"], "introduction": "Noosfero is a web platform for social and solidarity economy networks with blog, e-Porfolios, CMS, RSS, thematic discussion, events agenda and collective inteligence for solidarity economy in the same system."}
 	]
 };
 
