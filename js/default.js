@@ -156,7 +156,7 @@ lp = $.extend(lp, {
 		var $search = $(this);
 
 		// Only do the following after 100ms if keyup is not being used again
-		$search.doTimeout('lp.search', 100, function() {
+//		$search.doTimeout('lp.search', 100, function() { // Removing timeout for now to make it more instant
 			var value = $search.val().toLowerCase();
 
 			// Hide or show projects depending if they match or not
@@ -170,7 +170,7 @@ lp = $.extend(lp, {
 			} );
 
 			lp.categoriesDisplay();
-		} );
+//		} );
 	},
 
 	/**
