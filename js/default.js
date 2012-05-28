@@ -87,14 +87,14 @@ lp = $.extend(lp, {
 
 	setLocale: function(locale) {
 		if (!locale) {
-			locale = $.cookie('locale');
+			locale = localStorage.getItem('locale');
 		}
 		if (!locale) {
 			locale = window.navigator.language ? window.navigator.language : window.navigator.userLanguage;
 		}
 
 		if (locale != lp.locale) {
-			$.cookie('locale', locale);
+			localStorage.setItem('locale', locale);
 			lp.locale = locale;
 
 			$.each(lp.locales, function(lidx, availableLocale) {
@@ -129,10 +129,22 @@ lp = $.extend(lp, {
 			var $element = $(element);
 			var translation = '';
 
-			if (typeof lp.dictionaries[locale][$element.data('translatable')] == 'string') {
-				translation = lp.dictionaries[locale][$element.data('translatable')];
+			var key = $element.data('translatable');
+			if(! key) {
+				// element was (probably) dynamically loaded, hence original text
+				// hasn't been cached yet.
+				key = lp.determineTranslationKey($element);
+				if(! key) {
+					// still no translation key (i.e. element is empty).
+					// giving up.
+					return;
+				}
+			}
+
+			if (typeof lp.dictionaries[locale][key] == 'string') {
+				translation = lp.dictionaries[locale][key];
 			} else {
-				translation = $element.data('translatable');
+				translation = key;
 			}
 			if ($element.html()) {
 				$element.html(translation);
@@ -144,11 +156,17 @@ lp = $.extend(lp, {
 		} );
 	},
 
+	determineTranslationKey: function($element) {
+		var value = $element.html().replace(/"/g, '\'');
+		$element.data('translatable', value);
+		return value;
+	},
+
 	initTranslation: function($from) {
 		var $toInit = $from ? $from.find('.translatable') : $('.translatable');
 		$toInit.each(function(idxe, element) {
 			var $element = $(element);
-			$element.data('translatable', $element.html().replace(/"/g, '\''));
+			lp.determineTranslationKey($element);
 		} );
 	},
 
