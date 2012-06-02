@@ -2,7 +2,7 @@
 A collection of free web services & alternatives to proprietary apps
 
 If you’re interested in participating, know free projects or want to know more:
-Join the [#unhosted chat room](http://webchat.freenode.net/?channels=unhosted) and message [JanCBorchardt](http://jancborchardt.github.com)
+Join the [#unhosted chat room](http://webchat.freenode.net/?channels=unhosted) and message [jancborchardt](http://jancborchardt.net) or [Tatanka](http://github.com/jhuet)
 
 A directory of non-discriminating projects:
 
