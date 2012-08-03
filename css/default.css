@@ -77,6 +77,10 @@ h3+p, h3+p+p, h3+p+p+p { color:#777; }
 #simplemodal-container { background-color:rgba(50,50,50,.9); border:0; padding:12px; border-radius:.5em; box-shadow:0 0 2em #000; }
 
 #project-details { display:none; font-size:.9em; }
+#project-details img { vertical-align:middle; }
+#project-details ul { list-style:none; margin:0; padding:0; }
+#project-details li { float:left; }
+
 #project-details .header strong.name { border:none; font-size:4em; position:absolute; top:.68em; left:1.5em; }
 #project-details .header a img { height:70px; width:70px; }
 #project-details .header p { float:left; margin-top:0; font-weight:bold; }
