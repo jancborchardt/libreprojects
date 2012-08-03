@@ -8,7 +8,7 @@
 	"Information":
 	"Informo",
 
-	"Web services listed here have free usage & sharing as a main goal – using free licenses such as <a href='http://en.wikipedia.org/wiki/MIT_License'>MIT</a>, <a href='http://www.gnu.org/licenses/agpl.html'><abbr title='GNU Affero General Public License'>GNU AGPL</abbr></a>, <a title='preferably Attribution or Share-Alike' href='http://creativecommons.org/'>Creative Commons</a> or similar terms. There will be no advertising for corporations that offer libre features as a niche service. On the other hand, platforms that mainly distribute free content and don't require user accounts do not have to be free themselves.":
+	"Web services listed here have free usage &amp; sharing as a main goal – using free licenses such as <a href='http://en.wikipedia.org/wiki/MIT_License'>MIT</a>, <a href='http://www.gnu.org/licenses/agpl.html'><abbr title='GNU Affero General Public License'>GNU AGPL</abbr></a>, <a title='preferably Attribution or Share-Alike' href='http://creativecommons.org/'>Creative Commons</a> or similar terms. There will be no advertising for corporations that offer libre features as a niche service. On the other hand, platforms that mainly distribute free content and don't require user accounts do not have to be free themselves.":
 	"Retservoj listintaj ĉi tie havas liberan uzo kaj disvastigo kiel celo. Pro tio ili uzas liberajn licencojn kiel <a href='http://en.wikipedia.org/wiki/MIT_License'>MIT</a>, <a href='http://gnu.org/licenses/agpl.html'><abbr title='General Affero Public License'>GNU AGPL</abbr></a>, <a title='prefere Attribution aŭ Share-Alike' href='http://creativecommons.org/'>Creative Commons</a> aŭ similajn. Ĉi tie ne estos reklamo de korporacioj, kiu ofertas liberajn aplikaĵojn kiel niĉajn servojn. Aliflanke, se platformo disvastigas precipe liberan enhavon kaj ne postulas registadon, ĝi mem ne devas esti libera.",
 
 	"In the end, hosted web services are all about mutual trust. Users trust that their data is secure and the service will stay available in the future. Developers trust that the service will not be abused.":
@@ -20,11 +20,11 @@
 	"Participate":
 	"partopreno",
 
-	"<a rel='dct:publisher' href='http://jancborchardt.net'><span property='dct:title'>Jan-Christoph Borchardt</span></a> & <a rel='dct:publisher' href='https://github.com/jhuet'><span property='dct:title'>Jeremy Huet</span></a> have <a rel='license' href='http://creativecommons.org/publicdomain/zero/1.0/' title='by a Public Domain Dedication'>waived all copyright</a> on this project (except the logos which are subject to their own license).":
-	"<a rel='dct:publisher' href='http://jancborchardt.net'><span property='dct:title'>Jan-Christoph Borchardt</span></a> kaj <a rel='dct:publisher' href='https://github.com/jhuet'><span property='dct:title'>Jeremy Huet</span></a> rifuzis <a rel='license' href='http://creativecommons.org/publicdomain/zero/1.0/' title='per dediĉo al publika havaĵo'>ĉiuj kopirajtoj</a> sur ĉi tiu projekto (krom emblemoj, kiu obeas al propraj licencoj).",
+	"<a rel='dct:publisher' href='http://jancborchardt.net'><span property='dct:title'>Jan-Christoph Borchardt</span></a> &amp; <a rel='dct:publisher' href='http://github.com/jhuet'><span property='dct:title'>Jérémy Huet</span></a> have <a rel='license' href='http://creativecommons.org/publicdomain/zero/1.0/' title='by a Public Domain Dedication'>waived all copyright</a> on this project (logos are subject to their own license).":
+	"<a rel='dct:publisher' href='http://jancborchardt.net'><span property='dct:title'>Jan-Christoph Borchardt</span></a> kaj <a rel='dct:publisher' href='https://github.com/jhuet'><span property='dct:title'>Jérémy Huet</span></a> rifuzis <a rel='license' href='http://creativecommons.org/publicdomain/zero/1.0/' title='per dediĉo al publika havaĵo'>ĉiuj kopirajtoj</a> sur ĉi tiu projekto (krom emblemoj, kiu obeas al propraj licencoj).",
 
-	"Feel free to <a href='http://github.com/libreprojects/libreprojects/wiki'>contribute ideas</a> & <a href='http://github.com/libreprojects/libreprojects'>help with code</a> or simply tell your friends!":
-	"Ne ĝenu vin <a href='http://github.com/libreprojects/libreprojects/wiki'>kontribui ideojn</a> kaj <a href='http://github.com/libreprojects/libreprojects'>helpi kun kodo</a>, aŭ simple rakontu al amikoj!",
+	"<a href='http://github.com/libreprojects/libreprojects'>Help with code</a> and tell your friends about this!":
+	"Ne ĝenu vin <a href='http://github.com/libreprojects/libreprojects'>helpi kun kodo</a>, aŭ simple rakontu al amikoj!",
 
 	"social":"sociala",
 	"tools":"iloj",

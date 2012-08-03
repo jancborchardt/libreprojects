@@ -8,7 +8,7 @@
     "Information":
     "Information",
 
-    "Web services listed here have free usage & sharing as a main goal – using free licenses such as <a href='http://en.wikipedia.org/wiki/MIT_License'>MIT</a>, <a href='http://www.gnu.org/licenses/agpl.html'><abbr title='GNU Affero General Public License'>GNU AGPL</abbr></a>, <a title='preferably Attribution or Share-Alike' href='http://creativecommons.org/'>Creative Commons</a> or similar terms. There will be no advertising for corporations that offer libre features as a niche service. On the other hand, platforms that mainly distribute free content and don't require user accounts do not have to be free themselves.":
+    "Web services listed here have free usage &amp; sharing as a main goal – using free licenses such as <a href='http://en.wikipedia.org/wiki/MIT_License'>MIT</a>, <a href='http://www.gnu.org/licenses/agpl.html'><abbr title='GNU Affero General Public License'>GNU AGPL</abbr></a>, <a title='preferably Attribution or Share-Alike' href='http://creativecommons.org/'>Creative Commons</a> or similar terms. There will be no advertising for corporations that offer libre features as a niche service. On the other hand, platforms that mainly distribute free content and don't require user accounts do not have to be free themselves.":
     "Hier gelistete Webdienste haben freie Nutzung und Teilen als Hauptziel. Sie benutzen freie Lizenzen wie die <a href='http://de.wikipedia.org/wiki/MIT-Lizenz'>MIT</a>, <a href='http://gnu.org/licenses/agpl.html'><abbr title='General Affero Public License'>GNU AGPL</abbr></a>, <a title='vornehmlich Attribution oder Share-Alike' href='http://creativecommons.org/'>Creative Commons</a> oder ähnliche. Es wird keine Werbung geben für Firmen, die freie Features am Rand anbieten. Andererseits sind Plattformen in Ordnung, die frei lizenzierte Inhalte anbieten, die man ohne Nutzerkonto einsehen kann – auch wenn die Plattform selber unfrei ist.",
 
     "In the end, hosted web services are all about mutual trust. Users trust that their data is secure and the service will stay available in the future. Developers trust that the service will not be abused.":
@@ -20,10 +20,10 @@
     "Participate":
     "Mach mit",
 
-    "<a rel='dct:publisher' href='http://jancborchardt.net'><span property='dct:title'>Jan-Christoph Borchardt</span></a> & <a rel='dct:publisher' href='https://github.com/jhuet'><span property='dct:title'>Jeremy Huet</span></a> have <a rel='license' href='http://creativecommons.org/publicdomain/zero/1.0/' title='by a Public Domain Dedication'>waived all copyright</a> on this project (except the logos which are subject to their own license).":
-    "<a rel='dct:publisher' href='http://jancborchardt.net'><span property='dct:title'>Jan-Christoph Borchardt</span></a> & <a rel='dct:publisher' href='https://github.com/jhuet'><span property='dct:title'>Jeremy Huet</span></a> haben <a rel='license' href='http://creativecommons.org/publicdomain/zero/1.0/' title='durch Deklaration als gemeinfrei'>jegliches Eigentumsrecht</a> an diesem Projekt abgetreten (außer die Logos, welche den entsprechenden Projekten gehören).",
+    "<a rel='dct:publisher' href='http://jancborchardt.net'><span property='dct:title'>Jan-Christoph Borchardt</span></a> &amp; <a rel='dct:publisher' href='http://github.com/jhuet'><span property='dct:title'>Jérémy Huet</span></a> have <a rel='license' href='http://creativecommons.org/publicdomain/zero/1.0/' title='by a Public Domain Dedication'>waived all copyright</a> on this project (logos are subject to their own license).":
+    "<a rel='dct:publisher' href='http://jancborchardt.net'><span property='dct:title'>Jan-Christoph Borchardt</span></a> & <a rel='dct:publisher' href='https://github.com/jhuet'><span property='dct:title'>Jérémy Huet</span></a> haben <a rel='license' href='http://creativecommons.org/publicdomain/zero/1.0/' title='durch Deklaration als gemeinfrei'>jegliches Eigentumsrecht</a> an diesem Projekt abgetreten (außer die Logos, welche den entsprechenden Projekten gehören).",
 
-    "Feel free to <a href='http://github.com/libreprojects/libreprojects/wiki'>contribute ideas</a> & <a href='http://github.com/libreprojects/libreprojects'>help with code</a> or simply tell your friends!":
+    "<a href='http://github.com/libreprojects/libreprojects'>Help with code</a> and tell your friends about this!":
     "<a href='http://github.com/libreprojects/libreprojects'>Mach mit</a> und erzähl deinen Freunden von diesem Projekt!",
 
     "social":"Sozial",
