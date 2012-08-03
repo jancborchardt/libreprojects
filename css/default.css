@@ -93,5 +93,3 @@ h3+p, h3+p+p, h3+p+p+p { color:#777; }
 #project-details .tip { display:none; font-size:1.1em; font-weight:bold; position:absolute; background-color:rgba(20,20,20,.5); width:455px; margin:0 15px 0 0; bottom:0; left:0; padding:10px 10px; border-radius:0 0 .5em .5em; }
 #project-details .tip a { color:#888; }
 #project-details .tip a:hover, #project-details .tip a:focus { color:#fff; }
-
-.flattr { display:inline; position:absolute; top:.2em; right:14em; }
