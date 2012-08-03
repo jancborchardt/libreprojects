@@ -99,7 +99,7 @@ lp = $.extend(lp, {
 
 			$.each(lp.locales, function(lidx, availableLocale) {
 				if (locale.indexOf(availableLocale.id) != -1 || !locale.indexOf(availableLocale.name != -1)) {
-					$('#locale a').removeClass('selected');
+					$('#locale li').removeClass('selected');
 					$('#lang-' + availableLocale.id).addClass('selected');
 					lp.translateTo(availableLocale.id);
 				}
@@ -492,8 +492,8 @@ $(document).ready(function() {
 	// Create translations availables
 	var $locale = $('#locale');
 	$.each(lp.locales, function(lidx, locale) {
-		var $li = $('<li />');
-		var $a = $('<a href="#" id="lang-' + locale.id + '" />')
+		var $li = $('<li id="lang-' + locale.id + '" />');
+		var $a = $('<a href="#" />')
 			 .html('<img src="images/countries/' + locale.id + '.png" alt="' + locale.name + ' flag" />')
 			 .click(function() {
 				 lp.setLocale(locale.id);
@@ -502,6 +502,7 @@ $(document).ready(function() {
 			 .appendTo($li);
 		$li.appendTo($locale);
 	} );
+	$('#lang-' + lp.locale).addClass('selected');
 
 	// Total number of projects
 	$('#nb-projects').html(lp.projects.length);
@@ -549,7 +550,7 @@ $(document).ready(function() {
 		return false;
 	} );
 
-	$('a[href*=#]').click(function() {
+	$('#categories a[href*=#]').click(function() {
 		lp.saveToAddress('scroll', $(this).parent().attr('id'));
 
 		return false;

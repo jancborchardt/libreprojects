@@ -4,16 +4,20 @@ a { color:#ccc; text-decoration:none; }
 a:hover, a:focus { color:#fff; text-shadow:#000 0 0 1em; outline:0; }
 a:active { color:#ddd; }
 a img { border:0; }
-img { max-width:70px; max-height:70px; vertical-align:middle; }
-li a { width:70px; height:70px; }
 
-ul { list-style:none; margin:0; padding:0; }
-li { float:left; }
+#categories img { max-width:70px; max-height:70px; vertical-align:middle; }
+#categories li a { width:70px; height:70px; }
+#categories ul { list-style:none; margin:0; padding:0; }
+#categories li { float:left; }
 
 /* locale styling */
-#locale { position:absolute; top:0; right:0; }
-#locale li a { padding:.5em; margin:0; }
-#locale li a:hover, #locale li a:focus { border-radius:.5em; }
+#locale { position:absolute; top:0; right:0; list-style:none; margin:0; padding:.5em 0; }
+#locale:after { content:'▾'; position:absolute; top:.35em; right:.4em; color:#555; }
+#locale li { display:none; }
+#locale li a { padding:0 1em; }
+#locale li.selected { display:block; }
+#locale:hover li { display:block; }
+
 
 /* search styling */
 #search { z-index:200; position:absolute; margin:0; top:4em; right:3em; background:none; border:none; }
@@ -22,7 +26,7 @@ li { float:left; }
 
 /* main heading */
 h1 { font-size:3.8em; display:block; white-space:nowrap; }
-h1 img { width:.85em; height:.85em; margin:-.15em .3em 0 -1.3em; }
+h1 img { width:.85em; height:.85em; margin:-.15em .3em 0 -1.3em; vertical-align:middle; }
 h1 a { color:#fff; text-decoration:none; padding:0 .5em; }
 h1 a:hover, h1 a:focus { color:#fff; text-shadow:#000 0 0 1em; outline:0; }
 h1+p { color:#fff; margin:-2.7em 0 0 1.5em; z-index:-100; }
@@ -52,7 +56,7 @@ h2#favorites {padding-left:45px;}
 h2#favorites a:hover {color:#D9C540}
 
 /* icon hover */
-h2+ul li a:hover, h2+ul li a:focus, #locale a:hover, #locale a.selected,
+h2+ul li a:hover, h2+ul li a:focus,
 #project-details .license a:hover, #project-details .license a:focus,
 #project-details .alternative-to a:hover, #project-details .alternative-to a:focus,
 #project-details .similar-to a:hover, #project-details .similar-to a:focus, #searching { background:rgba(30, 30, 30, .7);  border-radius:.5em; box-shadow:#444 0 1px 0; }

@@ -1,5 +1,5 @@
 var lp = {
-	"locales":[{"id":"de","name":"german"},{"id":"en","name":"english"},{"id":"eo","name":"esperanto"},{"id":"fr","name":"french"},{"id":"id","name":"indonesian"},{"id":"it","name":"italian"},{"id":"ru","name":"russian"}],
+	"locales":[{"id":"en","name":"english"},{"id":"de","name":"german"},{"id":"fr","name":"french"},{"id":"it","name":"italian"},{"id":"ru","name":"russian"},{"id":"id","name":"indonesian"},{"id":"eo","name":"esperanto"}],
 	"categories":[{"id":"social","position":"1"},{"id":"tools","position":"2"},{"id":"news","position":"3"},{"id":"travel","position":"4"},{"id":"games","position":"5"},{"id":"multiplayer","position":"6"},{"id":"knowledge","position":"7"},{"id":"text","position":"8"},{"id":"audio","position":"9"},{"id":"video","position":"10"},{"id":"graphics","position":"11"},{"id":"publishing","position":"12"},{"id":"development","position":"13"},{"id":"science","position":"14"},{"id":"organization","position":"15"}],
 	"licenses":[
 		{"id":"cc-by-v25","name":"Creative Commons Attribution 2.5 Generic","address":"https://creativecommons.org/licenses/by/2.5/"},
