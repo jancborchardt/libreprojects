@@ -29,7 +29,7 @@ h1 { font-size:3.8em; display:block; white-space:nowrap; }
 h1 img { width:.85em; height:.85em; margin:-.15em .3em 0 -1.3em; vertical-align:middle; }
 h1 a { color:#fff; text-decoration:none; padding:0 .5em; }
 h1 a:hover, h1 a:focus { color:#fff; text-shadow:#000 0 0 1em; outline:0; }
-h1+p { color:#fff; margin:-2.7em 0 0 1.5em; z-index:-100; }
+h1+p { font-size:.9em; color:#fff; margin:-3em 0 2em 1.6em; z-index:-100; }
 p+h2 { margin:-1em 0 0 9.5em; z-index:100; }
 p+h2+p { position:absolute; font-size:3em; margin:-1em 0 0 12.5em; z-index:100; }
 p+h2 a { padding:1em; }
