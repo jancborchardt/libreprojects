@@ -23,8 +23,8 @@
     "<a rel='dct:publisher' href='http://jancborchardt.net'><span property='dct:title'>Jan-Christoph Borchardt</span></a> &amp; <a rel='dct:publisher' href='http://github.com/jhuet'><span property='dct:title'>Jérémy Huet</span></a> have <a rel='license' href='http://creativecommons.org/publicdomain/zero/1.0/' title='by a Public Domain Dedication'>waived all copyright</a> on this project (logos are subject to their own license).":
     "<a rel='dct:publisher' href='http://jancborchardt.net'><span property='dct:title'>Jan-Christoph Borchardt</span></a> & <a rel='dct:publisher' href='https://github.com/jhuet'><span property='dct:title'>Jérémy Huet</span></a> haben <a rel='license' href='http://creativecommons.org/publicdomain/zero/1.0/' title='durch Deklaration als gemeinfrei'>jegliches Eigentumsrecht</a> an diesem Projekt abgetreten (außer die Logos, welche den entsprechenden Projekten gehören).",
 
-    "<a href='http://github.com/libreprojects/libreprojects'>Help with code</a> and tell your friends about this!":
-    "<a href='http://github.com/libreprojects/libreprojects'>Mach mit</a> und erzähl deinen Freunden von diesem Projekt!",
+    "<a href='http://github.com/libreprojects/libreprojects'>Help with code</a>, <a href='http://github.com/libreprojects/libreprojects/issues/new'>suggest a project</a> (make sure it’s open source, hosted &amp; usable) and tell your friends about this!":
+    "<a href='http://github.com/libreprojects/libreprojects'>Mach mit</a>, <a href='http://github.com/libreprojects/libreprojects/issues/new'>schlag ein Projekt vor</a> (muss open-source, gehostet & nutzbar sein) und erzähl deinen Freunden von diesem Projekt!",
 
     "social":"Sozial",
 	"tools":"Tools",
