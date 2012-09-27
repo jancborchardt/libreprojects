@@ -132,7 +132,6 @@ var lp = {
 		{"id":"showslow","category":"development","name":"Show Slow","description":"metrics","address":"http:\/\/showslow.com\/"},
 		{"id":"transifex","category":"development","name":"Transifex","description":"translation","address":"http:\/\/transifex.net\/"},
 		{"id":"translatewiki","category":"development","name":"Translatewiki","description":"translation","address":"http:\/\/translatewiki.net\/"},
-		{"id":"diaspora","category":"social","name":"Diaspora","description":"social network","address":"http:\/\/diasp.org\/","licenses":["gnu-agpl-v3"],"tags":["social","network","decentralized"],"alternative":["facebook","google plus"],"introduction":"Diaspora is a free personal web server that implements a distributed social networking service. Installations of the software form nodes (termed 'pods') which make up the distributed Diaspora social network."},
 		{"id":"govsgo","category":"games","name":"Go vs Go","description":"gogogo!","address":"http:\/\/govsgo.com\/","licenses":["mit"],"source":"http:\/\/github.com/ryanb/govsgo"},
 		{"id":"lichess","category":"games","name":"Lichess","description":"chess","address":"http:\/\/lichess.org\/","licenses":["mit"],"source":"http:\/\/github.com/ornicar/lila"},
 		{"id":"tankworld","category":"games","name":"Tankworld","description":"3D shooter","address":"http://playtankworld.com","licenses":["gnu-gpl-v3"],"source":"http://www.playtankworld.com/multiplayer"},
