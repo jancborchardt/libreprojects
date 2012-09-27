@@ -357,6 +357,12 @@ lp = $.extend(lp, {
 						} );
 					}
 
+					if (lp.actualProject.source) {
+						$details.find('.license .label').html('<a href="'+lp.actualProject.source+'">Source code</a>');
+						$details.find('.license .label').removeClass('translatable');
+						$details.find('.license .label a').addClass('translatable');
+					}
+
 					var $license = $details.find('.license ul').html('');
 					if (lp.actualProject.licenses && lp.actualProject.licenses.length) {
 						$.each(lp.actualProject.licenses, function(idx, license) {
