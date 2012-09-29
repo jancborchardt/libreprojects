@@ -382,14 +382,17 @@ lp = $.extend(lp, {
 						$alternativeEmptyText.toggle($alternativeEmptyText.css('display') == 'none');
 					}
 
-					if (lp.actualProject.source) {
-						$details.find('.license .label').html('<a href="'+lp.actualProject.source+'">Source code</a>');
-						$details.find('.license .label').removeClass('translatable');
-						$details.find('.license .label a').addClass('translatable');
+					var $licenseText = $details.find('.license .label').first();
+					var $licenseTextEmpty = $licenseText.next().first();
+					if (lp.actualProject.source) { // Not sure what this is for... jhuet.
+						$licenseText.html('<a href="'+lp.actualProject.source+'">Source code</a>');
+						$licenseText.removeClass('translatable');
+						$licenseText.addClass('translatable');
 					}
 
 					var $license = $details.find('.license ul').html('');
-					if (lp.actualProject.licenses && lp.actualProject.licenses.length) {
+					var licences = lp.actualProject.licenses && lp.actualProject.licenses.length ? true : false;
+					if (licences) {
 						$.each(lp.actualProject.licenses, function(idx, license) {
 							license = lp.getLicense(license);
 							if (license) {
@@ -398,6 +401,12 @@ lp = $.extend(lp, {
 								$li.find('a').data('text', license.name);
 							}
 						} );
+					}
+					// Check if we have to display regular message or the "empty" one if there is no licenses
+					if ((licences && $licenseText.css('display') == 'none') ||
+					    (!licences && $licenseTextEmpty.css('display')) == 'none') {
+						$licenseText.toggle($licenseText.css('display') == 'none');
+						$licenseTextEmpty.toggle($licenseTextEmpty.css('display') == 'none');
 					}
 
 					var $similar = $details.find('.similar-to ul').html('');
