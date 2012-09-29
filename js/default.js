@@ -376,8 +376,7 @@ lp = $.extend(lp, {
 					// Check if we have to display regular message or the "empty" one if there is no alternative projects
 					var $alternativeText = $alternative.parent().find('p').first();
 					var $alternativeEmptyText = $alternativeText.next().first();
-					if ((alternatives && $alternativeText.css('display') == 'none') ||
-					    (!alternatives && $alternativeEmptyText.css('display')) == 'none') {
+					if (!alternatives && $alternativeEmptyText.css('display') == 'none') {
 						$alternativeText.toggle($alternativeText.css('display') == 'none');
 						$alternativeEmptyText.toggle($alternativeEmptyText.css('display') == 'none');
 					}
@@ -406,8 +405,7 @@ lp = $.extend(lp, {
 						} );
 					}
 					// Check if we have to display regular message or the "empty" one if there is no licenses
-					if ((licences && $licenseText.css('display') == 'none') ||
-					    (!licences && $licenseTextEmpty.css('display')) == 'none') {
+					if (!licences && $licenseTextEmpty.css('display') == 'none') {
 						$licenseText.toggle($licenseText.css('display') == 'none');
 						$licenseTextEmpty.toggle($licenseTextEmpty.css('display') == 'none');
 					}
@@ -430,8 +428,7 @@ lp = $.extend(lp, {
 					// Check if we have to display regular message or the "empty" one if there is no alternative projects
 					var $similarText = $similar.parent().find('p').first();
 					var $similarEmptyText = $similarText.next().first();
-					if ((similars && $similarText.css('display') == 'none') ||
-					    (!similars && $similarEmptyText.css('display')) == 'none') {
+					if (!similars && $similarEmptyText.css('display') == 'none') {
 						$similarText.toggle($similarText.css('display') == 'none');
 						$similarEmptyText.toggle($similarEmptyText.css('display') == 'none');
 					}
