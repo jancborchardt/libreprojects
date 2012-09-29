@@ -32,6 +32,9 @@
 	"Alternative to":
 	"Alternative &agrave;",
 
+	"Source code":
+	"Code source",
+
 	"This sheet is not complete <a href='#participate'>help us</a> improve it.":
 	"Cette fiche n'est pas compl&egrave;te <a href='#participate'>aidez-nous</a> &agrave; l'am&eacute;liorer.",
 
@@ -47,6 +50,7 @@
 	"video":"vid&eacute;o",
 	"graphics":"graphisme",
 	"publishing":"&eacute;dition",
+	"emulators":"&eacute;mulateurs",
 	"development":"d&eacute;veloppement",
 	"science":"science",
 	"organization":"organisation"
