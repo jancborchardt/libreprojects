@@ -360,8 +360,10 @@ lp = $.extend(lp, {
 						} );
 					}
 
+					// Display alternative projects
 					var $alternative = $details.find('.alternative-to ul').html('');
-					if (lp.actualProject.alternative && lp.actualProject.alternative.length) {
+					var alternatives = lp.actualProject.alternative && lp.actualProject.alternative.length ? true : false;
+					if (alternatives) {
 						$.each(lp.actualProject.alternative, function(idxa, alternative) {
 							alternative = lp.getAlternative(alternative);
 							if (alternative) {
@@ -370,6 +372,14 @@ lp = $.extend(lp, {
 								$li.find('a').data('text', alternative.name);
 							}
 						} );
+					}
+					// Check if we have to display regular message or the "empty" one if there is no alternative projects
+					var $alternativeText = $alternative.parent().find('p').first();
+					var $alternativeEmptyText = $alternative.parent().find('p').next().first();
+					if ((alternatives && $alternativeText.css('display') == 'none') ||
+					    (!alternatives && $alternativeEmptyText.css('display')) == 'none') {
+						$alternativeText.toggle($alternativeText.css('display') == 'none');
+						$alternativeEmptyText.toggle($alternativeEmptyText.css('display') == 'none');
 					}
 
 					if (lp.actualProject.source) {
