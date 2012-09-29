@@ -385,10 +385,12 @@ lp = $.extend(lp, {
 					// Display licenses
 					var $licenseText = $details.find('.license .label').first();
 					var $licenseTextEmpty = $licenseText.next().first();
-					if (lp.actualProject.source) { // Not sure what this is for... jhuet.
-						$licenseText.html('<a href="'+lp.actualProject.source+'">Source code</a>');
-						$licenseText.removeClass('translatable');
-						$licenseText.addClass('translatable');
+					if (lp.actualProject.source) {
+						$licenseText.html('<a href="'+lp.actualProject.source+'">Source code</a>')
+							    .removeClass('translatable')
+							    .find('a')
+							    .addClass('translatable')
+							    .data('Source code');
 					}
 
 					var $license = $details.find('.license ul').html('');
