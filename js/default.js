@@ -375,13 +375,14 @@ lp = $.extend(lp, {
 					}
 					// Check if we have to display regular message or the "empty" one if there is no alternative projects
 					var $alternativeText = $alternative.parent().find('p').first();
-					var $alternativeEmptyText = $alternative.parent().find('p').next().first();
+					var $alternativeEmptyText = $alternativeText.next().first();
 					if ((alternatives && $alternativeText.css('display') == 'none') ||
 					    (!alternatives && $alternativeEmptyText.css('display')) == 'none') {
 						$alternativeText.toggle($alternativeText.css('display') == 'none');
 						$alternativeEmptyText.toggle($alternativeEmptyText.css('display') == 'none');
 					}
 
+					// Display licenses
 					var $licenseText = $details.find('.license .label').first();
 					var $licenseTextEmpty = $licenseText.next().first();
 					if (lp.actualProject.source) { // Not sure what this is for... jhuet.
@@ -409,7 +410,9 @@ lp = $.extend(lp, {
 						$licenseTextEmpty.toggle($licenseTextEmpty.css('display') == 'none');
 					}
 
+					// Display similar projects
 					var $similar = $details.find('.similar-to ul').html('');
+					var similars = lp.findSimilarProjectsTo().length ? true : false;
 					$.each(lp.findSimilarProjectsTo(), function(idxs, similar) {
 						var $li = $('<li />').html('<a href="#"><img src="logos/' + similar.id + '.png" alt="' + similar.name + ' logo"/></a>')
 								     .appendTo($similar);
@@ -421,6 +424,15 @@ lp = $.extend(lp, {
 									return false;
 							     } );
 					} );
+
+					// Check if we have to display regular message or the "empty" one if there is no alternative projects
+					var $similarText = $similar.parent().find('p').first();
+					var $similarEmptyText = $similarText.next().first();
+					if ((similars && $similarText.css('display') == 'none') ||
+					    (!similars && $similarEmptyText.css('display')) == 'none') {
+						$similarText.toggle($similarText.css('display') == 'none');
+						$similarEmptyText.toggle($similarEmptyText.css('display') == 'none');
+					}
 
 					var $introduction = $details.find('.introduction');
 					if (typeof lp.actualProject.introduction == 'string') {
