@@ -44,6 +44,10 @@ lp = $.extend(lp, {
 		return lp.getData('licenses', id);
 	},
 
+	getDefaultFavorites: function() {
+		return lp.defaultFavorites;
+	},
+
 	findSimilarProjectsTo: function(project, max) {
 		var similar = [];
 		var found = [];
@@ -318,7 +322,12 @@ lp = $.extend(lp, {
 	},
 
 	setAddressFromStorage: function() {
-		var favs = lp.getFavoritesFromStorage();
+		var favs = [];
+		if (! $.Storage.get('hasUsedFavorites')) {
+			favs = lp.getDefaultFavorites();
+		} else {
+			favs = lp.getFavoritesFromStorage();
+		}
 		if (favs.length > 0) {
 			$.each(favs, function(idxf, fav) {
 				lp.addProjectToAddress(fav);
@@ -586,6 +595,7 @@ $(document).ready(function() {
 		var $star = $(this);
 		var $li = $star.parents('li');
 		var $category = $star.parents('ul').prev();
+		$.Storage.set('hasUsedFavorites', 'true'); // So we won't use default ones anymore
 		if ($category.attr('id') != 'favorites') {
 			lp.addProjectToAddress($li.attr('id'));
 		} else {

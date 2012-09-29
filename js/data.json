@@ -32,7 +32,7 @@ var lp = {
 		{"id":"gtalk","name":"Gtalk","address":"https://www.google.com/talk/"}
 	],
 	"projects":[
-		{"id":"diaspora","category":"social","name":"Diaspora","description":"social network","address":"http://joindiaspora.com/","licenses":["gnu-agpl-v3"],"tags":["social","network","decentralized"],"alternative":["facebook","google plus"],"introduction":"Diaspora is a free personal web server that implements a distributed social networking service. Installations of the software form nodes (termed 'pods') which make up the distributed Diaspora social network."},
+		{"id":"diaspora","category":"social","name":"Diaspora","description":"social network","address":"http://joindiaspora.com/","licenses":["gnu-agpl-v3"],"tags":["social","network","decentralized"],"alternative":["facebook","google plus"],"introduction":"Diaspora is a free personal web server that implements a distributed social networking service. Installations of the software form nodes (termed 'pods') which make up the distributed Diaspora social network.","source":"https://github.com/diaspora/diaspora"},
 		{"id":"identica","category":"social","name":"Identi.ca","description":"microblog","address":"http://identi.ca/","licenses":["gnu-agpl-v3"],"tags":["social","network","decentralized", "microblog"],"alternative":["twitter"]},
 		{"id":"jappix","category":"social","name":"Jappix","description":"chat","address":"http://jappix.com/","tags":["chat","jabber"],"alternative":["gtalk"]},
 		{"id":"reddit","category":"social","name":"Reddit","description":"discussion","address":"http://reddit.com/"},
@@ -163,7 +163,8 @@ var lp = {
 		{"id":"mirocommunity","category":"video","name":"Miro Community","description":"platform","address":"http://mirocommunity.org/"},
 		{"id":"openhatch","category":"organization","name":"OpenHatch","description":"help platform","address":"http://openhatch.org/"},
 		{"id":"friendica","category":"social","name":"Friendica","description":"social multi network","address":"http://friendica.com/","licenses":["mit"],"tags":["social","network","decentralized","microblog"],"alternative":["facebook","google plus","twitter"]}
-	]
+	],
+	'defaultFavorites' : ['diaspora', 'owncloud', 'openstreetmap', 'jamendo', 'cloud9', 'plos']
 };
 
 $(document).ready(function() {
