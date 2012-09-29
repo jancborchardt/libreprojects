@@ -248,11 +248,26 @@ lp = $.extend(lp, {
 	saveToAddress: function(fragment, value) {
 		var frags = $.deparam.fragment();
 		frags[fragment] = value;
+		var toRemoveFrags = [];
+
 		// To prevent scrolling on every actions, we remove it if not adding it right now
 		if (fragment != 'scroll') {
-			frags['scroll'] = '';
+			toRemoveFrags.push('scroll');
 		}
-		$.bbq.pushState(frags);
+
+		// If the value is empty we remove the fragment from state
+		if (value == '') {
+			toRemoveFrags.push(fragment);
+		}
+		// Otherwise we push the state
+		else {
+			$.bbq.pushState(frags);
+		}
+
+		// If necessary we remove from state empty fragments
+		if (toRemoveFrags.length) {
+			$.bbq.removeState(toRemoveFrags);
+		}
 	},
 
 	getFavoritesFromAddress: function() {
