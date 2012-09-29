@@ -286,7 +286,7 @@ lp = $.extend(lp, {
 
 	addProjectToAddress: function(project) {
 		var favs = lp.getFavoritesFromAddress();
-		if (favs.indexOf(project) == -1) {
+		if (favs.indexOf(project) == -1 && lp.getProject(project)) {
 			favs.push(project);
 		}
 		lp.saveFavoritesToAddress(favs);
