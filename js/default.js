@@ -349,11 +349,69 @@ lp = $.extend(lp, {
 		lp.saveFavoritesToStorage(favs);
 	},
 
+	bindTipOnHover: function($details) {
+		if (!$details) {
+			$details = $('#project-details')
+		}
+
+		$details.find('a').unbind('hover').hover(function() {
+			var $a = $(this);
+			if ($a.data('text')) {
+				$details.find('.tip').html($a.data('text')).show();
+			}
+		}, function() {
+			var $tip = $details.find('.tip');
+			if ($tip.data('translatable')) {
+				$tip.html($tip.data('translatable'));
+				lp.translateTo(lp.locale, $tip.parent());
+			} else {
+				$details.find('.tip').html('').hide();
+			}
+		} );
+	},
+
+	displayTosdr: function($details) {
+		if (!$details) {
+			$details = $('#project-details')
+		}
+		var tosdr = lp.actualProject.tosdr;
+		var text = tosdr.tosdr.rated == false ? 'No class yet' : tosdr.tosdr.rated;
+		var alternative = tosdr.tosdr.rated == false ? 'Not rated yet, help ToS:DR to provide one!' : 'Rated ' + tosdr.tosdr.rated + ' - rate being from A to E';
+
+		var $tosdr = $details.find('.tosdr ul').html('');
+		$('<li />').html('<a href="http://tos-dr.info/#' + lp.actualProject.id + '">' + text + '</a>')
+		           .addClass('tosdr')
+		           .appendTo($tosdr)
+		           .find('a')
+		           .addClass('tosdr-' + tosdr.tosdr.rated + ' translatable')
+		           .data('text', alternative);
+
+		lp.bindTipOnHover($details);
+		lp.translateTo(lp.locale, $tosdr);
+	},
+
 	getLightboxOptions: function() {
 		var $details = $('#project-details');
 		return {
 			onOpen: function(dialog) {
 				dialog.overlay.fadeIn('fast', function() {
+					// Retrieving TOS:DR information if not done already
+					if (! lp.actualProject.tosdr) {
+						lp.actualProject.tosdr = {tosdr:{rated: false}};
+						$.getJSON('http://tos-dr.info/services/' + lp.actualProject.id + '.json')
+							.done(function(data) {
+								if (data) {
+									lp.actualProject.tosdr = data;
+								}
+								lp.displayTosdr($details);
+							} )
+							.fail(function() {
+								lp.displayTosdr($details);
+							} )
+					} else {
+						lp.displayTosdr($details);
+					}
+
 					// Filling up details
 					$details.find('.address').attr('href', lp.actualProject.address).data('text', 'Check it out !');
 					$details.find('.name').html(lp.actualProject.name);
@@ -457,20 +515,7 @@ lp = $.extend(lp, {
 								     .show();
 					}
 
-					$details.find('a').unbind('hover').hover(function() {
-						var $a = $(this);
-						if ($a.data('text')) {
-							$details.find('.tip').html($a.data('text')).show();
-						}
-					}, function() {
-						var $tip = $details.find('.tip');
-						if ($tip.data('translatable')) {
-							$tip.html($tip.data('translatable'));
-							lp.translateTo(lp.locale, $tip.parent());
-						} else {
-							$details.find('.tip').html('').hide();
-						}
-					} );
+					lp.bindTipOnHover($details);
 
 					lp.initTranslation($details);
 					lp.translateTo(lp.locale, $details);
@@ -484,6 +529,9 @@ lp = $.extend(lp, {
 
 					dialog.data.show();
 					dialog.container.fadeIn('fast');
+
+					// Have to reset the size of the modal because of all the text and images added here
+					$.modal.update($('#project-details .details').height() + 370, 450);
 				} );
 			},
 			onClose: function(dialog) {
@@ -491,7 +539,7 @@ lp = $.extend(lp, {
 				$.modal.close();
 			},
 			minWidth: 450,
-			minHeight: 350,
+			minHeight: 370,
 			closeHTML: 'X',
 			overlayClose: true
 		};
