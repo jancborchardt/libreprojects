@@ -355,9 +355,10 @@ lp = $.extend(lp, {
 		}
 
 		$details.find('a').unbind('hover').hover(function() {
-			var $a = $(this);
-			if ($a.data('text')) {
-				$details.find('.tip').html($a.data('text')).show();
+			var text = $(this).data('text');
+			if (text) {
+				var translated = (typeof lp.dictionaries[lp.locale][text] == 'string') ? lp.dictionaries[lp.locale][text] : text;
+				$details.find('.tip').html(translated).show();
 			}
 		}, function() {
 			var $tip = $details.find('.tip');

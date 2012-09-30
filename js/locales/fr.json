@@ -15,13 +15,13 @@
 	"Au final, les services web se basent sur une confiance mutuelle. Les utilisateurs font confiance aux services pour assurer la s&eacute;curit&eacute; de leurs donn&eacute;es ainsi que la p&eacute;rennit&eacute; des services. Les d&eacute;veloppeurs sont confiants dans l'utilisation non-abusive de leurs services.",
 
 	"Ideally, you have a <a href='http://freedomboxfoundation.org'>FreedomBox</a> running at home and don't need to trust anyone. But many are not in the position to do that; either because of no permanent residence, not enough money to afford it or a weak internet connection not able to serve data across the country. That's why we hope the <a href='http://unhosted.org'>Unhosted</a> architecture will get adopted.":
-	"Id&eacute;alement, vous poss&eacute;dez une <a href='http://wiki.debian.org/fr/FreedomBox' title='Un ordinateur de petite taille (voire un ’Plug Computer’) h&eacute;bergeant vos services Internet'>FreedomBox</a> chez vous et vous ne d&eacute;pendez de personne (vous n’avez pas besoin de confier vos donn&eacute;es puisque vous les h&eacute;bergez vous-m&ecirc;me). Ceci n’est malheureusement pas r&eacute;alisable pour tout le monde, par exemple si vous n'avez pas de domicile fixe, pas assez d’argent pour assurer l’entretien ou simplement une connexion insuffisante pour assurer une bonne qualit&eacute; de service. C'est pourquoi nous espérons que l'architecture <a href='http://unhosted.org'>Unhosted</a> sera adoptée.",
+	"Id&eacute;alement, vous poss&eacute;dez une <a href='http://wiki.debian.org/fr/FreedomBox' title='Un ordinateur de petite taille (voire un ’Plug Computer’) h&eacute;bergeant vos services Internet'>FreedomBox</a> chez vous et vous ne d&eacute;pendez de personne (vous n’avez pas besoin de confier vos donn&eacute;es puisque vous les h&eacute;bergez vous-m&ecirc;me). Ceci n’est malheureusement pas r&eacute;alisable pour tout le monde, par exemple si vous n'avez pas de domicile fixe, pas assez d’argent pour assurer l’entretien ou simplement une connexion insuffisante pour assurer une bonne qualit&eacute; de service. C'est pourquoi nous esp&eacute;rons que l'architecture <a href='http://unhosted.org'>Unhosted</a> sera adopt&eacute;e.",
 
 	"Participate":
 	"Participer",
 
 	"<a rel='dct:publisher' href='http://jancborchardt.net'><span property='dct:title'>Jan-Christoph Borchardt</span></a> &amp; <a rel='dct:publisher' href='http://github.com/jhuet'><span property='dct:title'>Jérémy Huet</span></a> have <a rel='license' href='http://creativecommons.org/publicdomain/zero/1.0/' title='by a Public Domain Dedication'>waived all copyright</a> on this project (logos are subject to their own license).":
-	"<a rel='dct:publisher' href='http://jancborchardt.net'><span property='dct:title'>Jan-Christoph Borchardt</span></a> et <a rel='dct:publisher' href='https://github.com/jhuet'><span property='dct:title'>Jérémy Huet</span></a> <a rel='license' href='http://creativecommons.org/publicdomain/zero/1.0/' title='part un transfert au domaine public'>renoncent à tout copyright</a> sur ce projet (&agrave; l’exception des logos qui restent tributaires de leur propre licence).",
+	"<a rel='dct:publisher' href='http://jancborchardt.net'><span property='dct:title'>Jan-Christoph Borchardt</span></a> et <a rel='dct:publisher' href='https://github.com/jhuet'><span property='dct:title'>Jérémy Huet</span></a> <a rel='license' href='http://creativecommons.org/publicdomain/zero/1.0/' title='part un transfert au domaine public'>renoncent &agrave; tout copyright</a> sur ce projet (&agrave; l’exception des logos qui restent tributaires de leur propre licence).",
 
 	"<a href='http://github.com/libreprojects/libreprojects'>Help with code</a>, <a href='http://github.com/libreprojects/libreprojects/issues/new'>suggest a project</a> (make sure it’s open source, hosted &amp; usable) and tell your friends about this!":
 	"N'h&eacute;sitez pas &agrave; <a href='http://github.com/libreprojects/libreprojects'>contribuer au code</a> ou alors simplement &agrave; en parler &agrave; vos amis!",
@@ -30,31 +30,75 @@
 	"Similaire &agrave;",
 
 	"No similar projects added yet":
-	"Pas de projet similaire encore ajouté",
+	"Pas de projet similaire encore ajout&eacute;",
 
 	"Alternative to":
 	"Alternative &agrave;",
 
 	"No alternatives added yet":
-	"Pas d'alternative encore ajoutée",
+	"Pas d'alternative encore ajout&eacute;e",
 
 	"Source code":
 	"Code source",
 
 	"No licenses added yet":
-	"Pas de licence encore ajoutée",
+	"Pas de licence encore ajout&eacute;e",
 
 	"<acronym title='Terms of service ratings provided by http://tos-dr.info'>TOS rating</acronym>":
-	"<acronym title='Conditions générales d&acute;utilisation notées par by http://tos-dr.info'>Note des CGU</acronym>",
+	"<acronym title='Conditions g&eacute;n&eacute;rales d&acute;utilisation not&eacute;es par by http://tos-dr.info'>Note des CGU</acronym>",
 
 	"No class yet":
 	"Pas encore de note",
 
 	"Not rated yet, help ToS:DR to provide one!":
-	"Pas encore noté, aidez ToS:DR à en donner une!",
+	"Pas encore not&eacute;, aidez ToS:DR &agrave; en donner une!",
+
+	"Rated A - rate being from A to E":
+	"Not&eacute; A - les notes vont de A &agrave; E",
+	"Rated B - rate being from A to E":
+	"Not&eacute; B - les notes vont de A &agrave; E",
+	"Rated C - rate being from A to E":
+	"Not&eacute; C - les notes vont de A &agrave; E",
+	"Rated D - rate being from A to E":
+	"Not&eacute; D - les notes vont de A &agrave; E",
+	"Rated E - rate being from A to E":
+	"Not&eacute; E - les notes vont de A &agrave; E",
 
 	"Check it out !":
 	"Essayez le !",
+
+	"Check the social category":
+	"Visitez la cat&eacute;gorie social",
+	"Check the tools category":
+	"Visitez la cat&eacute;gorie outils",
+	"Check the news category":
+	"Visitez la cat&eacute;gorie infos",
+	"Check the travel category":
+	"Visitez la cat&eacute;gorie voyage",
+	"Check the games category":
+	"Visitez la cat&eacute;gorie jeux",
+	"Check the multiplayer category":
+	"Visitez la cat&eacute;gorie multi-joueurs",
+	"Check the knowledge category":
+	"Visitez la cat&eacute;gorie connaissance",
+	"Check the text category":
+	"Visitez la cat&eacute;gorie texte",
+	"Check the audio category":
+	"Visitez la cat&eacute;gorie audio",
+	"Check the video category":
+	"Visitez la cat&eacute;gorie vid&eacute;o",
+	"Check the graphics category":
+	"Visitez la cat&eacute;gorie graphisme",
+	"Check the publishing category":
+	"Visitez la cat&eacute;gorie &eacute;dition",
+	"Check the emulator category":
+	"Visitez la cat&eacute;gorie &eacute;mulateurs",
+	"Check the development category":
+	"Visitez la cat&eacute;gorie d&eacute;veloppement",
+	"Check the science category":
+	"Visitez la cat&eacute;gorie science",
+	"Check the organization category":
+	"Visitez la cat&eacute;gorie organisation",
 
 	"This sheet is not complete <a href='#participate'>help us</a> improve it.":
 	"Cette fiche n'est pas compl&egrave;te <a href='#participate'>aidez-nous</a> &agrave; l'am&eacute;liorer.",
