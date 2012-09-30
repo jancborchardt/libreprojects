@@ -568,7 +568,7 @@ $(document).ready(function() {
 	$('#nb-projects').html(lp.projects.length);
 
 	// Create categories and adding projects
-	var $categories = $('#categories')
+	var $categories = $('#categories');
 	$.each(lp.categories, function(cidx, category) {
 		var $h2 = $('<h2 id="' + category.id + '" />')
 			          .html('<a href="#' + category.id + '" class="translatable">' + category.id + '</a>')
