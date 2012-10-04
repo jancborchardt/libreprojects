@@ -2,7 +2,7 @@ var lp = {
 	"locales":[{"id":"en","name":"english"},{"id":"de","name":"german"},{"id":"fr","name":"french"},{"id":"it","name":"italian"},{"id":"ru","name":"russian"},{"id":"eo","name":"esperanto"}],
 	"categories":[{"id":"social","position":"1"},{"id":"tools","position":"2"},{"id":"news","position":"3"},{"id":"travel","position":"4"},{"id":"knowledge","position":"5"},{"id":"text","position":"6"},{"id":"audio","position":"7"},{"id":"video","position":"8"},{"id":"graphics","position":"9"},{"id":"publishing","position":"10"},{"id":"games","position":"11"},{"id":"emulators","position":"12"},{"id":"development","position":"13"},{"id":"science","position":"14"},{"id":"organization","position":"15"}],
 	"licenses":[
-		{"id":"cc-by-v25","name":"Creative Commons Attribution 2.5 Generic","address":"https://creativecommons.org/licenses/by/2.5/"},
+		{"id":"cc-by-v3","name":"Creative Commons Attribution 3.0 Unported","address":"https://creativecommons.org/licenses/by/3.0/"},
 		{"id":"cc-by-nc-v3","name":"Creative Commons Attribution-NonCommercial 3.0 Unported","address":"https://creativecommons.org/licenses/by-nc/3.0/"},
 		{"id":"cc-by-nc-sa-v3","name":"Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported","address":"https://creativecommons.org/licenses/by-nc-sa/3.0/"},
 		{"id":"cc-by-nc-nd-v3","name":"Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported","address":"https://creativecommons.org/licenses/by-nc-nd/3.0/"},
@@ -146,6 +146,7 @@ var lp = {
 		{"id":"govsgo","category":"games","name":"Go vs Go","description":"gogogo!","address":"http://govsgo.com/","licenses":["mit"],"source":"http://github.com/ryanb/govsgo"},
 		{"id":"lichess","category":"games","name":"Lichess","description":"chess","address":"http://lichess.org/","licenses":["mit"],"source":"http://github.com/ornicar/lila"},
 		{"id":"tankworld","category":"games","name":"Tankworld","description":"3D shooter","address":"http://playtankworld.com","licenses":["gnu-gpl-v3"],"source":"http://www.playtankworld.com/multiplayer"},
+		{"id":"thehouse","category":"games","name":"The House","description":"adventure","address":"http://the-house.arturkot.pl/","licenses":["mit","cc-by-v3"],"source":"https://github.com/arturkot/the-house-game"},
 		{"id":"stillalivejs","category":"games","name":"StillAliveJS","description":"2D portal","address":"http://stillalivejs.t4ils.com/play/","licenses":["gnu-agpl-v3"]},
 		{"id":"agent8ball","category":"games","name":"Agent 008","description":"billiard","address":"http://agent8ball.com","licenses":["mit"],"source":"https://github.com/thinkpixellab/agent8ball"},
 		{"id":"browsmos","category":"games","name":"Browsmos","description":"absorption","address":"http://stepheneisenhauer.com/demos/browsmos/","introduction":"Browsmos is a game the web browser, made entirely using HTML5, and inspired heavily by the gameplay of Osmos. The rules are simple; click to propel yourself around, and try to absorb smaller cells until you become the biggest. Watch out for larger cells, or they will absorb you!","licenses":["bsd"],"source":"http://stepheneisenhauer.com/browsmos"},
