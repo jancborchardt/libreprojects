@@ -136,7 +136,7 @@ var lp = {
 		{"id":"tuxfamily","category":"development","name":"TuxFamily","description":"hosting","address":"http://tuxfamily.org/"},
 		{"id":"ourproject","category":"development","name":"OurProject","description":"hosting","address":"http://ourproject.org/"},
 		{"id":"net2ftp","category":"development","name":"net2ftp","description":"FTP client","address":"http://net2ftp.com/"},
-		{"id":"cloud9","category":"development","name":"Cloud9","description":"IDE","address":"http://cloud9ide.com/"},
+		{"id":"cloud9","category":"development","name":"Cloud9","description":"IDE","address":"https://c9.io/","licenses":["gnu-gpl-v3"],"tags":["ide","cloud"],"introduction":"Write, run, and debug your code with our powerful and flexible cloud IDE. Collaborate on your workspaces publicly, or keep them private. The choice is yours!"},
 		{"id":"jsbin","category":"development","name":"JS Bin","description":"editor","address":"http://jsbin.com/"},
 		{"id":"htmlpad","category":"development","name":"HTMLPad","description":"editor","address":"http://htmlpad.org/"},
 		{"id":"hascanvas","category":"development","name":"HasCanvas","description":"processing","address":"http://hascanvas.com/"},
