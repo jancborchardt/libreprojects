@@ -42,6 +42,9 @@ var lp = {
 		{"id":"dropbox","name":"Dropbox","address":"https://www.dropbox.com/"},
 		{"id":"google drive","name":"Google Drive","address":"https://drive.google.com/"},
 		{"id":"ubuntu one","name":"Ubuntu One","address":"https://one.ubuntu.com/"},
+		{"id":"tinyurl","name":"TinyURL","address":"https://tinyurl.com/"},
+		{"id":"bitly","name":"Bitly","address":"http://bitly.com/"},
+		{"id":"picasa","name":"Picasa","address":"http://picasa.google.com/"},
 	],
 	"projects":[
 		{"id":"joindiaspora-com","category":"social","name":"Diaspora","description":"social network","address":"http://joindiaspora.com/","licenses":["gnu-agpl-v3"],"tags":["social","network","decentralized"],"alternative":["facebook","google plus"],"introduction":"Diaspora is a free personal web server that implements a distributed social networking service. Installations of the software form nodes (termed 'pods') which make up the distributed Diaspora social network.","source":"https://github.com/diaspora/"},
@@ -51,6 +54,10 @@ var lp = {
 		{"id":"riseup","category":"social","name":"Riseup","description":"activist network","address":"https://riseup.net/","tags":["email","mailinglist","social","network"],"alternative":["gmail","hotmail","yahoo groups","facebook"]},
 		{"id":"onlinegroups","category":"social","name":"OnlineGroups","description":"mailing lists","address":"http://onlinegroups.net/","licenses":["zpl-v2"],"tags":["mailinglist","provider"],"alternative":["yahoo groups"],"introduction":"GroupServer is an open source web-based mailing list manager designed for large mailing list sites.","source":"https://source.iopen.net/groupserver"},
 		{"id":"freenode","category":"social","name":"Freenode","description":"IRC","address":"http://webchat.freenode.net/","licenses":["gnu-gpl-v2"],"tags":["irc","chat"],"introduction":"Freenode provides discussion facilities for the Free and Open Source Software communities, for not-for-profit organizations and for related communities and organizations.","source":"https://hg.qwebirc.org/qwebirc"},
+		{"id":"friendica","category":"social","name":"Friendica","description":"social multi network","address":"http://friendica.com/","licenses":["mit"],"tags":["social","network","decentralized","microblog"],"alternative":["facebook","google plus","twitter"],"introduction":"Friendica is is an open source, free social web server. Your 'friends' can be from Facebook, Diaspora, Twitter, Identi.ca, weblogs and RSS feeds - and even email.","source":"https://github.com/friendica/"},
+		{"id":"mailoo","category":"social","name":"Mailoo","description":"mail service","address":"http://mailoo.org/","licenses":["various"],"tags":["mail"],"alternative":["gmail", "yahoo", "hotmail"],"introduction": "Mail service based on free software"},
+		{"id":"ur1.ca","category":"social","name":"ur1.ca","description":"Free URL shortening","address":"http://ur1.ca/","licenses":["gnu-gpl-v3"],"tags":["sharing","url"],"introduction": "Free URL shortening powered by StatusNet Inc.","alternative":["google","bitly","tinyurl"],"source":"http://ur1.ca/ur1-source.tar.gz"},
+
 		{"id":"seeks","category":"tools","name":"Seeks","description":"search engine","address":"http://seeks.fr/","licenses":["gnu-agpl-v3"],"tags":["searchengine"],"alternative":["google","bing","yahoo"],"introduction":"Seeks is a free and open technical design and application for enabling social websearch. Its specific purpose is to regroup users whose queries are similar so they can share both the query results and their experience on these results.","source":"http://seeks.git.sourceforge.net/git/gitweb.cgi?p=seeks/seeks;a=tree"},
 		{"id":"etherpad","category":"tools","name":"Titanpad","description":"document editor","address":"http://titanpad.com/","licenses":["apache-v2"],"tags":["collaborative","document","editor"],"introduction":"Web-based realtime collaborative document editor.","source":"https://github.com/titanpad/titanpad"},
 		{"id":"ethercalc","category":"tools","name":"Ethercalc","description":"spreadsheet editor","address":"http://ethercalc.net/","licenses":["cpal-v1"],"tags":["collaborative","stitanpadpreadsheet","editor"],"introduction":"Web-based realtime collaborative spreadsheet editor.","source":"https://github.com/audreyt/ethercalc"},
@@ -59,8 +66,10 @@ var lp = {
 		{"id":"wiktionary","category":"tools","name":"Wiktionary","description":"dictionary","address":"http://wiktionary.org/","licenses":["cc-by-sa-v3"],"tags":["dictionnary","collaborative"],"introduction":"As an international dictionary, Wiktionary is intended to include 'all meanings of all words in all language'. As well as words, Wiktionary accepts multi-word idioms, proverbs, abbreviations, initialisms, acronyms, affixes, symbols and other characters."},
 		{"id":"dictcc","category":"tools","name":"dict.cc","description":"translator","address":"http://dict.cc/","tags":["dictionnary","translator","collaborative"]},
 		{"id":"tosdr","category":"tools","name":"Terms of Service","description":"ratings","address":"http://tos-dr.info","licenses":["gnu-agpl-v3","cc-by-sa-v3"],"source":"https://github.com/didnotread"},
+		
 		{"id":"wikinews","category":"news","name":"Wikinews","description":"global news","address":"http://wikinews.org/"},
 		{"id":"newsblur","category":"news","name":"NewsBlur","description":"feed reader","address":"http://newsblur.com/"},
+		
 		{"id":"wikipedia","category":"knowledge","name":"Wikipedia","description":"encyclopedia","address":"http://wikipedia.org/"},
 		{"id":"wikiversity","category":"knowledge","name":"Wikiversity","description":"university","address":"http://wikiversity.org/"},
 		{"id":"oercommons","category":"knowledge","name":"OER Commons","description":"edu resources","address":"http://oercommons.org/"},
@@ -69,6 +78,7 @@ var lp = {
 		{"id":"universityofreddit","category":"knowledge","name":"University of Reddit","description":"university","address":"http://universityofreddit.com"},
 		{"id":"fta","category":"knowledge","name":"Free Technology","description":"academy","address":"http://ftacademy.org/"},
 		{"id":"shapado","category":"knowledge","name":"Shapado","description":"question-answer","address":"http://shapado.com/"},
+		
 		{"id":"projectgutenberg","category":"text","name":"Project Gutenberg","description":"library","address":"http://gutenberg.org/"},
 		{"id":"wikibooks","category":"text","name":"Wikibooks","description":"library","address":"http://wikibooks.org/"},
 		{"id":"wikisource","category":"text","name":"Wikisource","description":"library","address":"http://wikisource.org/"},
@@ -76,10 +86,13 @@ var lp = {
 		{"id":"openlibrary","category":"text","name":"OpenLibrary","description":"catalog","address":"http://openlibrary.org/"},
 		{"id":"flossmanuals","category":"text","name":"FLOSS Manuals","description":"manuals","address":"http://flossmanuals.net/"},
 		{"id":"booki","category":"text","name":"Booki","description":"platform","address":"http://www.booki.cc/"},
+		
 		{"id":"vodo","category":"video","name":"Vodo","description":"platform","address":"http://vodo.net/"},
 		{"id":"filmaster","category":"video","name":"Filmaster","description":"community","address":"http://filmaster.com/"},
 		{"id":"communityvideo","category":"video","name":"Community Video","description":"database","address":"http://archive.org/details/opensource_movies"},
 		{"id":"universalsubtitles","category":"video","name":"Universal","description":"subtitles","address":"http://universalsubtitles.org/"},
+		{"id":"mirocommunity","category":"video","name":"Miro Community","description":"platform","address":"http://mirocommunity.org/"},
+		
 		{"id":"openphoto","category":"graphics","name":"OpenPhoto","description":"photo hosting","address":"http://openphoto.me","licenses":["apache-v2"],"source":"https://github.com/photo"},
 		{"id":"mediagoblin","category":"graphics","name":"MediaGoblin","description":"media community","address":"http://gobblin.se/"},
 		{"id":"svg-edit","category":"graphics","name":"SVG-edit","description":"graphic editor","address":"http://svg-edit.googlecode.com/svn/trunk/editor/svg-editor.html"},
@@ -93,17 +106,21 @@ var lp = {
 		{"id":"openfontlibrary","category":"graphics","name":"Open Font Library","description":"typefaces","address":"http://openfontlibrary.org/"},
 		{"id":"leagueofmovabletype","category":"graphics","name":"League of Movable Type","description":"typefaces","address":"http://theleagueofmoveabletype.com/"},
 		{"id":"googlewebfonts","category":"graphics","name":"Google Web Fonts","description":"typefaces","address":"https://www.google.com/webfonts"},
+		{"id":"pixlpaste","category":"graphics","name":"PixlPaste","description":"Photo online sharing","address":"http://pixlpaste.com/","licenses":["gnu-agpl-v3"],"tags":["sharing","cloud"],"introduction": "Simple, free, reliable way to share your pixels","alternative":["picasa","ubuntuone"],"source":"https://github.com/alokmenghrajani/pixlpaste"},
+
 		{"id":"wordpress-com","category":"publishing","name":"WordPress","description":"blog","address":"http://wordpress.com/"},
 		{"id":"drupal","category":"publishing","name":"Drupal","description":"website","address":"http://drupalgardens.com/"},
 		{"id":"impresspages","category":"publishing","name":"ImpressPages","description":"website","address":"http://impresspages.org/"},
 		{"id":"wikia","category":"publishing","name":"Wikia","description":"wiki","address":"http://wikia.com/"},
 		{"id":"wikidot","category":"publishing","name":"Wikidot","description":"wiki","address":"http://wikidot.com/"},
 		{"id":"libravatar","category":"publishing","name":"Libravatar","description":"web avatar service","address":"http://www.libravatar.org/","licenses":["gnu-agpl-v3"],"tags":["avatar","decentralized"],"alternative":["gravatar"]},
+		
 		{"id":"wikispecies","category":"science","name":"Wikispecies","description":"directory","address":"http://species.wikimedia.org/wiki/Main_Page"},
 		{"id":"plos","category":"science","name":"PLoS","description":"library","address":"http://plos.org/"},
 		{"id":"sage","category":"science","name":"Sage","description":"mathematics","address":"http://sagemath.org/"},
 		{"id":"graph","category":"science","name":"Graph","description":"functions","address":"http://graph.tk/"},
 		{"id":"fractallab","category":"science","name":"Fractal Lab","description":"explorer","address":"http://fractal.io/"},
+		
 		{"id":"teamlab","category":"organization","name":"TeamLab","description":"projects","address":"http://teamlab.com/"},
 		{"id":"teambox","category":"organization","name":"Teambox","description":"projects","address":"http://teambox.com/"},
 		{"id":"ofuz","category":"organization","name":"Ofuz","description":"projects","address":"http://ofuz.com/"},
@@ -113,6 +130,8 @@ var lp = {
 		{"id":"crowdmap","category":"organization","name":"Crowdmap","description":"mapping","address":"http://crowdmap.com/"},
 		{"id":"backchannl","category":"organization","name":"backchan.nl","description":"audience","address":"http://backchan.nl/"},
 		{"id":"beex","category":"organization","name":"BEEx","description":"funding","address":"http://beex.org/"},
+		{"id":"openhatch","category":"organization","name":"OpenHatch","description":"help platform","address":"http://openhatch.org/"},
+		
 		{"id":"youtify","category":"audio","name":"Youtify","description":"music player","address":"http://youtify.com/"},
 		{"id":"jamendo","category":"audio","name":"Jamendo","description":"music store","address":"http://jamendo.com/"},
 		{"id":"freemusicarchive","category":"audio","name":"Free Music","description":"archive","address":"http://freemusicarchive.org/"},
@@ -126,6 +145,7 @@ var lp = {
 		{"id":"librivox","category":"audio","name":"LibriVox","description":"audiobooks","address":"http://librivox.org/"},
 		{"id":"lyriki","category":"audio","name":"Lyriki","description":"lyrics","address":"http://lyriki.com/"},
 		{"id":"html5drummachine","category":"audio","name":"Drum Machine","description":"sequencer","address":"http://stepheneisenhauer.com/demos/drummachine/"},
+
 		{"id":"openstreetmap","category":"travel","name":"OpenStreetMap","description":"world map","address":"http://openstreetmap.org/"},
 		{"id":"openrouteservice","category":"travel","name":"OpenRouteService","description":"directions","address":"http://openrouteservice.org/"},
 		{"id":"webglearth","category":"travel","name":"WebGL Earth","description":"globus","address":"http://webglearth.com/"},
@@ -134,6 +154,7 @@ var lp = {
 		{"id":"bewelcome","category":"travel","name":"BeWelcome","description":"hospitality","address":"http://bewelcome.org/"},
 		{"id":"hitchwiki","category":"travel","name":"Hitchwiki","description":"hitchhiking","address":"http://hitchwiki.org/"},
 		{"id":"useit","category":"travel","name":"Use-It","description":"city guides","address":"http://use-it.travel/"},
+
 		{"id":"launchpad","category":"development","name":"Launchpad","description":"platform","address":"http://launchpad.net/"},
 		{"id":"codingteam","category":"development","name":"CodingTeam","description":"platform","address":"http://codingteam.net/"},
 		{"id":"gitorious","category":"development","name":"Gitorious","description":"repositories","address":"http://gitorious.org/"},
@@ -148,6 +169,8 @@ var lp = {
 		{"id":"showslow","category":"development","name":"Show Slow","description":"metrics","address":"http://showslow.com/"},
 		{"id":"transifex","category":"development","name":"Transifex","description":"translation","address":"http://transifex.net/"},
 		{"id":"translatewiki","category":"development","name":"Translatewiki","description":"translation","address":"http://translatewiki.net/"},
+		{"id":"orion","category":"development","name":"Orion","description":"IDE","address":"http://orionhub.org/","licenses":["epl-v1"],"tags":["ide","cloud"],"introduction": "Open Source Platform For Cloud Based Development"},
+
 		{"id":"govsgo","category":"games","name":"Go vs Go","description":"gogogo!","address":"http://govsgo.com/","licenses":["mit"],"source":"http://github.com/ryanb/govsgo"},
 		{"id":"lichess","category":"games","name":"Lichess","description":"chess","address":"http://lichess.org/","licenses":["mit"],"source":"http://github.com/ornicar/lila"},
 		{"id":"tankworld","category":"games","name":"Tankworld","description":"3D shooter","address":"http://playtankworld.com","licenses":["gnu-gpl-v3"],"source":"http://www.playtankworld.com/multiplayer"},
@@ -171,17 +194,12 @@ var lp = {
 		{"id":"achtungdiekurve","category":"games","name":"Achtung die Kurve","description":"lines","address":"http://stravid.com/projects/achtung-die-kurve/","licenses":["mit"],"source":"http://github.com/stravid/achtung-die-kurve/"},
 		{"id":"monkeymadness","category":"games","name":"Monkey Madness","description":"slingshot","address":"http://manicmonkeymadness.appspot.com/","licenses":["mit"],"source":"http://code.google.com/p/manicmonkeymadness/"},
 		{"id":"pentagoo","category":"games","name":"Pentagoo","description":"puzzle","address":"http://cheeaun.com/projects/pentagoo/","licenses":["mit"],"source":"http:/code.google.com/p/pentagoo/"},
+		{"id":"jslander","category":"games","name":"JSlander","description":"land the UFO in safety","address":"http://somethinghitme.com/projects/jslander/","licenses":[""],"source":"http://somethinghitme.com/projects/jslander/download/jslander.zip/"},
+		{"id":"khalio","category":"games","name":"Project Khalio","description":"adventure","address":"http://khalio.banehq.com/","licenses":["mit"],"source":"https://github.com/Yannbane/Project-Khalio/"},
 
 		{"id":"nes","category":"emulators","name":"JSNES","description":"NES","address":"http://fir.sh/projects/jsnes/","licenses":["gnu-gpl-v3"],"source":"https://github.com/bfirsh/jsnes/"},
 		{"id":"gameboy","category":"emulators","name":"JSGB","description":"Game Boy","address":"http://codebase.es/jsgb/","licenses":["gnu-gpl-v3"],"source":"http://sourceforge.net/projects/jsgbemu/"},
 		{"id":"segamastersystem","category":"emulators","name":"Miracle","description":"Sega Master System","address":"http://xania.org/miracle/miracle.html","licenses":["gnu-gpl-v3"],"source":"https://github.com/mattgodbolt/Miracle"},
-
-		{"id":"mirocommunity","category":"video","name":"Miro Community","description":"platform","address":"http://mirocommunity.org/"},
-		{"id":"openhatch","category":"organization","name":"OpenHatch","description":"help platform","address":"http://openhatch.org/"},
-		{"id":"friendica","category":"social","name":"Friendica","description":"social multi network","address":"http://friendica.com/","licenses":["mit"],"tags":["social","network","decentralized","microblog"],"alternative":["facebook","google plus","twitter"],"introduction":"Friendica is is an open source, free social web server. Your 'friends' can be from Facebook, Diaspora, Twitter, Identi.ca, weblogs and RSS feeds - and even email.","source":"https://github.com/friendica/"},
-		{"id":"mailoo","category":"social","name":"Mailoo","description":"mail service","address":"http://mailoo.org/","licenses":["various"],"tags":["mail"],"alternative":["gmail", "yahoo", "hotmail"],"introduction": "Mail service based on free software"},
-		{"id":"orion","category":"development","name":"Orion","description":"IDE","address":"http://orionhub.org/","licenses":["epl-v1"],"tags":["ide","cloud"],"introduction": "Open Source Platform For Cloud Based Development"},
-		{"id":"pixlpaste","category":"graphics","name":"PixlPaste","description":"Photo online sharing","address":"http://pixlpaste.com/","licenses":["gnu-agpl-v3"],"tags":["sharing","cloud"],"introduction": "Simple, free, reliable way to share your pixels","alternative":[],"source":"https://github.com/alokmenghrajani/pixlpaste"},
 	],
 	'defaultFavorites' : ['diaspora', 'owncloud', 'openstreetmap', 'jamendo', 'cloud9', 'plos']
 };
