@@ -93,7 +93,7 @@ var lp = {
 		{"id":"universalsubtitles","category":"video","name":"Universal","description":"subtitles","address":"http://universalsubtitles.org/"},
 		{"id":"mirocommunity","category":"video","name":"Miro Community","description":"platform","address":"http://mirocommunity.org/"},
 		
-		{"id":"openphoto","category":"graphics","name":"OpenPhoto","description":"photo hosting","address":"http://openphoto.me","licenses":["apache-v2"],"source":"https://github.com/photo"},
+		{"id":"pixlpaste","category":"graphics","name":"PixlPaste","description":"Photo online sharing","address":"http://pixlpaste.com/","licenses":["gnu-agpl-v3"],"tags":["sharing","cloud"],"introduction": "Simple, free, reliable way to share your pixels","alternative":["picasa","ubuntuone"],"source":"https://github.com/alokmenghrajani/pixlpaste"},
 		{"id":"mediagoblin","category":"graphics","name":"MediaGoblin","description":"media community","address":"http://gobblin.se/"},
 		{"id":"svg-edit","category":"graphics","name":"SVG-edit","description":"graphic editor","address":"http://svg-edit.googlecode.com/svn/trunk/editor/svg-editor.html"},
 		{"id":"harmony","category":"graphics","name":"Harmony","description":"drawing tool","address":"http://mrdoob.com/projects/harmony/"},
@@ -106,7 +106,6 @@ var lp = {
 		{"id":"openfontlibrary","category":"graphics","name":"Open Font Library","description":"typefaces","address":"http://openfontlibrary.org/"},
 		{"id":"leagueofmovabletype","category":"graphics","name":"League of Movable Type","description":"typefaces","address":"http://theleagueofmoveabletype.com/"},
 		{"id":"googlewebfonts","category":"graphics","name":"Google Web Fonts","description":"typefaces","address":"https://www.google.com/webfonts"},
-		{"id":"pixlpaste","category":"graphics","name":"PixlPaste","description":"Photo online sharing","address":"http://pixlpaste.com/","licenses":["gnu-agpl-v3"],"tags":["sharing","cloud"],"introduction": "Simple, free, reliable way to share your pixels","alternative":["picasa","ubuntuone"],"source":"https://github.com/alokmenghrajani/pixlpaste"},
 
 		{"id":"wordpress-com","category":"publishing","name":"WordPress","description":"blog","address":"http://wordpress.com/"},
 		{"id":"drupal","category":"publishing","name":"Drupal","description":"website","address":"http://drupalgardens.com/"},
