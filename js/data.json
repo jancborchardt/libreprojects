@@ -200,7 +200,8 @@ var lp = {
 		{"id":"pentagoo","category":"games","name":"Pentagoo","description":"puzzle","address":"http://cheeaun.com/projects/pentagoo/","licenses":["mit"],"source":"http:/code.google.com/p/pentagoo/"},
 		{"id":"jslander","category":"games","name":"JSlander","description":"land the UFO in safety","address":"http://somethinghitme.com/projects/jslander/","licenses":[""],"source":"http://somethinghitme.com/projects/jslander/download/jslander.zip/"},
 		{"id":"khalio","category":"games","name":"Project Khalio","description":"adventure","address":"http://khalio.banehq.com/","licenses":["mit"],"source":"https://github.com/Yannbane/Project-Khalio/"},
-		{"id":"ancientbeast","category":"games","name":"AncientBeast","description":"adventure","address":"http://www.ancientbeast.com/","licenses":["gnu-agpl-v3"],"source":"http://www.ancientbeast.com/"},
+		{"id":"ancientbeast","category":"games","name":"AncientBeast","description":"adventure","address":"http://www.ancientbeast.com/","licenses":["gnu-agpl-v3"],"source":"https://github.com/FreezingMoon/AncientBeast"},
+		{"id":"cobaltcalibur3","category":"games","name":"Cobalt Calibur 3","description":"MMORPG","address":"http://www.coralcalibur.net/","licenses":["bsd","gnu-gpl-v3"],"source":"https://github.com/tlhunter/Cobalt-Calibur-3"},
 
 		{"id":"nes","category":"emulators","name":"JSNES","description":"NES","address":"http://fir.sh/projects/jsnes/","licenses":["gnu-gpl-v3"],"source":"https://github.com/bfirsh/jsnes/"},
 		{"id":"gameboy","category":"emulators","name":"JSGB","description":"Game Boy","address":"http://codebase.es/jsgb/","licenses":["gnu-gpl-v3"],"source":"http://sourceforge.net/projects/jsgbemu/"},
