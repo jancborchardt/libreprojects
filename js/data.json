@@ -12,8 +12,8 @@ var lp = {
 		{"id":"cc-by-nd-v3","name":"Creative Commons Attribution-NoDerivs 3.0 Unported","address":"https://creativecommons.org/licenses/by-nd/3.0/"},
 		{"id":"cc-by-sa-v3","name":"Creative Commons Attribution-ShareAlike 3.0 Unported","address":"https://creativecommons.org/licenses/by-sa/3.0/"},
 		{"id":"cc-zero-v1","name":"Creative Commons Public Domain Dedication","address":"https://creativecommons.org/publicdomain/zero/1.0/"},
-		{"id":"cpal-v1","name":"Common Public Attribution License v1","address":"http://opensource.org/licenses/cpal_1.0"}
-		{"id":"epl-v1","name":"Eclipse Public License v1","address":"http://eclipse.org/org/documents/epl-v10.php"}
+		{"id":"cpal-v1","name":"Common Public Attribution License v1","address":"http://opensource.org/licenses/cpal_1.0"},
+		{"id":"epl-v1","name":"Eclipse Public License v1","address":"http://eclipse.org/org/documents/epl-v10.php"},
 		{"id":"gnu-agpl-v3","name":"GNU Affero General Public License v3","address":"https://www.gnu.org/licenses/agpl-3.0.html"},
 		{"id":"gnu-gpl-v2","name":"GNU General Public License v2","address":"https://www.gnu.org/licenses/gpl-2.0.html"},
 		{"id":"gnu-gpl-v3","name":"GNU General Public License v3","address":"https://www.gnu.org/licenses/gpl-3.0.html"},
@@ -77,15 +77,15 @@ var lp = {
 
 		{"id":"wikinews","category":"news","name":"Wikinews","description":"global news","address":"http://wikinews.org/","licenses":["cc-by-v2.5"],"tags":["wiki","collaborative"],"alternative":["gnews"],"introduction":"Wikinews is a free-content news source wiki and a project of the Wikimedia Foundation. The site works through collaborative journalism.","source":"http://dumps.wikimedia.org/backup-index.html"},
 		{"id":"newsblur","category":"news","name":"NewsBlur","description":"feed reader","address":"http://newsblur.com/","licenses":["mit"],"tags":["social"],"alternative":["gnews"],"introduction":"NewsBlur is a social news reader with intelligence","source":"https://github.com/samuelclay/NewsBlur"},
-		
+
 		{"id":"wikipedia","category":"knowledge","name":"Wikipedia","description":"encyclopedia","address":"http://wikipedia.org/","licenses":["cc-by-sa-v3"],"tags":["wiki","collaborative"],"alternative":[""],"introduction":"Wikipedia is a collaboratively edited, multilingual, free Internet encyclopedia supported by the non-profit Wikimedia Foundation.","source":"http://dumps.wikimedia.org/backup-index.html"},
 		{"id":"wikiversity","category":"knowledge","name":"Wikiversity","description":"university","address":"http://wikiversity.org/","licenses":["cc-by-sa-v3"],"tags":["edu","wiki","collaborative"],"alternative":[""],"introduction":"Wikiversity is a Wikimedia Foundation project devoted to learning resources, learning projects, and research for use in all levels, types, and styles of education from pre-school to university, including professional training and informal learning. We invite teachers, students, and researchers to join us in creating open educational resources and collaborative learning communities. To learn more about Wikiversity, try a guided tour or start editing now.","source":"http://dumps.wikimedia.org/backup-index.html"},
 		{"id":"oercommons","category":"knowledge","name":"OER Commons","description":"edu resources","address":"http://oercommons.org/","licenses":["cc-by-nc-sa-v3"],"tags":["edu"],"alternative":[""],"introduction":"OER Commons is a project which aim to collect resources in order to create online lessons","source":""},
-		{"id":"opencourseware","category":"knowledge","name":"OpenCourseWare","description":"courses","address":"http://ocwconsortium.org/courses","licenses":[""],"tags":[""],"alternative":[""],"introduction":"","source":""},,"licenses":["cc-by-v3"],"tags":["edu"],"alternative":[""],"introduction":"OpenCourseWare is a website which  collects free and open eductional material for universities, such as courses and publications.","source":""},
+		{"id":"opencourseware","category":"knowledge","name":"OpenCourseWare","description":"courses","address":"http://ocwconsortium.org/courses","licenses":["cc-by-v3"],"tags":["edu"],"alternative":[""],"introduction":"OpenCourseWare is a website which  collects free and open eductional material for universities, such as courses and publications.","source":""},
 		{"id":"universityofreddit","category":"knowledge","name":"University of Reddit","description":"university","address":"http://universityofreddit.com","licenses":[""],"tags":[""],"alternative":[""],"introduction":"University of Reddit is a online university where you can learn online by using Reddit potential technologies.","source":"http://github.com/ureddit/ureddit"},
 		{"id":"fta","category":"knowledge","name":"Free Technology","description":"academy","address":"http://ftacademy.org/","licenses":["cc-by-sa-v3"],"tags":[""],"alternative":[""],"introduction":"FTA is a virtual campus where you can learn directly from your computer, downloading PDF lessons directly or via torrent.","source":""},
 		{"id":"shapado","category":"knowledge","name":"Shapado","description":"question-answer","address":"http://shapado.com/","licenses":["gnu-agpl-v3"],"tags":["question-answer"],"alternative":["stackoverflow"],"introduction":"Shapado is a StackOverflow-like web application which permits to create a platform where people can ask questions and answer to them from a web community.","source":"http://gitorious.org/shapado"},
-		
+
 		{"id":"projectgutenberg","category":"text","name":"Project Gutenberg","description":"library","address":"http://gutenberg.org/","licenses":["gutenberg"],"tags":[""],"alternative":[""],"introduction":"","source":""},
 		{"id":"wikibooks","category":"text","name":"Wikibooks","description":"library","address":"http://wikibooks.org/","licenses":["cc-by-sa-v3"],"tags":["wiki","collaborative"],"alternative":[""],"introduction":"Wikibooks is a wiki hosted by the Wikimedia Foundation for the creation of free content textbooks and annotated texts that anyone can edit.","source":"http://dumps.wikimedia.org/backup-index.html"},
 		{"id":"wikisource","category":"text","name":"Wikisource","description":"library","address":"http://wikisource.org/","licenses":["cc-by-sa-v3"],"tags":["wiki","collaborative"],"alternative":[""],"introduction":"Wikisource is an online digital library of free content textual sources on a wiki, operated by the Wikimedia Foundation, whose aims are to host all forms of free text, in many languages, and translations.","source":"http://dumps.wikimedia.org/backup-index.html"},
@@ -94,13 +94,13 @@ var lp = {
 		{"id":"openlibrary","category":"text","name":"OpenLibrary","description":"catalog","address":"http://openlibrary.org/","licenses":["gnu-agpl-v3"],"tags":[""],"alternative":[""],"introduction":" OpenLibrary is a project by Archive Internet, whose aim is to create one web page for every published book.","source":"https://github.com/openlibrary"},
 		{"id":"flossmanuals","category":"text","name":"FLOSS Manuals","description":"manuals","address":"http://flossmanuals.net/","licenses":[""],"tags":[""],"alternative":[""],"introduction":"FLOSS Manuals is a website which collects manuals about free and open source software.","source":""},
 		{"id":"booki","category":"text","name":"Booki","description":"platform","address":"http://www.booki.cc/","licenses":[""],"tags":[""],"alternative":[""],"introduction":"","source":""},
-		
+
 		{"id":"vodo","category":"video","name":"Vodo","description":"platform","address":"http://vodo.net/","licenses":[""],"tags":["film","download"],"alternative":[""],"introduction":"Vodo is a film download website through Torrent system and a fundraising service. Contents are published under Creative Commons licenses.","source":""},
 		{"id":"filmaster","category":"video","name":"Filmaster","description":"community","address":"http://filmaster.com/","licenses":["cc-by-v2.5"],"tags":["guide"],"alternative":[""],"introduction":"Filmaster is a community driven movie guide.","source":""},
 		{"id":"communityvideo","category":"video","name":"Community Video","description":"database","address":"http://archive.org/details/opensource_movies","licenses":[""],"tags":[""],"alternative":[""],"introduction":"","source":""},
 		{"id":"amara","category":"video","name":"Amara","description":"subtitles","address":"http://amara.org/","licenses":["gnu-gpl-v3"],"tags":["subtitles"],"alternative":[""],"introduction":"Amara is a service that permits to add subtitles to YouTube videos. This project is supported by Mozilla and ParticipatoryCulture.org ","source":"https://github.com/pculture/unisubs"},
 		{"id":"mirocommunity","category":"video","name":"Miro Community","description":"platform","address":"http://mirocommunity.org/","licenses":["gnu-agpl-v3"],"tags":["website"],"alternative":[""],"introduction":"Miro Community is an open service to create a free video website.","source":"https://github.com/pculture/mirocommunity"},
-		
+
 		{"id":"pixlpaste","category":"graphics","name":"PixlPaste","description":"Photo online sharing","address":"http://pixlpaste.com/","licenses":["gnu-agpl-v3"],"tags":["sharing","cloud"],"introduction": "Simple, free, reliable way to share your pixels","alternative":["picasa","ubuntuone"],"source":"https://github.com/alokmenghrajani/pixlpaste"},
 		{"id":"mediagoblin","category":"graphics","name":"MediaGoblin","description":"media community","address":"http://gobblin.se/","licenses":["gnu-agpl-v3"],"tags":["community"],"alternative":["picasa"],"introduction":"","source":"https://gitorious.org/mediagoblin/mediagoblin"},
 		{"id":"svg-edit","category":"graphics","name":"SVG-edit","description":"graphic editor","address":"http://svg-edit.googlecode.com/svn/trunk/editor/svg-editor.html","licenses":["mit"],"tags":[""],"alternative":[""],"introduction":"","source":"https://code.google.com/p/svg-edit/source/checkout"},
@@ -121,12 +121,12 @@ var lp = {
 		{"id":"wikia","category":"publishing","name":"Wikia","description":"wiki","address":"http://wikia.com/","licenses":[""],"tags":[""],"alternative":[""],"introduction":"","source":""},
 		{"id":"wikidot","category":"publishing","name":"Wikidot","description":"wiki","address":"http://wikidot.com/","licenses":[""],"tags":[""],"alternative":[""],"introduction":"","source":""},
 		{"id":"libravatar","category":"publishing","name":"Libravatar","description":"web avatar service","address":"http://www.libravatar.org/","licenses":["gnu-agpl-v3"],"tags":["avatar","decentralized"],"alternative":["gravatar"],"introduction":"","source":"https://code.launchpad.net/libravatar"},
-		
+
 		{"id":"wikispecies","category":"science","name":"Wikispecies","description":"directory","address":"http://species.wikimedia.org","licenses":["cc-by-sa-v3"],"tags":["wiki","collaboration"],"alternative":[""],"introduction":"Wikispecies is a wiki-based online project supported by the Wikimedia Foundation. Its aim is to create a comprehensive free content catalogue of all species and is directed at scientists, rather than at the general public.","source":"http://dumps.wikimedia.org/backup-index.html"},
 		{"id":"plos","category":"science","name":"PLoS","description":"library","address":"http://plos.org/","licenses":["cc-by-v3"],"tags":["edu"],"alternative":[""],"introduction":"","source":""},
 		{"id":"sage","category":"science","name":"Sage","description":"mathematics","address":"http://sagemath.org/","licenses":["gnu-gpl-v3"],"tags":["calculus","math"],"alternative":["matlab","wolframalpha"],"introduction":"Sage is a mathematic software which aims to be an alternative to MATLAB and Wolfram Mathematica","source":"http://hg.sagemath.org/"},
 		{"id":"graph","category":"science","name":"Graph","description":"functions","address":"http://graph.tk/","licenses":["gnu-lgpl-v3"],"tags":["math"],"alternative":["wolframalpha"],"introduction":"Graph.tk is a graph creator. It also supports polar functions and parametric functions.","source":"https://github.com/aantthony/graph.tk"},
-		
+
 		{"id":"teamlab","category":"organization","name":"TeamLab","description":"projects","address":"http://teamlab.com/"},
 		{"id":"teambox","category":"organization","name":"Teambox","description":"projects","address":"http://teambox.com/"},
 		{"id":"ofuz","category":"organization","name":"Ofuz","description":"projects","address":"http://ofuz.com/"},
@@ -137,7 +137,7 @@ var lp = {
 		{"id":"backchannl","category":"organization","name":"backchan.nl","description":"audience","address":"http://backchan.nl/"},
 		{"id":"beex","category":"organization","name":"BEEx","description":"funding","address":"http://beex.org/"},
 		{"id":"openhatch","category":"organization","name":"OpenHatch","description":"help platform","address":"http://openhatch.org/"},
-		
+
 		{"id":"youtify","category":"audio","name":"Youtify","description":"music player","address":"http://youtify.com/"},
 		{"id":"jamendo","category":"audio","name":"Jamendo","description":"music store","address":"http://jamendo.com/"},
 		{"id":"freemusicarchive","category":"audio","name":"Free Music","description":"archive","address":"http://freemusicarchive.org/"},
@@ -155,7 +155,7 @@ var lp = {
 		{"id":"openstreetmap","category":"travel","name":"OpenStreetMap","description":"world map","address":"http://openstreetmap.org/"},
 		{"id":"openrouteservice","category":"travel","name":"OpenRouteService","description":"directions","address":"http://openrouteservice.org/"},
 		{"id":"webglearth","category":"travel","name":"WebGL Earth","description":"globus","address":"http://webglearth.com/"},
-		{"id":"wikivoyage","category":"travel","name":"Wikivoyage","description":"guide","address":"http://wikivoyage.org/" "introduction":"project to create a free, complete, up-to-date, and reliable world-wide travel guide"},
+		{"id":"wikivoyage","category":"travel","name":"Wikivoyage","description":"guide","address":"http://wikivoyage.org/", "introduction":"project to create a free, complete, up-to-date, and reliable world-wide travel guide"},
 		{"id":"openmarkers","category":"travel","name":"openMarkers","description":"places","address":"http://openmarkers.com/"},
 		{"id":"bewelcome","category":"travel","name":"BeWelcome","description":"hospitality","address":"http://bewelcome.org/"},
 		{"id":"hitchwiki","category":"travel","name":"Hitchwiki","description":"hitchhiking","address":"http://hitchwiki.org/"},
