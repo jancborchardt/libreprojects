@@ -207,9 +207,9 @@ lp = $.extend(lp, {
 			if ($category.find('li').filter(function() {
 				return $(this).css('display') != 'none';
 			} ).length) {
-				$category.slideDown().prev().show();
+				$category.show().prev().show();
 			} else {
-				$category.hide().prev().slideUp();
+				$category.hide().prev().hide();
 			}
 		} );
 	},
