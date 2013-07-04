@@ -145,11 +145,13 @@ var lp = {
 		{"id":"showslow","category":"development","name":"Show Slow","description":"metrics","address":"http://showslow.com/"},
 		{"id":"transifex","category":"development","name":"Transifex","description":"translation","address":"http://transifex.net/"},
 		{"id":"translatewiki","category":"development","name":"Translatewiki","description":"translation","address":"http://translatewiki.net/", "introduction": "A localisation platform for translation communities, language communities, and free and open source projects."},
+
 		{"id":"govsgo","category":"games","name":"Go vs Go","description":"gogogo!","address":"http://govsgo.com/","licenses":["mit"],"source":"http://github.com/ryanb/govsgo"},
 		{"id":"lichess","category":"games","name":"Lichess","description":"chess","address":"http://lichess.org/","licenses":["mit"],"source":"http://github.com/ornicar/lila"},
 		{"id":"tankworld","category":"games","name":"Tankworld","description":"3D shooter","address":"http://playtankworld.com","licenses":["gnu-gpl-v3"],"source":"http://www.playtankworld.com/multiplayer"},
 		{"id":"thehouse","category":"games","name":"The House","description":"adventure","address":"http://the-house.arturkot.pl/","licenses":["mit","cc-by-v3"],"source":"https://github.com/arturkot/the-house-game"},
 		{"id":"stillalivejs","category":"games","name":"StillAliveJS","description":"2D portal","address":"http://stillalivejs.t4ils.com/play/","licenses":["gnu-agpl-v3"]},
+		{"id":"adarkroom","category":"games","name":"A Dark Room","description":"text adventure","address":"http://adarkroom.doublespeakgames.com/","licenses":["gnu-gpl-v3"],"source":"https://github.com/Continuities/adarkroom"},
 		{"id":"agent8ball","category":"games","name":"Agent 008","description":"billiard","address":"http://agent8ball.com","licenses":["mit"],"source":"https://github.com/thinkpixellab/agent8ball"},
 		{"id":"browsmos","category":"games","name":"Browsmos","description":"absorption","address":"http://stepheneisenhauer.com/demos/browsmos/","introduction":"Browsmos is a game the web browser, made entirely using HTML5, and inspired heavily by the gameplay of Osmos. The rules are simple; click to propel yourself around, and try to absorb smaller cells until you become the biggest. Watch out for larger cells, or they will absorb you!","licenses":["bsd"],"source":"http://stepheneisenhauer.com/browsmos"},
 		{"id":"slither","category":"games","name":"Slither","description":"snake","address":"http://brokenresolve.com/projects/slither/","licenses":["gnu-lgpl-v3"],"source":"https://github.com/xtrementl/slither/"},
